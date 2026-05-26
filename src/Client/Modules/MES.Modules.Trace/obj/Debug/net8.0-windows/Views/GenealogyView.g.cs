@@ -57,7 +57,7 @@ namespace MES.Modules.Trace.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Trace;component/views/genealogyview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Trace;V1.0.0.0;component/views/genealogyview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\GenealogyView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

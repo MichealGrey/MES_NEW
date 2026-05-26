@@ -68,7 +68,7 @@ namespace MES.Shell.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Shell;component/views/loginwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Shell;V1.0.0.0;component/views/loginwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LoginWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

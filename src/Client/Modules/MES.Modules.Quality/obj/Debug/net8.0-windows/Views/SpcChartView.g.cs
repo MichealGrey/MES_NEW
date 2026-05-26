@@ -57,7 +57,7 @@ namespace MES.Modules.Quality.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Quality;component/views/spcchartview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Quality;V1.0.0.0;component/views/spcchartview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\SpcChartView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

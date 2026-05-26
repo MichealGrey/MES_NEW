@@ -1,10 +1,10 @@
 ﻿MES.Modules.Production
-
+1.0.0.0
 
 library
 C#
 .cs
-E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Production\obj\Debug\net8.0-windows\
+e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Production\obj\Debug\net8.0-windows\
 MES.Modules.Production
 none
 false
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 
 181197103109
 
-1231675585152
-2221454764903
+125-529363739
+222-1640074874
 Views\AddWorkOrderWin.xaml;Views\AlarmDashboardView.xaml;Views\CustomerProgressView.xaml;Views\DispatchView.xaml;Views\ExternalSystemView.xaml;Views\GenealogyView.xaml;Views\HoldReasonDialog.xaml;Views\LotHoldView.xaml;Views\LotListView.xaml;Views\LotSplitMergeView.xaml;Views\MasterDataView.xaml;Views\ProductionReportView.xaml;Views\SystemHealthView.xaml;Views\SystemMonitorView.xaml;Views\TrackInView.xaml;Views\WipOverviewView.xaml;Views\WorkOrderListView.xaml;Views\YieldReportView.xaml;
 
-False
+True
 

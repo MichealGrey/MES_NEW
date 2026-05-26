@@ -1,10 +1,10 @@
 ﻿MES.Modules.Alarm
-
+1.0.0.0
 
 library
 C#
 .cs
-E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Alarm\obj\Debug\net8.0-windows\
+e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Alarm\obj\Debug\net8.0-windows\
 MES.Modules.Alarm
 none
 false
@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 
 4-1420820075
 
-14-825512045
-2201708370146
+16638671784
+220-1511120023
 Views\ActiveAlarmView.xaml;Views\AlarmHistoryView.xaml;Views\AlarmRuleConfigView.xaml;Views\AlarmStatisticsView.xaml;
 
 False

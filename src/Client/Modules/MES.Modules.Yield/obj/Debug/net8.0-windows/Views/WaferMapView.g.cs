@@ -57,7 +57,7 @@ namespace MES.Modules.Yield.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Yield;component/views/wafermapview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Yield;V1.0.0.0;component/views/wafermapview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\WaferMapView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

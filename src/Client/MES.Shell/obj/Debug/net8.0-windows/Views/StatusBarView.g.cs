@@ -58,7 +58,7 @@ namespace MES.Shell.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Shell;component/views/statusbarview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Shell;V1.0.0.0;component/views/statusbarview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\StatusBarView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

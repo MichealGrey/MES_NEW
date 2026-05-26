@@ -1,20 +1,20 @@
 ﻿MES.Shell
-
+1.0.0.0
 
 winexe
 C#
 .cs
-E:\AiProj\MES_NEW\src\Client\MES.Shell\obj\Debug\net8.0-windows\
+e:\AiProj\MES_NEW\src\Client\MES.Shell\obj\Debug\net8.0-windows\
 MES.Shell
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-E:\AiProj\MES_NEW\src\Client\MES.Shell\App.xaml
+e:\AiProj\MES_NEW\src\Client\MES.Shell\App.xaml
 5-819556392
 
-21-2137428142
-235-610754618
+23589382802
+2351770449891
 MainWindow.xaml;Views\LoginWindow.xaml;Views\MenuView.xaml;Views\NavigationView.xaml;Views\StatusBarView.xaml;
 
-False
+True
 

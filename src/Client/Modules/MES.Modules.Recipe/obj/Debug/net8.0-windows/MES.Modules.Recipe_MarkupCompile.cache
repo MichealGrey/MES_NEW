@@ -1,10 +1,10 @@
 ﻿MES.Modules.Recipe
-
+1.0.0.0
 
 library
 C#
 .cs
-E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Recipe\obj\Debug\net8.0-windows\
+e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Recipe\obj\Debug\net8.0-windows\
 MES.Modules.Recipe
 none
 false
@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 
 4580340235
 
-14-2080292749
-2201708370146
+161605350236
+220-1511120023
 Views\RecipeApprovalView.xaml;Views\RecipeEquipmentView.xaml;Views\RecipeListView.xaml;Views\RecipeParameterView.xaml;
 
 False

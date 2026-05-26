@@ -57,7 +57,7 @@ namespace MES.Modules.Equipment.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Equipment;component/views/equipmentoverviewview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Equipment;V1.0.0.0;component/views/equipmentoverviewview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EquipmentOverviewView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

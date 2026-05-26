@@ -57,7 +57,7 @@ namespace MES.Modules.Alarm.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Alarm;component/views/activealarmview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Alarm;V1.0.0.0;component/views/activealarmview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ActiveAlarmView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

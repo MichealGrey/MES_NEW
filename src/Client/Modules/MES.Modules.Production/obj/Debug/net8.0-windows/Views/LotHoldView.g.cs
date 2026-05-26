@@ -66,7 +66,7 @@ namespace MES.Modules.Production.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Production;component/views/lotholdview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Production;V1.0.0.0;component/views/lotholdview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LotHoldView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

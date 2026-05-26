@@ -57,7 +57,7 @@ namespace MES.Modules.Recipe.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Recipe;component/views/recipeparameterview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Recipe;V1.0.0.0;component/views/recipeparameterview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\RecipeParameterView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

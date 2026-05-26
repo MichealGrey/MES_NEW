@@ -57,7 +57,7 @@ namespace MES.Modules.Warehouse.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Warehouse;component/views/foupmanagementview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Warehouse;V1.0.0.0;component/views/foupmanagementview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\FoupManagementView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

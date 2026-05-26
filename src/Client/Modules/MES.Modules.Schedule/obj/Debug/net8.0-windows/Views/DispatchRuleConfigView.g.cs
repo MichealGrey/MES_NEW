@@ -57,7 +57,7 @@ namespace MES.Modules.Schedule.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Schedule;component/views/dispatchruleconfigview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Schedule;V1.0.0.0;component/views/dispatchruleconfigview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\DispatchRuleConfigView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

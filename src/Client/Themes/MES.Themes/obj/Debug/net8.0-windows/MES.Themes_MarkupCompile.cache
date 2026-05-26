@@ -1,10 +1,10 @@
 ﻿MES.Themes
-
+1.0.0.0
 
 library
 C#
 .cs
-E:\AiProj\MES_NEW\src\Client\Themes\MES.Themes\obj\Debug\net8.0-windows\
+e:\AiProj\MES_NEW\src\Client\Themes\MES.Themes\obj\Debug\net8.0-windows\
 MES.Themes
 none
 false
@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 
 1-943178879
 
-11906626404
+3831845507
 198-552479049
 Themes\DarkTheme.xaml;
 

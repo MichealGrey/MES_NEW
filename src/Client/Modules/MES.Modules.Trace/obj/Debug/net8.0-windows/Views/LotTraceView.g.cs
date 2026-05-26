@@ -57,7 +57,7 @@ namespace MES.Modules.Trace.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.Trace;component/views/lottraceview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.Trace;V1.0.0.0;component/views/lottraceview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LotTraceView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

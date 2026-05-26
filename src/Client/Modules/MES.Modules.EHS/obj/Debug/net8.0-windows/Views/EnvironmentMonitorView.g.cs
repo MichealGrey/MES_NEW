@@ -57,7 +57,7 @@ namespace MES.Modules.EHS.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MES.Modules.EHS;component/views/environmentmonitorview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MES.Modules.EHS;V1.0.0.0;component/views/environmentmonitorview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EnvironmentMonitorView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

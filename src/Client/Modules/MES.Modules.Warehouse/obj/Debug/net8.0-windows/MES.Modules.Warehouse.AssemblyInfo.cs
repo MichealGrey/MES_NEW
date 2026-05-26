@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MES.Modules.Warehouse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c126b2093b9a5275ac5a19f10928952c4c2224de")]
 [assembly: System.Reflection.AssemblyProductAttribute("MES.Modules.Warehouse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MES.Modules.Warehouse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
