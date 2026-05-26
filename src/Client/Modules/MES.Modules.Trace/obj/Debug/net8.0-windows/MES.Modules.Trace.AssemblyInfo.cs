@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MES.Modules.Trace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c126b2093b9a5275ac5a19f10928952c4c2224de")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e27e27083efff96cc537687bca47ff0c30c2f82")]
 [assembly: System.Reflection.AssemblyProductAttribute("MES.Modules.Trace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MES.Modules.Trace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
