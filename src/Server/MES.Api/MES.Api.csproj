@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MES.Contracts\MES.Contracts.csproj" />
+    <ProjectReference Include="..\..\Shared\MES.Domain\MES.Domain.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Production\MES.Services.Production.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Quality\MES.Services.Quality.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Equipment\MES.Services.Equipment.csproj" />
+  </ItemGroup>
+</Project>

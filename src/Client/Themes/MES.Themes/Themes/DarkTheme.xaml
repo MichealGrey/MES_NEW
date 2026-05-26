@@ -1,0 +1,40 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="MesPrimaryColor">#1A1A2E</Color>
+    <Color x:Key="MesSecondaryColor">#16213E</Color>
+    <Color x:Key="MesAccentColor">#0F3460</Color>
+    <Color x:Key="MesHighlightColor">#00D2FF</Color>
+    <Color x:Key="MesSuccessColor">#4CC56C</Color>
+    <Color x:Key="MesWarningColor">#F39C12</Color>
+    <Color x:Key="MesErrorColor">#E74C3C</Color>
+    <Color x:Key="MesCriticalColor">#FF4757</Color>
+    <Color x:Key="MesTextPrimary">#FFFFFF</Color>
+    <Color x:Key="MesTextSecondary">#B0B0C0</Color>
+    <Color x:Key="MesTextMuted">#808098</Color>
+    <Color x:Key="MesTextDim">#505068</Color>
+    <Color x:Key="MesTextCombox">#121220</Color>
+    <Color x:Key="MesBorder">#2A2A45</Color>
+    <Color x:Key="MesDivider">#3A3A55</Color>
+    <Color x:Key="MesCard">#1E1E35</Color>
+    <Color x:Key="MesSurface">#171728</Color>
+    <Color x:Key="MesMenu">#141425</Color>
+    <Color x:Key="MesStatusBar">#121220</Color>
+
+    <SolidColorBrush x:Key="MesComboxTextBrush" Color="{StaticResource MesPrimaryColor}"/>
+    <SolidColorBrush x:Key="MesBackgroundBrush" Color="{StaticResource MesTextCombox}"/>
+    <SolidColorBrush x:Key="MesSurfaceBrush" Color="{StaticResource MesSurface}"/>
+    <SolidColorBrush x:Key="MesMenuBrush" Color="{StaticResource MesMenu}"/>
+    <SolidColorBrush x:Key="MesStatusBarBrush" Color="{StaticResource MesStatusBar}"/>
+    <SolidColorBrush x:Key="MesCardBrush" Color="{StaticResource MesCard}"/>
+    <SolidColorBrush x:Key="MesAccentBrush" Color="{StaticResource MesHighlightColor}"/>
+    <SolidColorBrush x:Key="MesSuccessBrush" Color="{StaticResource MesSuccessColor}"/>
+    <SolidColorBrush x:Key="MesWarningBrush" Color="{StaticResource MesWarningColor}"/>
+    <SolidColorBrush x:Key="MesErrorBrush" Color="{StaticResource MesErrorColor}"/>
+    <SolidColorBrush x:Key="MesCriticalBrush" Color="{StaticResource MesCriticalColor}"/>
+    <SolidColorBrush x:Key="MesTextPrimaryBrush" Color="{StaticResource MesTextPrimary}"/>
+    <SolidColorBrush x:Key="MesTextSecondaryBrush" Color="{StaticResource MesTextSecondary}"/>
+    <SolidColorBrush x:Key="MesTextMutedBrush" Color="{StaticResource MesTextMuted}"/>
+    <SolidColorBrush x:Key="MesTextDimBrush" Color="{StaticResource MesTextDim}"/>
+    <SolidColorBrush x:Key="MesBorderBrush" Color="{StaticResource MesBorder}"/>
+    <SolidColorBrush x:Key="MesDividerBrush" Color="{StaticResource MesDivider}"/>
+</ResourceDictionary>

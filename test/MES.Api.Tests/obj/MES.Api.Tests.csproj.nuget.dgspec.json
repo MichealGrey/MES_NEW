@@ -1,0 +1,517 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\AiProj\\MES_NEW\\test\\MES.Api.Tests\\MES.Api.Tests.csproj": {}
+  },
+  "projects": {
+    "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\MES.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\MES.Api.csproj",
+        "projectName": "MES.Api",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\MES.Api.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\MES.Services.Equipment.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\MES.Services.Equipment.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\MES.Services.Production.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\MES.Services.Production.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\MES.Services.Quality.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\MES.Services.Quality.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\MES.Services.Equipment.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\MES.Services.Equipment.csproj",
+        "projectName": "MES.Services.Equipment",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\MES.Services.Equipment.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\MES.Services.Production.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\MES.Services.Production.csproj",
+        "projectName": "MES.Services.Production",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\MES.Services.Production.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\MES.Services.Quality.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\MES.Services.Quality.csproj",
+        "projectName": "MES.Services.Quality",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\MES.Services.Quality.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj",
+        "projectName": "MES.Contracts",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\MES.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj",
+        "projectName": "MES.Domain",
+        "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\AiProj\\MES_NEW\\test\\MES.Api.Tests\\MES.Api.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\AiProj\\MES_NEW\\test\\MES.Api.Tests\\MES.Api.Tests.csproj",
+        "projectName": "MES.Api.Tests",
+        "projectPath": "E:\\AiProj\\MES_NEW\\test\\MES.Api.Tests\\MES.Api.Tests.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "E:\\AiProj\\MES_NEW\\test\\MES.Api.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\MES.Api.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\MES.Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.9.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

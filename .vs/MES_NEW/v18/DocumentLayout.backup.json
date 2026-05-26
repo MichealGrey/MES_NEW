@@ -1,0 +1,1022 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\AiProj\\MES_NEW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\menuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\menuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\navigationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\navigationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\services\\routeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\services\\customerproductionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\services\\customerproductionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\navigationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\navigationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\customerprogressview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\customerprogressview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\services\\authdataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\services\\authdataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\lotholdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\lotholdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\statusbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\statusbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\trackinviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\trackinviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\workorderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\workorderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeequipmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|solutionrelative:src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeequipmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeapprovalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|solutionrelative:src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeapprovalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\ooceventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\ooceventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.warehouse\\viewmodels\\materiallistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|solutionrelative:src\\client\\modules\\mes.modules.warehouse\\viewmodels\\materiallistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\lottraceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\lottraceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\lotlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\lotlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\inspectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\inspectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\impactanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\impactanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\genealogyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\genealogyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\gasmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\gasmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.warehouse\\viewmodels\\foupmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|solutionrelative:src\\client\\modules\\mes.modules.warehouse\\viewmodels\\foupmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\fdcmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\fdcmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\environmentmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\environmentmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\chemicalmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\chemicalmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\capacityanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\capacityanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmstatisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmstatisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\activealarmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\activealarmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmhistoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmhistoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\lottraceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\lottraceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\impactanalysisview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\impactanalysisview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\genealogyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\genealogyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F9EB12B-A305-47E3-8315-713ECFD73CC1}|test\\MES.Modules.Production.Tests\\MES.Modules.Production.Tests.csproj|e:\\aiproj\\mes_new\\test\\mes.modules.production.tests\\workorderlistviewmodeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9EB12B-A305-47E3-8315-713ECFD73CC1}|test\\MES.Modules.Production.Tests\\MES.Modules.Production.Tests.csproj|solutionrelative:test\\mes.modules.production.tests\\workorderlistviewmodeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97008337-A6FA-4CF9-8612-802920587644}|src\\Client\\MES.Shared\\MES.Shared.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shared\\converters\\holdtypeconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97008337-A6FA-4CF9-8612-802920587644}|src\\Client\\MES.Shared\\MES.Shared.csproj|solutionrelative:src\\client\\mes.shared\\converters\\holdtypeconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|e:\\aiproj\\mes_new\\src\\client\\modules\\mes.modules.production\\models\\workorderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\models\\workorderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFB776B-D527-47C1-A2DE-621882D0D27B}|src\\Server\\MES.Api\\MES.Api.csproj|e:\\aiproj\\mes_new\\src\\server\\mes.api\\controllers\\workorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFB776B-D527-47C1-A2DE-621882D0D27B}|src\\Server\\MES.Api\\MES.Api.csproj|solutionrelative:src\\server\\mes.api\\controllers\\workorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FCAE55F-3D99-4A88-A6C9-EA2A0EB261D9}|src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.infrastructure\\mes.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4FCAE55F-3D99-4A88-A6C9-EA2A0EB261D9}|src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj|solutionrelative:src\\client\\mes.infrastructure\\mes.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\views\\statusbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\statusbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\viewmodels\\statusbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\statusbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|e:\\aiproj\\mes_new\\src\\client\\mes.shell\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\AiProj\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAUwHQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:54.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\App.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\App.xaml.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAiwHsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA0wBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrackInView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NavigationView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrackInView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MenuViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowEcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:54.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MenuView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NavigationView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\App.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerProductionService.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\CustomerProductionService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Services\\CustomerProductionService.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\CustomerProductionService.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Services\\CustomerProductionService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAawBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:46:18.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LotHoldViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAzwKkAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:54.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RouteService.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\RouteService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Services\\RouteService.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\RouteService.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Services\\RouteService.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAmwGgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:48:13.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CustomerProgressView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\CustomerProgressView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\CustomerProgressView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\CustomerProgressView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\CustomerProgressView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-24T13:56:43.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthDataSeeder.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Services\\AuthDataSeeder.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Services\\AuthDataSeeder.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Services\\AuthDataSeeder.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Services\\AuthDataSeeder.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAswJYAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:46:52.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WorkOrderListView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:54.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\MainWindow.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\MainWindow.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HoldReasonDialog.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAIwCMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StatusBarView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwD8AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TrackInViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "ViewState": "AQIAAMkCAAAAAAAAAAAkwN4CAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddWorkOrderWin.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAIwFgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LotHoldView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs",
+              "ViewState": "AQIAAKMBAAAAAAAAAAAUwLABAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "OocEventViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MaterialListViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LotTraceViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "WorkOrderListViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAUwMsAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RecipeEquipmentViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBwAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RecipeApprovalViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "LotListViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAABAwBUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "InspectionViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ImpactAnalysisViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GenealogyViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "GasMonitorViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FoupManagementViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAABAwBQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FdcMonitorViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "EnvironmentMonitorViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "DispatchRuleConfigViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DispatchBoardViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ChemicalManagementViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CapacityAnalysisViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AlarmStatisticsViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ActiveAlarmViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "WorkOrderListView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AlarmRuleConfigViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "AlarmHistoryViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAABAwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "LotHoldView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "LotTraceView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "GenealogyView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "ImpactAnalysisView.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AddWorkOrderWin.xaml",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-23T06:36:55.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "WorkOrderListViewModelTests.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "RelativeDocumentMoniker": "test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "RelativeToolTip": "test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "HoldTypeConverters.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAABAwBUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "WorkOrderInfo.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAUwDIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "WorkOrdersController.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "RelativeDocumentMoniker": "src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "RelativeToolTip": "src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "RedisService.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "RelativeToolTip": "src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "MES.Infrastructure.csproj",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-23T06:36:55.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "StatusBarView.xaml.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "StatusBarViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "NavigationViewModel.cs",
+              "DocumentMoniker": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "ToolTip": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "ViewState": "AQIAAIsAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T06:36:55.95Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

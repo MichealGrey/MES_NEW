@@ -1,0 +1,17 @@
+<prism:PrismApplication x:Class="MES.Shell.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MES.Themes;component/Themes/DarkTheme.xaml"/>
+                <ResourceDictionary>
+                    <converters:BooleanToVisibilityConverter x:Key="BoolToVis"/>
+                    <converters:EnumMatchConverter x:Key="EnumMatch"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

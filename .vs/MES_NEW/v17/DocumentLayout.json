@@ -1,0 +1,1288 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\wipoverviewview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\wipoverviewview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\services\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\services\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\yieldreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\yieldreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\systemmonitorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\systemmonitorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\wipoverviewview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\wipoverviewview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\trackinview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\yieldreportview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\yieldreportview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\externalsystemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\externalsystemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\lotlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\lotlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\lotsplitmergeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\lotsplitmergeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\masterdataviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\masterdataviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D0A742D-59FC-43A7-9B1F-CEEEE230FBD5}|src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\infrastructure\\mes.infrastructure.persistence\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D0A742D-59FC-43A7-9B1F-CEEEE230FBD5}|src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj|solutionrelative:src\\infrastructure\\mes.infrastructure.persistence\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotsplitmergeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotsplitmergeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\navigationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\masterdataview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\masterdataview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\workorderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\workorderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\services\\productiondataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\services\\productiondataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\navigationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\navigationview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\917e6033f24f9e1c6932765d2b17bb78f23a8e1009bf095372c4350799f875d5\\DryIocContainerExtension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\navigationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\navigationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\menuview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\workorderlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\addworkorderwin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\lotholdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\lotholdviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\menuviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\statusbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\statusbarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\menuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\menuview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\holdreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\viewmodels\\trackinviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\viewmodels\\trackinviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeequipmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|solutionrelative:src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeequipmentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeapprovalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19D633BD-D318-4D63-9B82-9826506B6F59}|src\\Client\\Modules\\MES.Modules.Recipe\\MES.Modules.Recipe.csproj|solutionrelative:src\\client\\modules\\mes.modules.recipe\\viewmodels\\recipeapprovalviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\ooceventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\ooceventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.warehouse\\viewmodels\\materiallistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|solutionrelative:src\\client\\modules\\mes.modules.warehouse\\viewmodels\\materiallistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\lottraceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\lottraceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\inspectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\inspectionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\impactanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\impactanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\viewmodels\\genealogyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\viewmodels\\genealogyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\gasmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\gasmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.warehouse\\viewmodels\\foupmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9874FB75-F386-45AC-876A-FF323668FB9F}|src\\Client\\Modules\\MES.Modules.Warehouse\\MES.Modules.Warehouse.csproj|solutionrelative:src\\client\\modules\\mes.modules.warehouse\\viewmodels\\foupmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.quality\\viewmodels\\fdcmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D56A46AE-63D2-430D-A032-0A7D65DE9061}|src\\Client\\Modules\\MES.Modules.Quality\\MES.Modules.Quality.csproj|solutionrelative:src\\client\\modules\\mes.modules.quality\\viewmodels\\fdcmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\environmentmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\environmentmonitorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\dispatchboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.ehs\\viewmodels\\chemicalmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{060501D7-FB1C-496D-9F3E-D1F850A52590}|src\\Client\\Modules\\MES.Modules.EHS\\MES.Modules.EHS.csproj|solutionrelative:src\\client\\modules\\mes.modules.ehs\\viewmodels\\chemicalmanagementviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.schedule\\viewmodels\\capacityanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AE31568-AE10-4A33-9EEE-876FC6DFF047}|src\\Client\\Modules\\MES.Modules.Schedule\\MES.Modules.Schedule.csproj|solutionrelative:src\\client\\modules\\mes.modules.schedule\\viewmodels\\capacityanalysisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmstatisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmstatisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\activealarmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\activealarmviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmhistoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmhistoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFDB0BE7-A622-451E-9524-8CA5982E945C}|src\\Client\\Modules\\MES.Modules.Alarm\\MES.Modules.Alarm.csproj|solutionrelative:src\\client\\modules\\mes.modules.alarm\\viewmodels\\alarmruleconfigviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\views\\lotholdview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\lottraceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\lottraceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\impactanalysisview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\impactanalysisview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.trace\\views\\genealogyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0598CA0D-89BB-47D7-9430-27B7949A24DC}|src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj|solutionrelative:src\\client\\modules\\mes.modules.trace\\views\\genealogyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F9EB12B-A305-47E3-8315-713ECFD73CC1}|test\\MES.Modules.Production.Tests\\MES.Modules.Production.Tests.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\test\\mes.modules.production.tests\\workorderlistviewmodeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F9EB12B-A305-47E3-8315-713ECFD73CC1}|test\\MES.Modules.Production.Tests\\MES.Modules.Production.Tests.csproj|solutionrelative:test\\mes.modules.production.tests\\workorderlistviewmodeltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97008337-A6FA-4CF9-8612-802920587644}|src\\Client\\MES.Shared\\MES.Shared.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shared\\converters\\holdtypeconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97008337-A6FA-4CF9-8612-802920587644}|src\\Client\\MES.Shared\\MES.Shared.csproj|solutionrelative:src\\client\\mes.shared\\converters\\holdtypeconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\modules\\mes.modules.production\\models\\workorderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6204243-145F-40C0-BA41-4C91C8E86162}|src\\Client\\Modules\\MES.Modules.Production\\MES.Modules.Production.csproj|solutionrelative:src\\client\\modules\\mes.modules.production\\models\\workorderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BFB776B-D527-47C1-A2DE-621882D0D27B}|src\\Server\\MES.Api\\MES.Api.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\server\\mes.api\\controllers\\workorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFB776B-D527-47C1-A2DE-621882D0D27B}|src\\Server\\MES.Api\\MES.Api.csproj|solutionrelative:src\\server\\mes.api\\controllers\\workorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FCAE55F-3D99-4A88-A6C9-EA2A0EB261D9}|src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.infrastructure\\mes.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4FCAE55F-3D99-4A88-A6C9-EA2A0EB261D9}|src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj|solutionrelative:src\\client\\mes.infrastructure\\mes.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\views\\statusbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\views\\statusbarview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\viewmodels\\statusbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\viewmodels\\statusbarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|d:\\dszstoreproject\\wpftest\\mes_new\\src\\client\\mes.shell\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1BF52D53-3F23-43DB-97A9-69D64C167885}|src\\Client\\MES.Shell\\MES.Shell.csproj|solutionrelative:src\\client\\mes.shell\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrackInView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T06:39:59.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SystemMonitorView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\SystemMonitorView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\SystemMonitorView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\SystemMonitorView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\SystemMonitorView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:32:26.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\App.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\App.xaml.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAiwIUAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:41.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WipOverviewView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T08:25:26.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IReportService.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\IReportService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Services\\IReportService.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\IReportService.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Services\\IReportService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:33:00.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WipOverviewView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WipOverviewView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:32:24.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "YieldReportViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\YieldReportViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\YieldReportViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\YieldReportViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\YieldReportViewModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvwwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:32:38.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "YieldReportView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\YieldReportView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\YieldReportView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\YieldReportView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\YieldReportView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:32:06.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ExternalSystemViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\ExternalSystemViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\ExternalSystemViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\ExternalSystemViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\ExternalSystemViewModel.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T07:31:48.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WorkOrderListView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:01:03.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TrackInView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\TrackInView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T07:25:17.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\MES.Infrastructure.Persistence\\ServiceCollectionExtensions.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\Infrastructure\\MES.Infrastructure.Persistence\\ServiceCollectionExtensions.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAABAAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T04:00:59.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MasterDataViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\MasterDataViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\MasterDataViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\MasterDataViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\MasterDataViewModel.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAD8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T03:22:39.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LotListViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotListViewModel.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:40.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LotListView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotListView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotListView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotListView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotListView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T06:03:03.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HoldReasonDialog.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T03:41:35.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LotSplitMergeViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotSplitMergeViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotSplitMergeViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotSplitMergeViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotSplitMergeViewModel.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAqwF8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T03:52:50.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LotSplitMergeView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotSplitMergeView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotSplitMergeView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotSplitMergeView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotSplitMergeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T03:43:19.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AddWorkOrderWin.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-20T03:18:09.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NavigationViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\NavigationViewModel.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAUwGQAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:56:50.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MasterDataView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\MasterDataView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\MasterDataView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\MasterDataView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\MasterDataView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T03:35:51.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DryIocContainerExtension.cs",
+              "DocumentMoniker": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\917e6033f24f9e1c6932765d2b17bb78f23a8e1009bf095372c4350799f875d5\\DryIocContainerExtension.cs",
+              "ToolTip": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\917e6033f24f9e1c6932765d2b17bb78f23a8e1009bf095372c4350799f875d5\\DryIocContainerExtension.cs [\u53EA\u8BFB]",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAUwOAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T02:35:46.696Z",
+              "EditorCaption": " [\u53EA\u8BFB]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WorkOrderListViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\WorkOrderListViewModel.cs",
+              "ViewState": "AQIAAIUBAAAAAAAAAAAUwJMBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T06:57:41.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProductionDataService.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\ProductionDataService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Services\\ProductionDataService.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Services\\ProductionDataService.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Services\\ProductionDataService.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAUwB0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T02:47:53.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NavigationView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:02.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NavigationView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\NavigationView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T08:47:10.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAADwv0MAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T08:40:43.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T07:59:18.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MenuView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\MenuView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:56:59.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAADwv4oAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T08:16:45.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WorkOrderListView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\WorkOrderListView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-19T05:12:51.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "LotHoldViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\LotHoldViewModel.cs",
+              "ViewState": "AQIAACwBAAAAAAAAAAAAAEoBAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T05:30:57.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "IRedisService.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs",
+              "RelativeToolTip": "src\\Client\\MES.Infrastructure\\Cache\\IRedisService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:45.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AddWorkOrderWin.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\AddWorkOrderWin.xaml.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAUwFoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T03:19:31.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MenuViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\MenuViewModel.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAABAwEcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:56:46.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Services\\SessionService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAABAwCEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T08:53:20.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MenuView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\MenuView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T08:47:07.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\MainWindow.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\MainWindow.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T08:47:23.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "HoldReasonDialog.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\HoldReasonDialog.xaml.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAIwCMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T08:38:12.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "StatusBarView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-19T02:57:51.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "TrackInViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\ViewModels\\TrackInViewModel.cs",
+              "ViewState": "AQIAAMkCAAAAAAAAAAAkwN4CAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T07:25:21.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "LotHoldView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T03:46:45.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\PH119761\\AppData\\Local\\Temp\\.vsdbgsrc\\811f0c1102ba7a3d32ee827d0bb52f1af2ec958c7f3fb7abe7c05f601195e6c8\\XamlReader.cs",
+              "ViewState": "AQIAAKMBAAAAAAAAAAAUwLABAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T07:24:05.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "OocEventViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\OocEventViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:44.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "MaterialListViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\MaterialListViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:43.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "LotTraceViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\LotTraceViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:42.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "RecipeEquipmentViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeEquipmentViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBwAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:47.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "RecipeApprovalViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Recipe\\ViewModels\\RecipeApprovalViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:46.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "InspectionViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\InspectionViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:39.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ImpactAnalysisViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\ImpactAnalysisViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:38.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "GenealogyViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\ViewModels\\GenealogyViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:36.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "GasMonitorViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\GasMonitorViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:35.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "FoupManagementViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Warehouse\\ViewModels\\FoupManagementViewModel.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAABQwBQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:34.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "FdcMonitorViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Quality\\ViewModels\\FdcMonitorViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:33.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "EnvironmentMonitorViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\EnvironmentMonitorViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:32.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "DispatchRuleConfigViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchRuleConfigViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:30.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DispatchBoardViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\DispatchBoardViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:28.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ChemicalManagementViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.EHS\\ViewModels\\ChemicalManagementViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:27.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "CapacityAnalysisViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Schedule\\ViewModels\\CapacityAnalysisViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:26.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "AlarmStatisticsViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmStatisticsViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:24.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ActiveAlarmViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\ActiveAlarmViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:35:23.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "AlarmRuleConfigViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmRuleConfigViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:26.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AlarmHistoryViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Alarm\\ViewModels\\AlarmHistoryViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAABQwBMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:22.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "LotHoldView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Views\\LotHoldView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-19T08:49:01.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "LotTraceView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\LotTraceView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T05:24:01.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "GenealogyView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\GenealogyView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T05:23:57.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ImpactAnalysisView.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Trace\\Views\\ImpactAnalysisView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-21T05:23:59.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "WorkOrderListViewModelTests.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "RelativeDocumentMoniker": "test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "RelativeToolTip": "test\\MES.Modules.Production.Tests\\WorkOrderListViewModelTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T02:15:12.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "HoldTypeConverters.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shared\\Converters\\HoldTypeConverters.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAABQwBUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T08:59:03.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "WorkOrderInfo.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "RelativeDocumentMoniker": "src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "RelativeToolTip": "src\\Client\\Modules\\MES.Modules.Production\\Models\\WorkOrderInfo.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAUwDIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T07:03:58.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "WorkOrdersController.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "RelativeDocumentMoniker": "src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "RelativeToolTip": "src\\Server\\MES.Api\\Controllers\\WorkOrdersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T03:24:36.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\App.xaml",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\App.xaml",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-19T06:56:15.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "RedisService.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "RelativeToolTip": "src\\Client\\MES.Infrastructure\\Cache\\RedisService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:48.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "MES.Infrastructure.csproj",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Client\\MES.Infrastructure\\MES.Infrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-19T02:57:46.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "StatusBarView.xaml.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\Views\\StatusBarView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:57:09.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "StatusBarViewModel.cs",
+              "DocumentMoniker": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "RelativeDocumentMoniker": "src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "ToolTip": "D:\\DSZStoreProject\\wpftest\\MES_NEW\\src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "RelativeToolTip": "src\\Client\\MES.Shell\\ViewModels\\StatusBarViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T02:56:54.019Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

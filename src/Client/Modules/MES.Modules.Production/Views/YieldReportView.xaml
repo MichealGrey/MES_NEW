@@ -1,0 +1,64 @@
+<UserControl x:Class="MES.Modules.Production.Views.YieldReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="#1E1E2E">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
+            <TextBlock Text="良率报表" FontSize="20" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,16,0"/>
+            <TextBlock Text="路线:" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#CDD6F4"/>
+            <TextBox Text="{Binding RouteId}" Width="120" Margin="0,0,12,0"/>
+            <TextBlock Text="开始:" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#CDD6F4"/>
+            <DatePicker SelectedDate="{Binding StartDate}" Width="130" Margin="0,0,12,0"/>
+            <TextBlock Text="结束:" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#CDD6F4"/>
+            <DatePicker SelectedDate="{Binding EndDate}" Width="130" Margin="0,0,12,0"/>
+            <Button Content="生成报表" Command="{Binding GenerateCommand}" Width="100"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLoading}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="#CDD6F4"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="批次总数" FontSize="14" Foreground="#CDD6F4"/>
+                <TextBlock Text="{Binding Report.TotalLots}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="平均良率" FontSize="14" Foreground="#CDD6F4"/>
+                <TextBlock Text="{Binding Report.AverageYield, StringFormat={}{0:F1}%}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="最低良率" FontSize="14" Foreground="#CDD6F4"/>
+                <TextBlock Text="{Binding Report.MinYield, StringFormat={}{0:F1}%}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <TextBlock Text="标准差" FontSize="14" Foreground="#CDD6F4"/>
+                <TextBlock Text="{Binding Report.StdDev, StringFormat={}{0:F2}}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,398 @@
+using MES.Infrastructure.Persistence;
+using MES.Infrastructure.Persistence.Repositories;
+using MES.Infrastructure.Persistence.Entities;
+using MES.Modules.Production.Models;
+using ReqEntity = MES.Infrastructure.Persistence.Entities.CustomerRequirement;
+using ReqModel = MES.Modules.Production.Models.CustomerRequirement;
+
+namespace MES.Modules.Production.Services;
+
+public interface ICustomerProductionService
+{
+    Task<CustomerLotProgress> GetLotProgressAsync(string lotId);
+    Task<List<CustomerLotProgress>> GetCustomerProgressAsync(string customerId);
+    Task<List<CustomerLotProgress>> GetOrderProgressAsync(string orderId);
+    Task<DueDateRisk> CalculateDueDateRiskAsync(string orderId);
+    Task<List<DueDateRisk>> GetAllDueDateRisksAsync();
+    Task<ReqModel> CreateRequirementAsync(ReqModel requirement);
+    Task<List<ReqModel>> GetRequirementsAsync(string? customerId = null, string? orderId = null);
+    Task<TraceReport> GenerateTraceReportAsync(string lotId, string generatedBy);
+}
+
+public class CustomerProductionService : ICustomerProductionService
+{
+    private readonly IRepository<ProdLot> _lotRepo;
+    private readonly IRepository<ProdWorkOrder> _woRepo;
+    private readonly IRepository<ProdLotStep> _lotStepRepo;
+    private readonly IRepository<ReqEntity> _reqRepo;
+    private readonly IRouteService _routeService;
+
+    public CustomerProductionService(
+        IRepository<ProdLot> lotRepo,
+        IRepository<ProdWorkOrder> woRepo,
+        IRepository<ProdLotStep> lotStepRepo,
+        IRepository<ReqEntity> reqRepo,
+        IRouteService routeService)
+    {
+        _lotRepo = lotRepo;
+        _woRepo = woRepo;
+        _lotStepRepo = lotStepRepo;
+        _reqRepo = reqRepo;
+        _routeService = routeService;
+    }
+
+    public async Task<CustomerLotProgress> GetLotProgressAsync(string lotId)
+    {
+        var lot = await _lotRepo.GetByIdAsync(lotId);
+        if (lot is null) return new CustomerLotProgress { LotId = lotId };
+
+        var wo = await _woRepo.GetByIdAsync(lot.OrderId);
+        var routeId = lot.ReworkRouteId ?? (string.IsNullOrEmpty(lot.RouteId) ? "DEFAULT" : lot.RouteId);
+        var steps = await _routeService.GetStepsAsync(routeId);
+
+        var stepRecords = await _lotStepRepo.GetWhereAsync(s => s.LotId == lotId);
+        var stepDict = stepRecords.ToDictionary(s => s.StepSeq);
+
+        var completedSteps = new List<string>();
+        var pendingSteps = new List<string>();
+
+        foreach (var step in steps)
+        {
+            if (stepDict.TryGetValue(step.StepSeq, out var record) && record.Status == "Completed")
+                completedSteps.Add(step.StepName);
+            else if (step.StepSeq > lot.CurrentStepSeq)
+                pendingSteps.Add(step.StepName);
+        }
+
+        var yield = lot.OriginalQty > 0 ? (double)lot.TotalPassQty / lot.OriginalQty * 100 : 0;
+
+        return new CustomerLotProgress
+        {
+            LotId = lot.LotId,
+            OrderId = lot.OrderId,
+            ParentOrderId = wo?.ParentOrderId,
+            WoType = wo?.WoType,
+            CustomerId = wo?.CustomerId ?? string.Empty,
+            CustomerName = wo?.CustomerName ?? string.Empty,
+            CustomerPN = wo?.CustomerPn ?? string.Empty,
+            InternalPN = wo?.InternalPn ?? string.Empty,
+            ProductName = lot.ProductName,
+            CurrentStep = lot.CurrentStepCode ?? string.Empty,
+            CurrentStepSeq = lot.CurrentStepSeq,
+            Status = lot.Status,
+            OriginalQty = lot.OriginalQty,
+            CurrentQty = lot.UnitCount,
+            TotalPassQty = lot.TotalPassQty,
+            TotalScrapQty = lot.TotalScrapQty,
+            YieldPercent = Math.Round(yield, 1),
+            PlannedEndDate = wo?.PlannedEndDate,
+            EstimatedEndDate = await EstimateEndDate(lot, wo),
+            CompletedSteps = completedSteps,
+            PendingSteps = pendingSteps,
+            LastUpdateTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm")
+        };
+    }
+
+    public async Task<List<CustomerLotProgress>> GetCustomerProgressAsync(string customerId)
+    {
+        var wos = await _woRepo.GetWhereAsync(w => w.CustomerId == customerId);
+        var orderIds = wos.Select(w => w.OrderId).ToHashSet();
+        var lots = await _lotRepo.GetWhereAsync(l => orderIds.Contains(l.OrderId));
+
+        var progressList = new List<CustomerLotProgress>();
+        foreach (var lot in lots)
+        {
+            var progress = await GetLotProgressAsync(lot.LotId);
+            progressList.Add(progress);
+        }
+
+        return progressList;
+    }
+
+    public async Task<List<CustomerLotProgress>> GetOrderProgressAsync(string orderId)
+    {
+        var wo = await _woRepo.GetByIdAsync(orderId);
+        if (wo is null) return new List<CustomerLotProgress>();
+
+        var lots = await _lotRepo.GetWhereAsync(l => l.OrderId == orderId);
+        var progressList = new List<CustomerLotProgress>();
+        foreach (var lot in lots)
+        {
+            var progress = await GetLotProgressAsync(lot.LotId);
+            progressList.Add(progress);
+        }
+
+        return progressList;
+    }
+
+    public async Task<DueDateRisk> CalculateDueDateRiskAsync(string orderId)
+    {
+        var wo = await _woRepo.GetByIdAsync(orderId);
+        if (wo is null) return new DueDateRisk { OrderId = orderId };
+
+        var lots = await _lotRepo.GetWhereAsync(l => l.OrderId == orderId);
+        var lot = lots.FirstOrDefault();
+        var progress = wo.PlannedQty > 0 ? (double)wo.CompletedQty / wo.PlannedQty * 100 : 0;
+
+        var daysRemaining = wo.PlannedEndDate.HasValue
+            ? (wo.PlannedEndDate.Value - DateTime.Now).Days
+            : 999;
+
+        var estimatedDaysNeeded = await EstimateDaysToComplete(lot, wo);
+
+        var riskFactors = new List<string>();
+        string riskLevel = "Green";
+
+        if (daysRemaining < estimatedDaysNeeded)
+        {
+            riskLevel = "Red";
+            riskFactors.Add($"预计需要 {estimatedDaysNeeded} 天，仅剩 {daysRemaining} 天");
+        }
+        else if (daysRemaining < estimatedDaysNeeded * 1.5)
+        {
+            riskLevel = "Yellow";
+            riskFactors.Add("交期余量不足");
+        }
+
+        if (lot?.Status == "Hold")
+        {
+            riskLevel = riskLevel == "Green" ? "Yellow" : "Red";
+            riskFactors.Add("批次处于 Hold 状态");
+        }
+
+        if (progress < 50 && daysRemaining < 5)
+        {
+            riskLevel = "Critical";
+            riskFactors.Add("进度严重落后");
+        }
+
+        string? recommendation = riskLevel switch
+        {
+            "Red" or "Critical" => "建议增加资源或与客户协商延期",
+            "Yellow" => "建议密切关注进度，准备应急方案",
+            _ => null
+        };
+
+        return new DueDateRisk
+        {
+            OrderId = wo.OrderId,
+            CustomerId = wo.CustomerId ?? string.Empty,
+            CustomerName = wo.CustomerName ?? string.Empty,
+            CustomerPN = wo.CustomerPn ?? string.Empty,
+            PlannedEndDate = wo.PlannedEndDate ?? DateTime.Now.AddDays(30),
+            EstimatedEndDate = DateTime.Now.AddDays(estimatedDaysNeeded),
+            PlannedQty = wo.PlannedQty,
+            CompletedQty = wo.CompletedQty,
+            ProgressPercent = Math.Round(progress, 1),
+            RiskLevel = riskLevel,
+            DaysRemaining = daysRemaining,
+            EstimatedDaysNeeded = estimatedDaysNeeded,
+            RiskFactors = riskFactors,
+            Recommendation = recommendation
+        };
+    }
+
+    public async Task<List<DueDateRisk>> GetAllDueDateRisksAsync()
+    {
+        var wos = await _woRepo.GetAllAsync();
+        var risks = new List<DueDateRisk>();
+
+        foreach (var wo in wos)
+        {
+            var risk = await CalculateDueDateRiskAsync(wo.OrderId);
+            if (risk.RiskLevel != "Green")
+                risks.Add(risk);
+        }
+
+        return risks.OrderByDescending(r => r.RiskLevel switch { "Critical" => 4, "Red" => 3, "Yellow" => 2, _ => 1 }).ToList();
+    }
+
+    public async Task<ReqModel> CreateRequirementAsync(ReqModel requirement)
+    {
+        var entity = MapToRequirementEntity(requirement);
+        await _reqRepo.AddAsync(entity);
+        return MapToRequirementModel(entity);
+    }
+
+    public async Task<List<ReqModel>> GetRequirementsAsync(string? customerId = null, string? orderId = null)
+    {
+        List<ReqModel> models;
+        if (!string.IsNullOrEmpty(customerId))
+        {
+            models = (await _reqRepo.GetWhereAsync(r => r.CustomerId == customerId))
+                .Select(MapToRequirementModel).ToList();
+        }
+        else if (!string.IsNullOrEmpty(orderId))
+        {
+            models = (await _reqRepo.GetWhereAsync(r => r.OrderId == orderId))
+                .Select(MapToRequirementModel).ToList();
+        }
+        else
+        {
+            models = (await _reqRepo.GetAllAsync())
+                .Select(MapToRequirementModel).ToList();
+        }
+
+        if (!string.IsNullOrEmpty(customerId))
+            models = models.Where(r => r.CustomerId == customerId).ToList();
+        if (!string.IsNullOrEmpty(orderId))
+            models = models.Where(r => r.OrderId == orderId).ToList();
+
+        return models;
+    }
+
+    public async Task<TraceReport> GenerateTraceReportAsync(string lotId, string generatedBy)
+    {
+        var lot = await _lotRepo.GetByIdAsync(lotId);
+        if (lot is null) return new TraceReport { LotId = lotId };
+
+        var wo = await _woRepo.GetByIdAsync(lot.OrderId);
+        var routeId = lot.ReworkRouteId ?? (string.IsNullOrEmpty(lot.RouteId) ? "DEFAULT" : lot.RouteId);
+        var steps = await _routeService.GetStepsAsync(routeId);
+
+        var stepRecords = await _lotStepRepo.GetWhereAsync(s => s.LotId == lotId);
+        var stepDict = stepRecords.ToDictionary(s => s.StepSeq);
+
+        var report = new TraceReport
+        {
+            LotId = lotId,
+            CustomerId = wo?.CustomerId ?? string.Empty,
+            CustomerName = wo?.CustomerName ?? string.Empty,
+            OrderId = lot.OrderId ?? string.Empty,
+            CustomerPN = wo?.CustomerPn ?? string.Empty,
+            ProductName = lot.ProductName,
+            GeneratedBy = generatedBy,
+            ReportDate = DateTime.UtcNow
+        };
+
+        DateTime? firstTrackIn = null;
+        DateTime? lastTrackOut = null;
+        int totalSteps = steps.Count;
+        int completedSteps = 0;
+
+        foreach (var step in steps.OrderBy(s => s.StepSeq))
+        {
+            if (!stepDict.TryGetValue(step.StepSeq, out var record)) continue;
+
+            var stepReport = new TraceReportStep
+            {
+                StepSeq = step.StepSeq,
+                StepName = step.StepName,
+                StepCode = step.StepCode,
+                Status = record.Status,
+                TrackInTime = record.TrackInTime,
+                TrackOutTime = record.TrackOutTime,
+                EquipmentId = record.TrackInEquipment,
+                Operator = record.TrackInOperator,
+                InputQty = record.InputQty,
+                PassQty = record.PassQty,
+                ScrapQty = record.ScrapQty,
+                YieldPercent = record.InputQty > 0 ? Math.Round((double)record.PassQty / record.InputQty * 100, 1) : 0,
+                Remark = record.Remark
+            };
+            report.Steps.Add(stepReport);
+
+            if (record.TrackInTime.HasValue && (!firstTrackIn.HasValue || record.TrackInTime.Value < firstTrackIn.Value))
+                firstTrackIn = record.TrackInTime;
+            if (record.TrackOutTime.HasValue && (!lastTrackOut.HasValue || record.TrackOutTime.Value > lastTrackOut.Value))
+                lastTrackOut = record.TrackOutTime;
+            if (record.Status == "Completed") completedSteps++;
+        }
+
+        report.Summary = new TraceReportSummary
+        {
+            OriginalQty = lot.OriginalQty,
+            FinalQty = lot.TotalPassQty,
+            OverallYield = lot.OriginalQty > 0 ? Math.Round((double)lot.TotalPassQty / lot.OriginalQty * 100, 1) : 0,
+            TotalHoldCount = lot.TotalHoldQty > 0 ? 1 : 0,
+            TotalReworkCount = lot.ReworkCount ?? 0,
+            TotalScrapQty = lot.TotalScrapQty,
+            StartDate = firstTrackIn ?? DateTime.UtcNow,
+            EndDate = lastTrackOut,
+            TotalSteps = totalSteps,
+            CompletedSteps = completedSteps
+        };
+
+        return report;
+    }
+
+    private async Task<DateTime?> EstimateEndDate(ProdLot? lot, ProdWorkOrder? wo)
+    {
+        if (wo?.PlannedEndDate is null || lot is null) return null;
+
+        var routeId = lot.ReworkRouteId ?? (string.IsNullOrEmpty(lot.RouteId) ? "DEFAULT" : lot.RouteId);
+        var steps = await _routeService.GetStepsAsync(routeId);
+        var remainingSteps = steps.Count(s => s.StepSeq > lot.CurrentStepSeq);
+
+        if (remainingSteps == 0) return lot.Status == "Completed" ? DateTime.Now : wo.PlannedEndDate;
+
+        var elapsedSteps = lot.CurrentStepSeq;
+        var elapsedDays = elapsedSteps > 0 ? (DateTime.Now - (wo.ActualStartDate ?? DateTime.Now.AddDays(-10))).TotalDays : 1;
+        var avgDaysPerStep = elapsedDays / Math.Max(elapsedSteps, 1);
+
+        return DateTime.Now.AddDays(remainingSteps * avgDaysPerStep);
+    }
+
+    private async Task<int> EstimateDaysToComplete(ProdLot? lot, ProdWorkOrder wo)
+    {
+        if (lot is null || lot.Status == "Completed") return 0;
+
+        var routeId = lot.ReworkRouteId ?? (string.IsNullOrEmpty(lot.RouteId) ? "DEFAULT" : lot.RouteId);
+        var steps = await _routeService.GetStepsAsync(routeId);
+        var remainingSteps = steps.Count(s => s.StepSeq > lot.CurrentStepSeq);
+
+        if (remainingSteps == 0) return 1;
+
+        var elapsedDays = Math.Max((DateTime.Now - wo.CreatedAt).TotalDays, 1);
+        var progress = wo.PlannedQty > 0 ? (double)wo.CompletedQty / wo.PlannedQty : 0;
+        if (progress > 0) return (int)Math.Ceiling((1 - progress) * elapsedDays / progress);
+
+        return remainingSteps * 2;
+    }
+
+    private static ReqModel MapToRequirementModel(ReqEntity e)
+    {
+        if (e is null) return new ReqModel();
+        return new ReqModel
+        {
+            RequirementId = e.RequirementId,
+            CustomerId = e.CustomerId,
+            CustomerName = e.CustomerName,
+            OrderId = e.OrderId,
+            ProductId = e.ProductId,
+            RequirementType = e.RequirementType,
+            Description = e.Description,
+            Priority = e.Priority,
+            IsMandatory = e.IsMandatory,
+            VerificationMethod = e.VerificationMethod,
+            Status = e.Status,
+            CreatedBy = e.CreatedBy,
+            CreatedAt = e.CreatedAt,
+            ApprovedBy = e.ApprovedBy,
+            ApprovedAt = e.ApprovedAt
+        };
+    }
+
+    private static ReqEntity MapToRequirementEntity(ReqModel m)
+    {
+        if (m is null) return new ReqEntity();
+        return new ReqEntity
+        {
+            RequirementId = m.RequirementId,
+            CustomerId = m.CustomerId,
+            CustomerName = m.CustomerName,
+            OrderId = m.OrderId,
+            ProductId = m.ProductId,
+            RequirementType = m.RequirementType,
+            Description = m.Description,
+            Priority = m.Priority,
+            IsMandatory = m.IsMandatory,
+            VerificationMethod = m.VerificationMethod,
+            Status = m.Status,
+            CreatedBy = m.CreatedBy,
+            CreatedAt = m.CreatedAt,
+            ApprovedBy = m.ApprovedBy,
+            ApprovedAt = m.ApprovedAt
+        };
+    }
+}

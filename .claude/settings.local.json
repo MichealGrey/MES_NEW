@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr /v \"obj\\\\|bin\")",
+      "Bash(dir /s /b \"D:\\\\DSZStoreProject\\\\wpftest\\\\MES_NEW\\\\src\\\\Client\\\\Modules\\\\MES.Modules.Production\\\\*.cs\" \"D:\\\\DSZStoreProject\\\\wpftest\\\\MES_NEW\\\\src\\\\Client\\\\Modules\\\\MES.Modules.Production\\\\*.xaml\")",
+      "Bash(findstr /v obj)",
+      "Bash(findstr /v bin)",
+      "Bash(dir:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet test:*)",
+      "Bash(findstr /i \"MES.Modules.Production\")",
+      "Bash(findstr /i \"production\\\\|module\")",
+      "Bash(Get-ChildItem:*)",
+      "Bash(findstr /v /i obj)",
+      "Bash(ls:*)",
+      "Bash(xxd \"D:/DSZStoreProject/wpftest/MES_NEW/src/Client/Modules/MES.Modules.Trace/Views/GenealogyView.xaml\")",
+      "Bash(xxd)"
+    ]
+  }
+}

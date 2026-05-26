@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    <PackageReference Include="Prism.Wpf" Version="9.0.537" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MES.Domain\MES.Domain.csproj" />
+    <ProjectReference Include="..\MES.Shared\MES.Shared.csproj" />
+    <ProjectReference Include="..\MES.Infrastructure\MES.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MES.Infrastructure.Persistence\MES.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\Themes\MES.Themes\MES.Themes.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Production\MES.Modules.Production.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Equipment\MES.Modules.Equipment.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Recipe\MES.Modules.Recipe.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Quality\MES.Modules.Quality.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Warehouse\MES.Modules.Warehouse.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Schedule\MES.Modules.Schedule.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Alarm\MES.Modules.Alarm.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Trace\MES.Modules.Trace.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Yield\MES.Modules.Yield.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.EHS\MES.Modules.EHS.csproj" />
+  </ItemGroup>
+</Project>

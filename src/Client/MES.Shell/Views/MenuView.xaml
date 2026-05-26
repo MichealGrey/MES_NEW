@@ -1,0 +1,95 @@
+<UserControl x:Class="MES.Shell.Views.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{StaticResource MesMenuBrush}">
+
+    <!--
+        【WPF知识点 - 中级】MenuView 顶部菜单栏
+        - 使用 ItemsControl + StackPanel 实现水平菜单
+        - 每个 MenuItem 是一个 RadioButton，通过 Command 绑定导航
+        - 使用共享样式 MesSecondaryButton / MesAccentButton 替代内联样式
+    -->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 系统Logo -->
+        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,24,0">
+            <Ellipse Width="24" Height="24" Fill="{StaticResource MesAccentBrush}" Margin="0,0,8,0"/>
+            <TextBlock Text="SEMI-MES" FontSize="16" FontWeight="Bold"
+                       Foreground="{StaticResource MesTextPrimaryBrush}" VerticalAlignment="Center"
+                       FontFamily="Consolas"/>
+        </StackPanel>
+
+        <!--
+            【WPF知识点 - 中级】ItemsControl 统一项容器
+            - ItemsSource 绑定 ViewModel 中的 MenuItems 集合
+            - ItemTemplate 定义每一项的渲染模板
+        -->
+        <ItemsControl Grid.Column="1" ItemsSource="{Binding MenuItems}" VerticalAlignment="Center">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!--
+                        【WPF知识点 - 中级】RadioButton 分组选择
+                        - 使用共享样式替代内联 ControlTemplate
+                        - 选中时显示底部指示条
+                    -->
+                    <RadioButton Content="{Binding DisplayName}"
+                                 IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                                 Command="{Binding DataContext.SelectModuleCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                 CommandParameter="{Binding ModuleKey}"
+                                 GroupName="TopMenu"
+                                 Cursor="Hand"
+                                 Foreground="{StaticResource MesTextSecondaryBrush}"
+                                 FontSize="14"
+                                 FontFamily="Microsoft YaHei"
+                                 Padding="16,12"
+                                 BorderThickness="0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border x:Name="RootBorder"
+                                        Background="Transparent"
+                                        Padding="{TemplateBinding Padding}">
+                                    <Grid>
+                                        <!-- 底部选中指示条 -->
+                                        <Border x:Name="Indicator"
+                                                Height="3"
+                                                VerticalAlignment="Bottom"
+                                                Background="{StaticResource MesAccentBrush}"
+                                                CornerRadius="2,2,0,0"
+                                                Visibility="Collapsed"/>
+                                        <!-- 菜单文字 -->
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          TextBlock.Foreground="{TemplateBinding Foreground}"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="RootBorder" Property="Background" Value="#35355A"/>
+                                        <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="Indicator" Property="Visibility" Value="Visible"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter TargetName="RootBorder" Property="Background" Value="#303055"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

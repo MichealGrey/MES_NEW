@@ -1,0 +1,191 @@
+<UserControl x:Class="MES.Modules.Production.Views.WipOverviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{StaticResource MesBackgroundBrush}">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- 标题 -->
+            <RowDefinition Height="Auto"/>   <!-- 汇总统计 -->
+            <RowDefinition Height="Auto"/>   <!-- 过滤栏 -->
+            <RowDefinition Height="*"/>      <!-- 工序卡片 -->
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="WIP总览" FontSize="20" FontWeight="Bold"
+                   Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+
+        <!-- 汇总统计行 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,12">
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总批次" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.TotalLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总数量" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.TotalQty}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesCriticalBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Urgent" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.UrgentLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesCriticalBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesCriticalBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Hold" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.HoldLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesCriticalBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="等待中" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.WaitingLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesWarningBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="生产中" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.ProcessingLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="{StaticResource MesAccentBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="平均良率" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.AvgYield, StringFormat={}{0:F1}%}" FontSize="18" FontWeight="Bold"
+                               Foreground="#4CC56C"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="#00D2FF"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Assemble" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.AssembleLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="#00D2FF"/>
+                </StackPanel>
+            </Border>
+            <Border Background="{StaticResource MesCardBrush}" BorderBrush="#4CC56C"
+                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Test" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                    <TextBlock Text="{Binding Summary.TestLots}" FontSize="18" FontWeight="Bold"
+                               Foreground="#4CC56C"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 过滤栏 -->
+        <Border Grid.Row="2" Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
+                BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 工艺阶段 Tab -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="阶段:" FontSize="13" Foreground="{StaticResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <RadioButton Content="全部"
+                                 IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=All}"
+                                 FontSize="13" Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,12,0"/>
+                    <RadioButton Content="Assemble"
+                                 IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=Assemble}"
+                                 FontSize="13" Foreground="#00D2FF" Margin="0,0,12,0"/>
+                    <RadioButton Content="Test"
+                                 IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=Test}"
+                                 FontSize="13" Foreground="#4CC56C" Margin="0,0,12,0"/>
+                </StackPanel>
+
+                <!-- 刷新按钮 -->
+                <Button Grid.Column="2" Content="刷新" Command="{Binding RefreshCommand}"
+                        FontSize="13" Padding="16,6"
+                        Background="{StaticResource MesAccentBrush}" Foreground="White"
+                        BorderThickness="0" Cursor="Hand"/>
+            </Grid>
+        </Border>
+
+        <!-- 工序卡片 -->
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding WipByStep}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{StaticResource MesCardBrush}" CornerRadius="8" Padding="16,12"
+                                Margin="6" MinWidth="180" MaxWidth="220"
+                                BorderBrush="{StaticResource MesBorderBrush}" BorderThickness="1">
+                            <StackPanel>
+                                <!-- 工序名称 -->
+                                <TextBlock Text="{Binding StepName}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                                           FontSize="13" FontWeight="SemiBold" Margin="0,0,0,8"/>
+
+                                <!-- WIP 数量 -->
+                                <TextBlock FontSize="24" FontWeight="Bold" Margin="0,0,0,4"
+                                           Foreground="{StaticResource MesAccentBrush}">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} 批次">
+                                            <Binding Path="WipCount"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+
+                                <!-- 状态分布 -->
+                                <StackPanel Orientation="Horizontal" Margin="0,4,0,2">
+                                    <TextBlock Text="等待: " FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                                    <TextBlock Text="{Binding WaitingCount}" FontSize="11"
+                                               Foreground="{StaticResource MesWarningBrush}" FontWeight="Bold"/>
+                                    <TextBlock Text="  生产: " FontSize="11" Foreground="{StaticResource MesTextMutedBrush}" Margin="8,0,0,0"/>
+                                    <TextBlock Text="{Binding ProcessingCount}" FontSize="11"
+                                               Foreground="{StaticResource MesAccentBrush}" FontWeight="Bold"/>
+                                </StackPanel>
+
+                                <!-- Urgent / Hold -->
+                                <StackPanel Orientation="Horizontal" Margin="0,2,0,2">
+                                    <TextBlock Text="Urgent: " FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
+                                    <TextBlock Text="{Binding UrgentCount}" FontSize="11"
+                                               Foreground="{StaticResource MesCriticalBrush}" FontWeight="Bold"/>
+                                    <TextBlock Text="  Hold: " FontSize="11" Foreground="{StaticResource MesTextMutedBrush}" Margin="8,0,0,0"/>
+                                    <TextBlock Text="{Binding HoldCount}" FontSize="11"
+                                               Foreground="{StaticResource MesCriticalBrush}" FontWeight="Bold"/>
+                                </StackPanel>
+
+                                <!-- 良率 -->
+                                <TextBlock FontSize="11" Foreground="#4CC56C" Margin="0,4,0,0">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="平均良率: {0:F1}%">
+                                            <Binding Path="AvgYield"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

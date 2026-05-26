@@ -1,0 +1,31 @@
+<UserControl x:Class="MES.Modules.Quality.Views.FdcMonitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{StaticResource MesBackgroundBrush}">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="FDC监控" FontSize="20" FontWeight="Bold"
+                   Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
+                  AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
+                  HeadersVisibility="Column" FontSize="13">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="设备ID" Binding="{Binding EquipmentId}" Width="80"/>
+                <DataGridTextColumn Header="腔体" Binding="{Binding Chamber}" Width="80"/>
+                <DataGridTextColumn Header="T2" Binding="{Binding T2}" Width="100"/>
+                <DataGridTextColumn Header="SPE" Binding="{Binding SPE}" Width="100"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

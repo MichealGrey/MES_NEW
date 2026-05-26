@@ -1,0 +1,122 @@
+﻿using MES.Infrastructure.Persistence.Repositories;
+using MES.Modules.Production.Models;
+
+namespace MES.Modules.Production.Services;
+
+public class RouteService : IRouteService
+{
+    private readonly IRouteRepository _routeRepo;
+    private readonly ILotRepository _lotRepo;
+
+    public RouteService(IRouteRepository routeRepo, ILotRepository lotRepo)
+    {
+        _routeRepo = routeRepo;
+        _lotRepo = lotRepo;
+    }
+
+    public async Task<List<RouteInfo>> GetAllRoutesAsync()
+    {
+        var routes = await _routeRepo.GetAllAsync();
+        return routes.Select(MapToRouteInfo).ToList();
+    }
+
+    public async Task<RouteInfo?> GetRouteAsync(string routeId, string? version = null)
+    {
+        var route = await _routeRepo.GetRouteWithStepsAsync(routeId, version);
+        return route == null ? null : MapToRouteInfo(route);
+    }
+
+    public async Task SaveRouteAsync(RouteInfo route)
+    {
+        var entity = MapToEntity(route);
+        var existing = await _routeRepo.GetByIdAsync(route.RouteId);
+        if (existing != null)
+            await _routeRepo.UpdateAsync(entity);
+        else
+            await _routeRepo.AddAsync(entity);
+    }
+
+    public async Task<List<RouteStep>> GetStepsAsync(string routeId, string? version = null)
+    {
+        var steps = await _routeRepo.GetRouteStepsAsync(routeId);
+        return steps.OrderBy(s => s.StepSeq).Select(MapToRouteStep).ToList();
+    }
+
+    public async Task<RouteStep?> GetCurrentStepAsync(string lotId)
+    {
+        var lot = await _lotRepo.GetByIdAsync(lotId);
+        if (lot == null || string.IsNullOrEmpty(lot.RouteId)) return null;
+
+        var steps = await _routeRepo.GetRouteStepsAsync(lot.RouteId);
+        var currentStep = steps.FirstOrDefault(s => s.StepSeq == lot.CurrentStepSeq);
+        return currentStep == null ? null : MapToRouteStep(currentStep);
+    }
+
+    public async Task<RouteStep?> GetNextStepAsync(string lotId, string routeId, string? routeVersion, int currentStepSeq)
+    {
+        var steps = await _routeRepo.GetRouteStepsAsync(routeId);
+        var nextStep = steps.FirstOrDefault(s => s.StepSeq == currentStepSeq + 1);
+        return nextStep == null ? null : MapToRouteStep(nextStep);
+    }
+
+    public Task<bool> IsEquipmentAllowedAsync(string stepCode, string equipmentGroup)
+    {
+        return Task.FromResult(true);
+    }
+
+    private static RouteInfo MapToRouteInfo(MES.Infrastructure.Persistence.Entities.MasterRoute entity)
+    {
+        var route = new RouteInfo
+        {
+            RouteId = entity.RouteId,
+            RouteName = entity.RouteName,
+            RouteVersion = entity.RouteVersion,
+            ProductId = entity.ProductId,
+            PackageType = entity.PackageType ?? string.Empty,
+            IsActive = entity.IsActive,
+            IsApproved = entity.IsApproved,
+            ApprovedBy = entity.ApprovedBy ?? string.Empty,
+            ApprovedAt = entity.ApprovedAt,
+            Steps = entity.Steps.Select(MapToRouteStep).ToList(),
+        };
+        return route;
+    }
+
+    private static RouteStep MapToRouteStep(MES.Infrastructure.Persistence.Entities.MasterRouteStep entity)
+    {
+        return new RouteStep
+        {
+            RouteId = entity.RouteId,
+            RouteVersion = "1.0",
+            StepSeq = entity.StepSeq,
+            StepName = entity.StepName,
+            StepCode = entity.StepCode,
+            EquipmentGroup = entity.EquipmentGroup ?? string.Empty,
+        };
+    }
+
+    private static MES.Infrastructure.Persistence.Entities.MasterRoute MapToEntity(RouteInfo model)
+    {
+        var entity = new Persistence.Entities.MasterRoute
+        {
+            RouteId = model.RouteId,
+            RouteName = model.RouteName,
+            RouteVersion = model.RouteVersion,
+            ProductId = model.ProductId,
+            PackageType = model.PackageType,
+            IsActive = model.IsActive,
+            IsApproved = model.IsApproved,
+            ApprovedBy = model.ApprovedBy,
+            ApprovedAt = model.ApprovedAt,
+            Steps = model.Steps.Select(s => new MES.Infrastructure.Persistence.Entities.MasterRouteStep
+            {
+                RouteId = model.RouteId,
+                StepSeq = s.StepSeq,
+                StepCode = s.StepCode,
+                StepName = s.StepName,
+                EquipmentGroup = s.EquipmentGroup,
+            }).ToList(),
+        };
+        return entity;
+    }
+}
