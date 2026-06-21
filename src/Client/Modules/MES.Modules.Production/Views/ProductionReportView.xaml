@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -12,14 +12,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
-            <TextBlock Text="生产报表" FontSize="20" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,16,0"/>
-            <TextBlock Text="日期:" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="#CDD6F4"/>
-            <DatePicker SelectedDate="{Binding ReportDate}" Width="150" Margin="0,0,12,0"/>
-            <Button Content="生成报表" Command="{Binding GenerateCommand}" Width="100"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="生产报表" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,16,0"/>
+            <TextBlock Text="日期:" VerticalAlignment="Center" Margin="0,0,8,0" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+            <DatePicker SelectedDate="{Binding ReportDate}" Width="150" Margin="0,0,12,0"
+                        Style="{DynamicResource MesDatePicker}"/>
+            <Button Content="生成报表" Command="{Binding GenerateCommand}" Width="100"
+                    Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
-        <Grid Grid.Row="1" Margin="0,0,0,12">
+        <Grid Grid.Row="1" Margin="0,0,0,16">
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -30,54 +32,38 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="#CDD6F4"/>
+            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
         </Grid>
 
-        <Grid Grid.Row="2" Margin="0,0,0,12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock Text="总批次" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Report.TotalLots}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <TextBlock Text="完成批次" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Report.CompletedLots}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
-            <StackPanel Grid.Column="2">
-                <TextBlock Text="总良率" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Report.OverallYield, StringFormat={}{0:F1}%}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
-            <StackPanel Grid.Column="3">
-                <TextBlock Text="报废数量" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Report.TotalScrapQty}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
-        </Grid>
+        <WrapPanel Grid.Row="2" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总批次" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Report.TotalLots}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="完成批次" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Report.CompletedLots}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总良率" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Report.OverallYield, StringFormat={}{0:F1}%}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="报废数量" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Report.TotalScrapQty}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesDangerBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
 
         <DataGrid Grid.Row="3" ItemsSource="{Binding StepYields}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#313244"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="Padding" Value="8,4"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="32"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#45475A"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="工序" Binding="{Binding StepCode}" Width="100"/>
                 <DataGridTextColumn Header="名称" Binding="{Binding StepName}" Width="120"/>

@@ -1,0 +1,145 @@
+<UserControl x:Class="MES.Modules.Schedule.Views.WorkOrderScheduleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="工单排程" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <UniformGrid Grid.Row="1" Rows="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="工单总数" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalOrders}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="已完成" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding CompletedOrders}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="进行中" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding InProgressOrders}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesWarningBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="平均进度" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding AvgProgress, StringFormat={}{0:F1}%}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <!-- 筛选栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="状态:" VerticalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,8,0"/>
+                <ComboBox Width="120" SelectedValue="{Binding StatusFilter}" SelectedValuePath="Content" Style="{DynamicResource MesComboBox}" Margin="0,0,16,0">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Created"/>
+                    <ComboBoxItem Content="InProgress"/>
+                    <ComboBoxItem Content="Completed"/>
+                    <ComboBoxItem Content="Delayed"/>
+                </ComboBox>
+                <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="{DynamicResource MesDangerBrush}" FontSize="13" Margin="0,0,0,16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <!-- 数据表格 -->
+        <Border Grid.Row="4" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True" Style="{DynamicResource MesDataGrid}" FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="工单号" Binding="{Binding WorkOrderNo}" Width="120"/>
+                    <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
+                    <DataGridTextColumn Header="计划量" Binding="{Binding PlanQty}" Width="80"/>
+                    <DataGridTextColumn Header="完成量" Binding="{Binding CompletedQty}" Width="80"/>
+                    <DataGridTemplateColumn Header="进度" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <ProgressBar Value="{Binding ProgressPercent, Mode=OneWay}" Maximum="100" Height="8" Style="{DynamicResource MesProgressBar}" Foreground="{DynamicResource MesSuccessBrush}" Background="{DynamicResource MesBackgroundElevatedBrush}"/>
+                                    <TextBlock Text="{Binding ProgressPercent, StringFormat='{}{0}%'}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="开始日期" Binding="{Binding StartDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="100"/>
+                    <DataGridTextColumn Header="计划结束" Binding="{Binding PlanEndDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="100"/>
+                    <DataGridTemplateColumn Header="状态" Width="90">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" HorizontalAlignment="Center">
+                                    <Border.Style>
+                                        <Style TargetType="Border" BasedOn="{StaticResource MesBadge}">
+                                            <Setter Property="Background" Value="{DynamicResource MesInfoBrush}"/>
+                                            <Setter Property="BorderBrush" Value="{DynamicResource MesInfoBrush}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="Completed">
+                                                    <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource MesSuccessBrush}"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="Delayed">
+                                                    <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource MesDangerBrush}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock Text="{Binding Status}" FontSize="11" FontWeight="Medium" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="风险" Width="80">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" HorizontalAlignment="Center">
+                                    <Border.Style>
+                                        <Style TargetType="Border" BasedOn="{StaticResource MesBadge}">
+                                            <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
+                                            <Setter Property="BorderBrush" Value="{DynamicResource MesSuccessBrush}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RiskLevel}" Value="High">
+                                                    <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource MesDangerBrush}"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding RiskLevel}" Value="Medium">
+                                                    <Setter Property="Background" Value="{DynamicResource MesWarningBrush}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource MesWarningBrush}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock Text="{Binding RiskLevel}" FontSize="11" FontWeight="Medium" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

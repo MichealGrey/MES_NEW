@@ -6,6 +6,8 @@ using MES.Shared.Services;
 using MES.Shell.Services;
 using System.Windows.Input;
 
+using ISessionService = MES.Shell.Services.ISessionService;
+
 namespace MES.Shell.ViewModels;
 
 public class LoginViewModel : BindableBase
@@ -19,6 +21,7 @@ public class LoginViewModel : BindableBase
     private string _errorMessage = string.Empty;
     private bool _isLoading;
     private bool _hasError;
+    private bool _rememberMe;
 
     /// <summary>
     /// 密码从 View 层通过 code-behind 同步写入（WPF PasswordBox 不支持绑定）
@@ -33,6 +36,13 @@ public class LoginViewModel : BindableBase
             SetProperty(ref _employeeId, value);
             HasError = false;
         }
+    }
+
+    /// <summary>是否勾选"记住密码"（仅记住工号，出于安全考虑不保存密码）</summary>
+    public bool RememberMe
+    {
+        get => _rememberMe;
+        set => SetProperty(ref _rememberMe, value);
     }
 
     public string ErrorMessage
@@ -93,6 +103,19 @@ public class LoginViewModel : BindableBase
         HasError = true;
     }
 
+    /// <summary>
+    /// 窗口加载后调用 — 恢复上次保存的工号
+    /// </summary>
+    public void LoadSavedCredentials()
+    {
+        var savedId = LoginSettings.LoadEmployeeId();
+        if (!string.IsNullOrEmpty(savedId))
+        {
+            EmployeeId = savedId;
+            RememberMe = true;
+        }
+    }
+
     private async Task LoginAsync()
     {
         if (string.IsNullOrWhiteSpace(EmployeeId))
@@ -121,6 +144,16 @@ public class LoginViewModel : BindableBase
                 ErrorMessage = "工号或密码错误";
                 HasError = true;
                 return;
+            }
+
+            // 登录成功 — 如果勾选了"记住密码"，保存工号
+            if (RememberMe)
+            {
+                LoginSettings.Save(EmployeeId.Trim());
+            }
+            else
+            {
+                LoginSettings.Clear();
             }
 
             // 查询角色名称

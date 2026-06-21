@@ -13,6 +13,7 @@ D:\DSZStoreProject\wpftest\MES_NEW\src\Infrastructure\MES.Infrastructure.Persist
 D:\DSZStoreProject\wpftest\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\refint\MES.Infrastructure.Persistence.dll
 D:\DSZStoreProject\wpftest\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.pdb
 D:\DSZStoreProject\wpftest\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\ref\MES.Infrastructure.Persistence.dll
+D:\DSZStoreProject\wpftest\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.sourcelink.json
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\bin\Debug\net8.0\MES.Infrastructure.Persistence.deps.json
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\bin\Debug\net8.0\MES.Infrastructure.Persistence.dll
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\bin\Debug\net8.0\MES.Infrastructure.Persistence.pdb
@@ -23,6 +24,7 @@ E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\ne
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.AssemblyInfoInputs.cache
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.AssemblyInfo.cs
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.sourcelink.json
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infr.624C1E0E.Up2Date
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\MES.Infrastructure.Persistence.dll
 E:\AiProj\MES_NEW\src\Infrastructure\MES.Infrastructure.Persistence\obj\Debug\net8.0\refint\MES.Infrastructure.Persistence.dll

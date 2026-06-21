@@ -1,0 +1,73 @@
+<Window x:Class="MES.Modules.Production.Views.ReasonCodeDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="原因代码" Height="380" Width="480"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E2E"
+        ResizeMode="NoResize">
+    <ScrollViewer Padding="16">
+        <StackPanel>
+            <GroupBox Header="原因代码信息" Foreground="#CDD6F4" BorderBrush="#45475A" Margin="0,0,0,12">
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="原因代码" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtReasonCodeId" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="分类 *" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cmbCategory" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Material"/>
+                        <ComboBoxItem Content="Equipment"/>
+                        <ComboBoxItem Content="Process"/>
+                        <ComboBoxItem Content="Quality"/>
+                        <ComboBoxItem Content="Personnel"/>
+                        <ComboBoxItem Content="Other"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="子分类" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtSubCategory" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="适用操作 *" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="6" Grid.Column="1" x:Name="cmbApplicableTo" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Hold"/>
+                        <ComboBoxItem Content="Scrap"/>
+                        <ComboBoxItem Content="Rework"/>
+                        <ComboBoxItem Content="Alarm"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="是否启用" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <CheckBox Grid.Row="8" Grid.Column="1" x:Name="chkIsEnabled" Content="启用" Foreground="#CDD6F4" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="原因描述 *" Foreground="#A6ADC8" VerticalAlignment="Top" Margin="0,4,0,0"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="txtReasonText" AcceptsReturn="True" TextWrapping="Wrap"
+                             Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
+                <Button Content="确定" x:Name="btnSave" Width="100" Height="32"
+                        Background="#89B4FA" Foreground="#1E1E2E" FontWeight="Bold"
+                        BorderThickness="0" Cursor="Hand" Click="btnSave_Click"/>
+                <Button Content="取消" Width="100" Height="32" Margin="16,0,0,0"
+                        Background="#45475A" Foreground="#CDD6F4"
+                        BorderThickness="0" Cursor="Hand" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

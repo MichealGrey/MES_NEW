@@ -1,0 +1,46 @@
+<UserControl x:Class="MES.Modules.Warehouse.Views.OutboundManageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <TextBlock Grid.Row="0" Text="出库管理" Style="{DynamicResource MesPageTitle}" Margin="0,0,0,16"/>
+
+        <!-- 操作区域 -->
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="出库记录管理" VerticalAlignment="Center" Margin="0,0,16,0" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                <Button Content="刷新数据" Command="{Binding RefreshCommand}" Padding="12,4" Margin="0,0,8,0"/>
+                <Button Content="保存" Command="{Binding SaveCommand}" Padding="12,4"/>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 出库记录表格 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,0">
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}"
+                      AutoGenerateColumns="False" IsReadOnly="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="出库单号" Binding="{Binding Id}" Width="100"/>
+                    <DataGridTextColumn Header="物料编号" Binding="{Binding MaterialNo}" Width="120"/>
+                    <DataGridTextColumn Header="物料名称" Binding="{Binding MaterialName}" Width="150"/>
+                    <DataGridTextColumn Header="出库数量" Binding="{Binding Qty}" Width="80"/>
+                    <DataGridTextColumn Header="目的地" Binding="{Binding Destination}" Width="120"/>
+                    <DataGridTextColumn Header="工单号" Binding="{Binding WorkOrderNo}" Width="120"/>
+                    <DataGridTextColumn Header="出库日期" Binding="{Binding OutboundDate, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Width="160"/>
+                    <DataGridTextColumn Header="操作人" Binding="{Binding Operator}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

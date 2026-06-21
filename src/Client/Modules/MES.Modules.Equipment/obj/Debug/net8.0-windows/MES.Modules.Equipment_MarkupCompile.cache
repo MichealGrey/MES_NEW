@@ -1,20 +1,20 @@
 ﻿MES.Modules.Equipment
-1.0.0.0
+
 
 library
 C#
 .cs
-e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Equipment\obj\Debug\net8.0-windows\
+E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Equipment\obj\Debug\net8.0-windows\
 MES.Modules.Equipment
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-5217468320
+9-743421341
 
-15-393716336
-220-1511120023
-Views\EapControlView.xaml;Views\EquipmentAlarmView.xaml;Views\EquipmentDetailView.xaml;Views\EquipmentOverviewView.xaml;Views\PmScheduleView.xaml;
+15-1819941331
+220-1007459289
+Views\EapControlView.xaml;Views\EquipmentAlarmView.xaml;Views\EquipmentDetailView.xaml;Views\EquipmentHistoryView.xaml;Views\EquipmentOverviewView.xaml;Views\EquipmentPerformanceView.xaml;Views\FixtureView.xaml;Views\PmScheduleView.xaml;Views\SparePartView.xaml;
 
 False
 

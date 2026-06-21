@@ -1,5 +1,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation.Regions;
 using MES.Modules.Production.Models;
 using MES.Modules.Production.Services;
 using MES.Domain.Production;
@@ -12,6 +13,7 @@ public class WorkOrderListViewModel : BindableBase
 {
     // --- 字段 ---
     private readonly IProductionDataService _dataService;
+    private readonly IRegionManager _regionManager;
     private ObservableCollection<WorkOrderInfo> _workOrders = [];
     private ObservableCollection<WorkOrderInfo> _pagedWorkOrders = [];
     private string _searchText = string.Empty;
@@ -154,9 +156,10 @@ public class WorkOrderListViewModel : BindableBase
     public DelegateCommand NextPageCommand { get; }
     public DelegateCommand LastPageCommand { get; }
 
-    public WorkOrderListViewModel(IProductionDataService dataService)
+    public WorkOrderListViewModel(IProductionDataService dataService, IRegionManager regionManager)
     {
         _dataService = dataService;
+        _regionManager = regionManager;
 
         CreateCommand = new DelegateCommand(OnCreate);
         DeleteCommand = new DelegateCommand<WorkOrderInfo?>(OnDelete, wo => wo != null);
@@ -426,26 +429,8 @@ public class WorkOrderListViewModel : BindableBase
     private void OnViewDetail(WorkOrderInfo? wo)
     {
         if (wo == null) return;
-        System.Windows.MessageBox.Show(
-            $"工单详情\n\n" +
-            $"工单号: {wo.OrderId}\n" +
-            $"产品: {wo.ProductName}\n" +
-            $"管芯: {wo.DieName}\n" +
-            $"封装类型: {wo.PackageTypeDisplay}\n" +
-            $"工艺路线: {wo.RouteName}\n" +
-            $"状态: {wo.Status}\n" +
-            $"优先级: {wo.Priority}\n" +
-            $"成品颗数: {wo.UnitQty}\n" +
-            $"客户: {wo.CustomerName}\n" +
-            $"客户料号: {wo.CustomerPN}\n" +
-            $"目标封装良率: {wo.TargetCPYield}%\n" +
-            $"目标测试良率: {wo.TargetFTYield}%\n" +
-            $"进度: {wo.ProgressPercent}%\n" +
-            $"计划开始: {wo.PlannedStartDate:yyyy-MM-dd}\n" +
-            $"计划结束: {wo.PlannedEndDate:yyyy-MM-dd}",
-            "工单详情",
-            System.Windows.MessageBoxButton.OK,
-            System.Windows.MessageBoxImage.Information);
+        var parameters = new NavigationParameters { { "OrderId", wo.OrderId } };
+        _regionManager.RequestNavigate("MainContentRegion", "WorkOrderDetailView", parameters);
     }
 
     private void RaiseCanExecuteChanged()

@@ -7,5 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\MES.Domain\MES.Domain.csproj" />
     <ProjectReference Include="..\..\..\Shared\MES.Contracts\MES.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\MES.Infrastructure.Persistence\MES.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 </Project>

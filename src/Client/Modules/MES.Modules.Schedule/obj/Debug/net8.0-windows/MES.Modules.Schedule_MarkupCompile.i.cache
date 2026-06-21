@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-31876425898
+7-883982669
 
-131412635242
-2201708370146
-Views\CapacityAnalysisView.xaml;Views\DispatchBoardView.xaml;Views\DispatchRuleConfigView.xaml;
+17-914429569
+2211403511454
+Views\CapacityAnalysisView.xaml;Views\CapacityBalanceView.xaml;Views\DeliveryManageView.xaml;Views\DispatchBoardView.xaml;Views\DispatchRuleConfigView.xaml;Views\MrpView.xaml;Views\WorkOrderScheduleView.xaml;
 
 False
 

@@ -1,20 +1,20 @@
 ﻿MES.Modules.Yield
-1.0.0.0
+
 
 library
 C#
 .cs
-e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Yield\obj\Debug\net8.0-windows\
+E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.Yield\obj\Debug\net8.0-windows\
 MES.Modules.Yield
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-31953319297
+6-1718528275
 
-131675315389
-220-1511120023
-Views\WaferMapView.xaml;Views\YieldDashboardView.xaml;Views\YieldTrendView.xaml;
+13-353133510
+225942001167
+Views\BinAnalysisView.xaml;Views\DefectAnalysisView.xaml;Views\WaferMapView.xaml;Views\YieldAnalysisView.xaml;Views\YieldDashboardView.xaml;Views\YieldTrendView.xaml;
 
 False
 

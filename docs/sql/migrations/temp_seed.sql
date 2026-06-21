@@ -1,0 +1,1 @@
+SET @now = NOW();

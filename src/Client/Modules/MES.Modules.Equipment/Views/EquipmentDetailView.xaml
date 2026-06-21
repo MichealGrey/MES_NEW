@@ -3,23 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="设备详情" FontSize="20" FontWeight="Bold"
-                   Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="0" Text="设备详情" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
 
-        <Border Grid.Row="1" Background="{StaticResource MesCardBrush}" CornerRadius="8" Padding="24" BorderBrush="{StaticResource MesBorderBrush}" BorderThickness="1">
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="24">
             <StackPanel>
-                <TextBlock Text="{Binding EquipmentId}" Foreground="{StaticResource MesTextSecondaryBrush}" FontSize="14"/>
-                <TextBlock Text="{Binding EquipmentName}" Foreground="{StaticResource MesTextPrimaryBrush}" FontSize="24" FontWeight="Bold" Margin="0,8,0,8"/>
+                <TextBlock Text="{Binding EquipmentId}" Foreground="{DynamicResource MesTextSecondaryBrush}" FontSize="14"/>
+                <TextBlock Text="{Binding EquipmentName}" Foreground="{DynamicResource MesTextPrimaryBrush}" FontSize="24" FontWeight="SemiBold" Margin="0,8,0,8"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="状态: " Foreground="{StaticResource MesTextMutedBrush}" FontSize="14"/>
-                    <TextBlock Text="{Binding Status}" Foreground="{StaticResource MesAccentBrush}" FontSize="14" FontWeight="SemiBold"/>
+                    <TextBlock Text="状态: " Foreground="{DynamicResource MesTextTertiaryBrush}" FontSize="14"/>
+                    <TextBlock Text="{Binding Status}" Foreground="{DynamicResource MesInfoBrush}" FontSize="14" FontWeight="SemiBold"/>
                 </StackPanel>
             </StackPanel>
         </Border>

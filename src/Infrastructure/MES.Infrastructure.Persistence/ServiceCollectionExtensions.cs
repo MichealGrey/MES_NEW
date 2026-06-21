@@ -42,6 +42,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
         services.AddScoped<ISignatureLevelRepository, SignatureLevelRepository>();
+        services.AddScoped<IPermissionConfirmRepository, PermissionConfirmRepository>();
 
         // Register generic repository for all entities
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

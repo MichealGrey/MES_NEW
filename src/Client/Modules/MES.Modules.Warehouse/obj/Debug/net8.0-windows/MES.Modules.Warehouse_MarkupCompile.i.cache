@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-4-1179558047
+8940831017
 
-16-1022569155
-2201708370146
-Views\FoupManagementView.xaml;Views\MaterialListView.xaml;Views\ReticleManagementView.xaml;Views\StockerView.xaml;
+161900815763
+220-1007459289
+Views\ExpiryAlertView.xaml;Views\FoupManagementView.xaml;Views\InboundManageView.xaml;Views\InventoryManageView.xaml;Views\MaterialListView.xaml;Views\OutboundManageView.xaml;Views\ReticleManagementView.xaml;Views\StockerView.xaml;
 
 False
 

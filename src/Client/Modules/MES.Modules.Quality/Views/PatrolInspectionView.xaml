@@ -1,0 +1,155 @@
+<UserControl x:Class="MES.Modules.Quality.Views.PatrolInspectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <UserControl.Resources>
+        <Style x:Key="StatCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource MesCardBackgroundBrush}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="0,0,12,0"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 统计卡片 -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding TotalCount}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource MesPrimaryBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="巡检总数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding PassCount}" FontSize="28" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center"/>
+                    <TextBlock Text="合格" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding FailCount}" FontSize="28" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"/>
+                    <TextBlock Text="不合格" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding TotalDefects}" FontSize="28" FontWeight="Bold" Foreground="Orange" HorizontalAlignment="Center"/>
+                    <TextBlock Text="缺陷总数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding AvgDefectsPerInspection, StringFormat={}{0:F2}}" FontSize="28" FontWeight="Bold" Foreground="Blue" HorizontalAlignment="Center"/>
+                    <TextBlock Text="平均缺陷数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- 工具栏 -->
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Padding="8" VerticalContentAlignment="Center" ToolTip="搜索批次/产品/检验员"/>
+            <ComboBox Grid.Column="1" Text="{Binding ResultFilter, UpdateSourceTrigger=PropertyChanged}" Margin="8,0,0,0" VerticalContentAlignment="Center">
+                <x:Array Type="sys:String" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <sys:String>All</sys:String>
+                    <sys:String>Pass</sys:String>
+                    <sys:String>Fail</sys:String>
+                </x:Array>
+            </ComboBox>
+            <Button Grid.Column="3" Content="新建" Command="{Binding NewCommand}" Margin="8,0,4,0" Width="70"/>
+            <Button Grid.Column="4" Content="刷新" Command="{Binding RefreshCommand}" Margin="0,0,4,0" Width="70"/>
+            <Button Grid.Column="5" Content="记录缺陷" Command="{Binding RecordDefectCommand}" Margin="0,0,4,0" Width="80"/>
+            <Button Grid.Column="6" Content="删除" Command="{Binding DeleteCommand}" Margin="0,0,4,0" Width="70"/>
+            <Button Grid.Column="7" Content="清除" Command="{Binding ClearFilterCommand}" Width="70"/>
+        </Grid>
+
+        <!-- 编辑表单 -->
+        <Border Grid.Row="2" Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12" Margin="0,0,0,12">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEditing}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,8,4">
+                    <TextBlock Text="批次号" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBox Text="{Binding EditingItem.LotId}" Padding="6" Margin="0,2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,8,4">
+                    <TextBlock Text="产品" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBox Text="{Binding EditingItem.Product}" Padding="6" Margin="0,2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,8,4">
+                    <TextBlock Text="检验员" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBox Text="{Binding EditingItem.Inspector}" Padding="6" Margin="0,2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="3" Margin="0,0,0,4">
+                    <TextBlock Text="缺陷数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBox Text="{Binding EditingItem.DefectCount}" Padding="6" Margin="0,2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,8,8">
+                    <TextBlock Text="备注" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBox Text="{Binding EditingItem.Comments}" Padding="6" Margin="0,2"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button Content="保存" Command="{Binding SaveCommand}" Width="70" Margin="0,0,8,0"/>
+                    <Button Content="取消" Command="{Binding CancelCommand}" Width="70"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding FilteredView}" SelectedItem="{Binding SelectedItem}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                  IsReadOnly="True" GridLinesVisibility="Horizontal" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="检验ID" Binding="{Binding Id}" Width="160"/>
+                <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="120"/>
+                <DataGridTextColumn Header="产品" Binding="{Binding Product}" Width="150"/>
+                <DataGridTextColumn Header="类型" Binding="{Binding InspectionType}" Width="70"/>
+                <DataGridTextColumn Header="结果" Binding="{Binding Result}" Width="70"/>
+                <DataGridTextColumn Header="缺陷数" Binding="{Binding DefectCount}" Width="70"/>
+                <DataGridTextColumn Header="检验员" Binding="{Binding Inspector}" Width="80"/>
+                <DataGridTextColumn Header="检验时间" Binding="{Binding InspectTime, StringFormat=yyyy-MM-dd HH:mm}" Width="130"/>
+                <DataGridTextColumn Header="备注" Binding="{Binding Comments}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

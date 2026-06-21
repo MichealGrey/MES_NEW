@@ -2,23 +2,99 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
-        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="化学品管理" FontSize="20" FontWeight="Bold" Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                  AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="13">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="化学品名" Binding="{Binding ChemicalName}" Width="150"/>
-                <DataGridTextColumn Header="CAS号" Binding="{Binding CAS}" Width="120"/>
-                <DataGridTextColumn Header="库存" Binding="{Binding Quantity}" Width="80"/>
-                <DataGridTextColumn Header="单位" Binding="{Binding Unit}" Width="60"/>
-                <DataGridTextColumn Header="MSDS" Binding="{Binding MsdsStatus}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="化学品管理" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <UniformGrid Grid.Row="1" Rows="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="化学品总数" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="MSDS有效" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding ValidMsdsCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="MSDS过期" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding ExpiredMsdsCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesDangerBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="即将过期" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding ExpiringCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesWarningBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <!-- 工具栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="添加" Command="{Binding AddCommand}" Margin="0,0,8,0" Style="{DynamicResource MesPrimaryButton}"/>
+                <Button Content="删除" Command="{Binding DeleteCommand}" Margin="0,0,8,0" Style="{DynamicResource MesDangerButton}"/>
+                <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesSecondaryButton}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="{DynamicResource MesDangerBrush}" FontSize="13" Margin="0,0,0,16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <!-- 数据表格 -->
+        <Border Grid.Row="4" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False" IsReadOnly="True" Style="{DynamicResource MesDataGrid}" FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="化学品名称" Binding="{Binding ChemicalName}" Width="180"/>
+                    <DataGridTextColumn Header="CAS号" Binding="{Binding CAS}" Width="120"/>
+                    <DataGridTextColumn Header="库存数量" Binding="{Binding Quantity}" Width="100"/>
+                    <DataGridTextColumn Header="单位" Binding="{Binding Unit}" Width="60"/>
+                    <DataGridTextColumn Header="存放位置" Binding="{Binding Location}" Width="150"/>
+                    <DataGridTextColumn Header="过期日期" Binding="{Binding ExpiryDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="120"/>
+                    <DataGridTemplateColumn Header="MSDS状态" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" HorizontalAlignment="Center">
+                                    <Border.Style>
+                                        <Style TargetType="Border" BasedOn="{StaticResource MesBadge}">
+                                            <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding MsdsStatus}" Value="Expired">
+                                                    <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding MsdsStatus}" Value="Expiring">
+                                                    <Setter Property="Background" Value="{DynamicResource MesWarningBrush}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock Text="{Binding MsdsStatus}" FontSize="10" FontWeight="Medium" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </UserControl>

@@ -2,10 +2,10 @@ namespace MES.Modules.Trace.Models;
 
 public class ImpactAnalysisItem
 {
-    public string LotId { get; set; } = string.Empty;
-    public string Product { get; set; } = string.Empty;
-    public string CurrentStep { get; set; } = string.Empty;
-    public string EquipmentId { get; set; } = string.Empty;
-    public DateTime ProcessTime { get; set; }
-    public string RiskLevel { get; set; } = "Low";
+    public string AffectedLotId { get; set; } = string.Empty;
+    public string RootCause { get; set; } = string.Empty;
+    public string ImpactType { get; set; } = string.Empty;
+    public int AffectedQty { get; set; }
+    public string RecommendedAction { get; set; } = string.Empty;
+    public DateTime AnalysisDate { get; set; }
 }

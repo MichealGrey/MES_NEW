@@ -10,7 +10,7 @@ public class ApiService : IApiService
     public ApiService(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("http://localhost:5000/api/");
+        _httpClient.BaseAddress = new Uri("http://localhost:8940/api/");
     }
 
     public async Task<T?> GetAsync<T>(string endpoint)

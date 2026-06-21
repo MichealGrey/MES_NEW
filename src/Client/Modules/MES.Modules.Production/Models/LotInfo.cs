@@ -5,24 +5,13 @@ using MES.Domain.Production;
 namespace MES.Modules.Production.Models;
 
 /// <summary>
-/// 批次层级枚举
-/// </summary>
-public enum LotLevel
-{
-    Wafer,    // 来料晶圆批次
-    Mother,   // 前道母批次
-    Sub,      // 后道子批次
-    Grade     // 等级批次
-}
-
-/// <summary>
 /// 工艺阶段枚举
 /// </summary>
 public enum ProcessStage
 {
     Assemble,  // 前道
     Test,      // 后道
-    Finished   // 成品
+    Finished        // 所有项目
 }
 
 /// <summary>
@@ -66,12 +55,26 @@ public class LotInfo
     public string DieName { get; set; } = string.Empty;
     public PackageType PackageType { get; set; } = PackageType.QFP;
     
-    // === 新增批次层级字段 ===
-    public LotLevel LotLevel { get; set; } = LotLevel.Mother;
+    // === 新增批次层级字段 (5层模型) ===
+    public LotLevel LotLevel { get; set; } = LotLevel.MotherLot;
     public string LotHierarchyPath { get; set; } = string.Empty;  // "WF-20260526-001/LOT-20260001/LOT-20260001-T1"
     public string RootWaferLotId { get; set; } = string.Empty;
     public ProcessStage ProcessStage { get; set; } = ProcessStage.Assemble;
-    public string? MotherLotId { get; set; }
+    
+    // === 5层关系字段 ===
+    public string? WaferLotId { get; set; }         // Wafer Lot ID (L1)
+    public string? MotherLotId { get; set; }          // Mother Lot ID (L2)
+    public string? SubLotId { get; set; }           // Sub Lot ID (L3)
+    public string? GradeLotId { get; set; }         // Grade Lot ID (L4)
+    public string? MfgLotId { get; set; }           // Mfg ID (L5)
+    public string? ParentLotId { get; set; }           // 直接父批次
+    
+    // 子批次
+    public List<LotInfo> Children { get; set; } = new();
+    public bool HasChildren => Children.Count > 0;
+    
+    // 树形展开状态
+    public bool IsExpanded { get; set; }
     
     // === Route/Step 跟踪 ===
     public string RouteId { get; set; } = string.Empty;
@@ -107,9 +110,6 @@ public class LotInfo
     public string? TestResult { get; set; }
     public int QtyPass { get; set; }
     public int QtyFail { get; set; }
-    
-    // === Wafer 关联 ===
-    public string? WaferLotId { get; set; }
     
     // === Split/Merge 追踪 ===
     public bool IsPartialLot { get; set; }
@@ -206,10 +206,22 @@ public class LotInfo
     [JsonIgnore]
     public string LotLevelDisplay => LotLevel switch
     {
-        LotLevel.Wafer => "Wafer Lot",
-        LotLevel.Mother => "Mother Lot",
-        LotLevel.Sub => "Sub Lot",
-        LotLevel.Grade => "Grade Lot",
+        LotLevel.WaferLot => "Wafer Lot",
+        LotLevel.MotherLot => "Mother Lot",
+        LotLevel.SubLot => "Sub Lot",
+        LotLevel.GradeLot => "Grade Lot",
+        LotLevel.MfgId => "MFG ID",
+        _ => LotLevel.ToString()
+    };
+    
+    [JsonIgnore]
+    public string LotLevelShort => LotLevel switch
+    {
+        LotLevel.WaferLot => "WF",
+        LotLevel.MotherLot => "M",
+        LotLevel.SubLot => "S",
+        LotLevel.GradeLot => "G",
+        LotLevel.MfgId => "MFG",
         _ => LotLevel.ToString()
     };
     

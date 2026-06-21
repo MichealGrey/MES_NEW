@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-181197103109
+46-1942808543
 
-125-529363739
-2221454764903
-Views\AddWorkOrderWin.xaml;Views\AlarmDashboardView.xaml;Views\CustomerProgressView.xaml;Views\DispatchView.xaml;Views\ExternalSystemView.xaml;Views\GenealogyView.xaml;Views\HoldReasonDialog.xaml;Views\LotHoldView.xaml;Views\LotListView.xaml;Views\LotSplitMergeView.xaml;Views\MasterDataView.xaml;Views\ProductionReportView.xaml;Views\SystemHealthView.xaml;Views\SystemMonitorView.xaml;Views\TrackInView.xaml;Views\WipOverviewView.xaml;Views\WorkOrderListView.xaml;Views\YieldReportView.xaml;
+1691768569328
+222-1261064532
+Views\AddWorkOrderWin.xaml;Views\AlarmDashboardView.xaml;Views\AlarmRuleDialogWindow.xaml;Views\AlarmRuleManagementView.xaml;Views\CarrierManagementView.xaml;Views\CustomerDialogWindow.xaml;Views\CustomerManagementView.xaml;Views\CustomerProgressView.xaml;Views\DefectCodeDialogWindow.xaml;Views\DefectCodeManagementView.xaml;Views\DispatchView.xaml;Views\EquipmentManagementView.xaml;Views\ExternalSystemView.xaml;Views\GenealogyView.xaml;Views\GradeSortView.xaml;Views\HoldReasonDialog.xaml;Views\LotArchiveView.xaml;Views\LotDetailViewV2.xaml;Views\LotExceptionView.xaml;Views\LotHoldView.xaml;Views\LotListView.xaml;Views\LotListViewV2.xaml;Views\LotOverviewView.xaml;Views\LotSplitMergeView.xaml;Views\LotSplitMergeViewV2.xaml;Views\MasterDataView.xaml;Views\MaterialDialogWindow.xaml;Views\MaterialManagementView.xaml;Views\ProductDialogWindow.xaml;Views\ProductionReportView.xaml;Views\ProductManagementView.xaml;Views\ReasonCodeDialogWindow.xaml;Views\ReasonCodeManagementView.xaml;Views\RecipeManagementView.xaml;Views\RouteDialogWindow.xaml;Views\RouteManagementView.xaml;Views\ScrapRuleDialogWindow.xaml;Views\ScrapRuleManagementView.xaml;Views\SystemHealthView.xaml;Views\SystemMonitorView.xaml;Views\TrackInView.xaml;Views\WipOverviewView.xaml;Views\WorkOrderListView.xaml;Views\YieldReportView.xaml;Views\YieldRuleDialogWindow.xaml;Views\YieldRuleManagementView.xaml;
 
 True
 

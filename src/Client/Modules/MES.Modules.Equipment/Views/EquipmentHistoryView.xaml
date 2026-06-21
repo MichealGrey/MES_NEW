@@ -1,0 +1,52 @@
+<UserControl x:Class="MES.Modules.Equipment.Views.EquipmentHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <TextBlock Grid.Row="0" Text="设备履历" Style="{DynamicResource MesPageTitle}" Margin="0,0,0,16"/>
+
+        <!-- 选择设备区域 -->
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="选择设备:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox Width="200" Text="{Binding SelectedEquipmentId, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,16,0">
+                    <ComboBoxItem Content="WB-01"/>
+                    <ComboBoxItem Content="WB-02"/>
+                    <ComboBoxItem Content="DB-01"/>
+                    <ComboBoxItem Content="MP-01"/>
+                    <ComboBoxItem Content="MP-02"/>
+                    <ComboBoxItem Content="TH-01"/>
+                    <ComboBoxItem Content="WS-01"/>
+                    <ComboBoxItem Content="PL-01"/>
+                </ComboBox>
+                <Button Content="刷新数据" Command="{Binding RefreshCommand}" Padding="12,4"/>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 履历记录表格 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,0">
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="记录ID" Binding="{Binding Id}" Width="100"/>
+                    <DataGridTextColumn Header="设备编号" Binding="{Binding EquipmentId}" Width="100"/>
+                    <DataGridTextColumn Header="事件时间" Binding="{Binding EventTime, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" Width="160"/>
+                    <DataGridTextColumn Header="事件类型" Binding="{Binding EventType}" Width="120"/>
+                    <DataGridTextColumn Header="事件描述" Binding="{Binding Description}" Width="*"/>
+                    <DataGridTextColumn Header="操作人员" Binding="{Binding Operator}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

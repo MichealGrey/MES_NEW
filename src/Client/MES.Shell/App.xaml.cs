@@ -15,10 +15,13 @@ using DryIoc;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
 using Microsoft.Extensions.Logging;
+
+using ISessionService = MES.Shell.Services.ISessionService;
 
 namespace MES.Shell;
 
@@ -30,8 +33,27 @@ public partial class App : PrismApplication
 
     private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
-        File.WriteAllText(@"C:\temp\mes_crash.txt", $"Message: {e.Exception.Message}\nStackTrace:\n{e.Exception.StackTrace}");
-        MessageBox.Show(e.Exception.Message, "MES Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        var ex = e.Exception;
+        var log = $"=== Exception ===\nTime: {DateTime.Now}\n";
+        var depth = 0;
+        while (ex != null)
+        {
+            log += $"\n[Level {depth}] Type: {ex.GetType().FullName}\n";
+            log += $"Message: {ex.Message}\n";
+            log += $"StackTrace:\n{ex.StackTrace}\n";
+            if (ex is System.Windows.Markup.XamlParseException xamlEx && xamlEx.InnerException != null)
+            {
+                ex = xamlEx.InnerException;
+                depth++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        Directory.CreateDirectory(@"C:\temp");
+        File.WriteAllText(@"C:\temp\mes_crash.txt", log);
+        MessageBox.Show($"错误: {e.Exception.Message}\n\n详细日志: C:\\temp\\mes_crash.txt", "MES Error", MessageBoxButton.OK, MessageBoxImage.Error);
         e.Handled = true;
     }
 
@@ -51,8 +73,8 @@ public partial class App : PrismApplication
         // ====================================================================
         // Step 1: 初始化认证种子数据
         // ====================================================================
-        //var seeder = Container.Resolve<AuthDataSeeder>();
-        //await seeder.EnsureSeededAsync();
+        var seeder = Container.Resolve<AuthDataSeeder>();
+        await seeder.EnsureSeededAsync();
 
         // ====================================================================
         // Step 2: 显示登录窗口（模态阻塞，后台无 MainWindow）
@@ -86,6 +108,15 @@ public partial class App : PrismApplication
         rm.RegisterViewWithRegion("NavigationRegion", typeof(NavigationView));
         rm.RegisterViewWithRegion("StatusRegion", typeof(StatusBarView));
 
+        // V2.0 视图注册
+        rm.RegisterViewWithRegion("NavigationRegionV2", typeof(NavigationViewV2));
+        rm.RegisterViewWithRegion("StatusBarRegionV2", typeof(StatusBarViewV2));
+        rm.RegisterViewWithRegion("MainContentRegionV2", typeof(ComponentDemoView));
+
+        // 登录后重建菜单（MenuViewModel 是单例，登录前已创建但菜单为空）
+        var menuVm = Container.Resolve<MenuViewModel>();
+        menuVm.BuildMenu();
+
         // 根据用户权限导航到默认页面
         var session = Container.Resolve<ISessionService>();
         var defaultView = GetDefaultViewForRole(session);
@@ -101,28 +132,32 @@ public partial class App : PrismApplication
     /// </summary>
     private static (string,string) GetDefaultViewForRole(ISessionService session)
     {
-        if (session.HasPermission("Production", "TrackInView"))
-            return ("Production", "TrackInView");
         if (session.HasPermission("Production", "WorkOrderListView"))
             return ("Production", "WorkOrderListView");
+        if (session.HasPermission("Production", "TrackInView"))
+            return ("Production", "TrackInView");
         if (session.HasPermission("Production", "LotListView"))
             return ("Production", "LotListView");
         if (session.HasPermission("Quality", "SpcChartView"))
-            return ("Production", "SpcChartView");
+            return ("Quality", "SpcChartView");
         if (session.HasPermission("Schedule", "DispatchBoardView"))
-            return ("Production", "DispatchBoardView");
+            return ("Schedule", "DispatchBoardView");
         if (session.HasPermission("Equipment", "EquipmentOverviewView"))
-            return ("Production", "EquipmentOverviewView");
+            return ("Equipment", "EquipmentOverviewView");
 
         return ("Production", "WorkOrderListView");
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        // 基础设施 - EF Core + Repository 模式
-        var mysqlConnStr = "Server=localhost;Database=mes_prod;Uid=root;Pwd=MyNewPass123!;Max Pool Size=100;";
-        // 获取 DryIoc 底层容器
+        // Register HttpClient as a singleton - all modules share this instance
+        containerRegistry.RegisterInstance(new HttpClient { BaseAddress = new Uri("http://localhost:8940/api/") });
+
+        // Get DryIoc container for advanced registration (Reuse, Made.Of, etc.)
         var container = containerRegistry.GetContainer();
+
+        // 基础设施 - EF Core + Repository 模式
+        var mysqlConnStr = "Server=Localhost;Database=mes_prod;Uid=root;Pwd=MyNewPass123!;Max Pool Size=100;";
 
         // 注册 DbContextOptions（EF Core 需要这个）
         var dbOptions = new DbContextOptionsBuilder<MesDbContext>()
@@ -174,10 +209,18 @@ public partial class App : PrismApplication
         container.Register<IRoleRepository, RoleRepository>(Reuse.Transient);
         container.Register<IDepartmentRepository, DepartmentRepository>(Reuse.Transient);
         container.Register<ISignatureLevelRepository, SignatureLevelRepository>(Reuse.Transient);
+        container.Register<IPermissionConfirmRepository, PermissionConfirmRepository>(Reuse.Transient);
 
         // 认证与会话服务
-        containerRegistry.RegisterSingleton<ISessionService, SessionService>();
+        // 先创建共享实例，再注册到两个接口，确保所有 ViewModel 拿到同一个 SessionService
+        var sharedSession = new SessionService(
+            container.Resolve<IRepository<MES.Infrastructure.Persistence.Entities.SysUserPermission>>(),
+            container.Resolve<IRepository<MES.Infrastructure.Persistence.Entities.SysRole>>(),
+            container.Resolve<IRepository<MES.Infrastructure.Persistence.Entities.SysDepartment>>());
+        container.RegisterInstance<MES.Shared.Services.ISessionService>(sharedSession);
+        container.RegisterInstance<ISessionService>(sharedSession);
         containerRegistry.Register<IUserAuthenticationService, UserAuthenticationService>();
+        containerRegistry.Register<IPermissionConfirmService, PermissionConfirmService>();
         containerRegistry.Register<AuthDataSeeder>();
 
         // 视图与 ViewModel
@@ -193,6 +236,11 @@ public partial class App : PrismApplication
         containerRegistry.RegisterForNavigation<MenuView>();
         containerRegistry.RegisterForNavigation<NavigationView>();
         containerRegistry.RegisterForNavigation<StatusBarView>();
+        
+        // V2.0 导航注册
+        containerRegistry.RegisterForNavigation<NavigationViewV2>();
+        containerRegistry.RegisterForNavigation<StatusBarViewV2>();
+        containerRegistry.RegisterForNavigation<ComponentDemoView>();
     }
 
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

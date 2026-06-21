@@ -1,0 +1,9 @@
+# Exclude archived docs - always ignore
+docs/exclude/
+
+# Build output
+bin/
+obj/
+
+# IDE files
+.vs/

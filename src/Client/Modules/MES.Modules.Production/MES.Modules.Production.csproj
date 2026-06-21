@@ -9,6 +9,7 @@
     <PackageReference Include="Prism.Wpf" Version="9.0.537" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\MES.Domain\MES.Domain.csproj" />
     <ProjectReference Include="..\..\MES.Infrastructure\MES.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Infrastructure\MES.Infrastructure.Persistence\MES.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\..\MES.Shared\MES.Shared.csproj" />

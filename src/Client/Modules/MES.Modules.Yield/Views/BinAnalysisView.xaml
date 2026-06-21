@@ -1,0 +1,69 @@
+<UserControl x:Class="MES.Modules.Yield.Views.BinAnalysisView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Bin分析" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <UniformGrid Grid.Row="1" Rows="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总Die数" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalDie}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Good Die" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding GoodCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Fail Die" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding FailCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesDangerBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="Bin良率" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding YieldPercent, StringFormat={}{0:F1}%}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}" HorizontalAlignment="Right"/>
+        </Border>
+
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="{DynamicResource MesDangerBrush}" FontSize="13" Margin="0,0,0,16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <Border Grid.Row="4" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False" IsReadOnly="True" Style="{DynamicResource MesDataGrid}" FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Bin Code" Binding="{Binding BinCode}" Width="100"/>
+                    <DataGridTextColumn Header="Bin名称" Binding="{Binding BinName}" Width="120"/>
+                    <DataGridTextColumn Header="数量" Binding="{Binding Count}" Width="80"/>
+                    <DataGridTextColumn Header="占比" Binding="{Binding Percentage, StringFormat={}{0:F1}%}" Width="80"/>
+                    <DataGridTextColumn Header="结果" Binding="{Binding Result}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

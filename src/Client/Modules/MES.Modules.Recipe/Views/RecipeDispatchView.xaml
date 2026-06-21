@@ -1,0 +1,85 @@
+<UserControl x:Class="MES.Modules.Recipe.Views.RecipeDispatchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="配方下发" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <UniformGrid Grid.Row="1" Rows="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="配方总数" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="已下发" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding DispatchedCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </UniformGrid>
+
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="目标设备:" VerticalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,8,0"/>
+                <TextBox Width="200" Text="{Binding TargetEquipment}" Style="{DynamicResource MesTextBox}" Margin="0,0,16,0" ToolTip="输入设备编号"/>
+                <Button Content="下发" Command="{Binding DispatchCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0" ToolTip="将选中配方下发到目标设备"/>
+                <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesSecondaryButton}"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="{DynamicResource MesDangerBrush}" FontSize="13" Margin="0,0,0,16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <Border Grid.Row="4" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False" IsReadOnly="True" Style="{DynamicResource MesDataGrid}" FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="配方ID" Binding="{Binding Id}" Width="100"/>
+                    <DataGridTextColumn Header="配方编号" Binding="{Binding RecipeId}" Width="120"/>
+                    <DataGridTextColumn Header="配方名称" Binding="{Binding RecipeName}" Width="*"/>
+                    <DataGridTextColumn Header="版本" Binding="{Binding Version}" Width="80"/>
+                    <DataGridTextColumn Header="提交人" Binding="{Binding SubmittedBy}" Width="100"/>
+                    <DataGridTextColumn Header="提交日期" Binding="{Binding SubmittedDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="110"/>
+                    <DataGridTemplateColumn Header="状态" Width="90">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Padding="6,2" HorizontalAlignment="Center">
+                                    <Border.Style>
+                                        <Style TargetType="Border" BasedOn="{StaticResource MesBadge}">
+                                            <Setter Property="Background" Value="{DynamicResource MesWarningBrush}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="Approved">
+                                                    <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="Rejected">
+                                                    <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock Text="{Binding Status}" FontSize="10" FontWeight="Medium" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

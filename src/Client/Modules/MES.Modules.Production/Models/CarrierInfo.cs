@@ -12,5 +12,7 @@ public class CarrierInfo
     public DateTime LastCleanDate { get; set; }
     public int CleanIntervalUses { get; set; }
     public string Location { get; set; } = string.Empty;
+    public string? ApplicableProcess { get; set; }
+    public string? ApplicablePackage { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

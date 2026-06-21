@@ -1,0 +1,98 @@
+<UserControl x:Class="MES.Modules.Production.Views.LotExceptionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="批次异常管理" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="异常总数" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding TotalExceptions}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="待处理" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding PendingCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesWarningBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="已处理" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding ResolvedCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 过滤栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="12" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 状态筛选 -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <TextBlock Text="状态:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox Width="120" SelectedItem="{Binding FilterStatus}"
+                              Style="{DynamicResource MesComboBox}">
+                        <ComboBoxItem Content="全部"/>
+                        <ComboBoxItem Content="待处理"/>
+                        <ComboBoxItem Content="处理中"/>
+                        <ComboBoxItem Content="已关闭"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- 搜索框 -->
+                <TextBox Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,16,0" Width="220" Style="{DynamicResource MesTextBox}"/>
+
+                <!-- 刷新按钮 -->
+                <Button Grid.Column="2" Content="刷新" Command="{Binding RefreshCommand}"
+                        Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+
+                <!-- 导出按钮 -->
+                <Button Grid.Column="3" Content="导出报表" Command="{Binding ExportCommand}"
+                        Style="{DynamicResource MesSecondaryButton}"/>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding FilteredExceptions}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Style="{DynamicResource MesDataGrid}"
+                  SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="异常编号" Binding="{Binding ExceptionId}" Width="120"/>
+                <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
+                <DataGridTextColumn Header="异常类型" Binding="{Binding ExceptionType}" Width="100"/>
+                <DataGridTextColumn Header="异常描述" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                <DataGridTextColumn Header="发现时间" Binding="{Binding DetectedAt, StringFormat={}{0:yyyy-MM-dd HH:mm}}" Width="150"/>
+                <DataGridTextColumn Header="处理人" Binding="{Binding Handler}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

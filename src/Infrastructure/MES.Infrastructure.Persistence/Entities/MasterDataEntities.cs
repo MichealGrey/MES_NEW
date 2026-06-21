@@ -6,6 +6,9 @@ public class MasterProduct
     public string ProductName { get; set; } = string.Empty;
     public string? DieName { get; set; }
     public string PackageType { get; set; } = string.Empty;
+    public string ProcessStage { get; set; } = "Assemble";
+    public string? DefaultRouteId { get; set; }
+    public int UnitQty { get; set; } = 1;
     public string? CustomerId { get; set; }
     public string? CustomerName { get; set; }
     public string? CustomerPn { get; set; }
@@ -47,6 +50,11 @@ public class MasterEquipment
     public string EquipmentName { get; set; } = string.Empty;
     public string EquipmentGroup { get; set; } = string.Empty;
     public string EquipmentType { get; set; } = string.Empty;
+    public string ProcessStage { get; set; } = "Assemble";
+    public string? Vendor { get; set; }
+    public string? Model { get; set; }
+    public string? SerialNumber { get; set; }
+    public string? Capability { get; set; }
     public string Status { get; set; } = "Available";
     public string? CurrentLotId { get; set; }
     public string? CurrentRecipe { get; set; }
@@ -77,6 +85,47 @@ public class MasterCarrier
     public DateTime? LastCleanDate { get; set; }
     public int CleanIntervalUses { get; set; }
     public string? Location { get; set; }
+    public string? ApplicableProcess { get; set; }
+    public string? ApplicablePackage { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
+
+public class MasterCustomer
+{
+    public string CustomerId { get; set; } = string.Empty;
+    public string CustomerName { get; set; } = string.Empty;
+    public string CustomerCode { get; set; } = string.Empty;
+    public string? ContactPerson { get; set; }
+    public string? ContactPhone { get; set; }
+    public string? Email { get; set; }
+    public string? Address { get; set; }
+    public string? CustomerPnPrefix { get; set; }
+    public string QualityLevel { get; set; } = "Industrial";
+    public string? SpecialRequirements { get; set; }
+    public string? DefaultPackingSpec { get; set; }
+    public string? DefaultOqcSpec { get; set; }
+    public string Status { get; set; } = "Active";
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
+
+public class MasterReasonCode
+{
+    public string ReasonCodeId { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
+    public string? SubCategory { get; set; }
+    public string ReasonText { get; set; } = string.Empty;
+    public string ApplicableTo { get; set; } = string.Empty;
+    public bool IsEnabled { get; set; } = true;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
+
+public class MasterDefectCode
+{
+    public string DefectCodeId { get; set; } = string.Empty;
+    public string DefectCategory { get; set; } = string.Empty;
+    public string DefectText { get; set; } = string.Empty;
+    public string Severity { get; set; } = "Major";
+    public bool IsEnabled { get; set; } = true;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
 

@@ -1,0 +1,68 @@
+<UserControl x:Class="MES.Modules.Warehouse.Views.ExpiryAlertView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <TextBlock Grid.Row="0" Text="过期预警" Style="{DynamicResource MesPageTitle}" Margin="0,0,0,16"/>
+
+        <!-- 操作区域 -->
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="30天内即将过期物料" VerticalAlignment="Center" Margin="0,0,16,0" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                <TextBlock Text="预警数量: " VerticalAlignment="Center" Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding Items.Count}" FontWeight="Bold" Foreground="Orange" VerticalAlignment="Center"/>
+                <TextBlock Text=" 项" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                <Button Content="刷新数据" Command="{Binding RefreshCommand}" Padding="12,4"/>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 预警数据表格 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,0">
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="物料编号" Binding="{Binding MaterialNo}" Width="120"/>
+                    <DataGridTextColumn Header="物料名称" Binding="{Binding MaterialName}" Width="150"/>
+                    <DataGridTextColumn Header="类别" Binding="{Binding Category}" Width="100"/>
+                    <DataGridTextColumn Header="当前库存" Binding="{Binding StockQty}" Width="80"/>
+                    <DataGridTextColumn Header="最低库存" Binding="{Binding MinQty}" Width="80"/>
+                    <DataGridTextColumn Header="单位" Binding="{Binding Unit}" Width="60"/>
+                    <DataGridTextColumn Header="供应商" Binding="{Binding Supplier}" Width="120"/>
+                    <DataGridTextColumn Header="存放位置" Binding="{Binding Location}" Width="100"/>
+                    <DataGridTextColumn Header="过期日期" Binding="{Binding ExpiryDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="140"/>
+                    <DataGridTemplateColumn Header="预警状态" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Text" Value="正常"/>
+                                            <Setter Property="Foreground" Value="Green"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ExpiryDate}" Value="{x:Null}">
+                                                    <Setter Property="Text" Value="无过期日期"/>
+                                                    <Setter Property="Foreground" Value="LightGray"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -5,21 +5,7 @@
              xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
              xmlns:local="clr-namespace:MES.Modules.Production.ViewModels"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-
-    <!-- ======================================================================
-         键盘快捷键 & 扫描自动触发
-         - Enter:      扫码查询（条码枪扫描后自动触发）
-         - Ctrl+Enter: 确认进站/出站
-         - Esc:        取消/重置
-         - F8:         强制操作
-         ====================================================================== -->
-    <!--<UserControl.InputBindings>
-        <KeyBinding Key="S"        Command="{Binding ScanLotCommand}"         Modifiers=""    />
-        <KeyBinding Key="Enter"        Command="{Binding ConfirmCommand}"         Modifiers="Ctrl"    />
-        <KeyBinding Key="Escape"       Command="{Binding CancelCommand}"          Modifiers=""    />
-        <KeyBinding Key="F8"           Command="{Binding ForceConfirmCommand}"    Modifiers=""    />
-    </UserControl.InputBindings>-->
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
 
     <UserControl.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BoolToVis"/>
@@ -27,85 +13,32 @@
         <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextPrimaryBrush}"/>
             <Setter Property="Margin" Value="0,0,0,8"/>
         </Style>
 
         <Style x:Key="InfoLabelStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextSecondaryBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextSecondaryBrush}"/>
         </Style>
 
         <Style x:Key="InfoValueStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextPrimaryBrush}"/>
         </Style>
 
         <Style x:Key="InfoValueHighlight" TargetType="TextBlock" BasedOn="{StaticResource InfoValueStyle}">
-            <Setter Property="Foreground" Value="{StaticResource MesAccentBrush}"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-
-        <Style x:Key="MesButtonStyle" TargetType="Button">
-            <Setter Property="Padding" Value="24,10"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="MinWidth" Value="100"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-
-        <Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource MesButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource MesAccentBrush}"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-
-        <Style x:Key="WarningButtonStyle" TargetType="Button" BasedOn="{StaticResource MesButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource MesWarningBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-
-        <Style x:Key="DangerButtonStyle" TargetType="Button" BasedOn="{StaticResource MesButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource MesCriticalBrush}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-
-        <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource MesButtonStyle}">
-            <Setter Property="Background" Value="{StaticResource MesSurfaceBrush}"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource MesBorderBrush}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-        </Style>
-
-        <!-- 状态指示灯圆点样式 -->
-        <Style x:Key="StatusDotStyle" TargetType="Ellipse">
-            <Setter Property="Width" Value="10"/>
-            <Setter Property="Height" Value="10"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,0,6,0"/>
-        </Style>
-
-        <!-- 扫描输入框通用样式 -->
-        <Style x:Key="ScanInputStyle" TargetType="TextBox">
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Padding" Value="8"/>
-            <Setter Property="Background" Value="{StaticResource MesSurfaceBrush}"/>
-            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource MesBorderBrush}"/>
-            <Setter Property="CaretBrush" Value="{StaticResource MesAccentBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesInfoBrush}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
         </Style>
     </UserControl.Resources>
 
-    <!-- ======================================================================
-         全局加载遮罩层
-         ====================================================================== -->
+    <!-- 全局加载遮罩层 -->
     <Grid>
         <!-- 主内容 -->
         <ScrollViewer x:Name="MainScrollViewer" VerticalScrollBarVisibility="Auto">
-            <Grid Margin="20">
+            <Grid Margin="24">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>   <!-- 标题栏 -->
                     <RowDefinition Height="Auto"/>   <!-- 快速扫描区 -->
@@ -117,9 +50,7 @@
                     <RowDefinition Height="Auto"/>   <!-- 操作员信息栏 -->
                 </Grid.RowDefinitions>
 
-                <!-- ============================================================
-                     Row 0: 标题与模式切换
-                     ============================================================ -->
+                <!-- Row 0: 标题与模式切换 -->
                 <Grid Grid.Row="0" Margin="0,0,0,16">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -129,32 +60,25 @@
                     <TextBlock Grid.Column="0"
                                Text="{Binding PageTitle}"
                                FontSize="24"
-                               FontWeight="Bold"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <RadioButton Content="进站"
                                      IsChecked="{Binding IsTrackInMode}"
                                      FontSize="14"
-                                     Foreground="{StaticResource MesTextPrimaryBrush}"
+                                     Foreground="{DynamicResource MesTextPrimaryBrush}"
                                      Margin="0,0,16,0"/>
                         <RadioButton Content="出站"
                                      IsChecked="{Binding IsTrackOutMode}"
                                      FontSize="14"
-                                     Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                                     Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                     </StackPanel>
                 </Grid>
 
-                <!-- ============================================================
-                     Row 1: 快速扫描区
-                     包含：批次号、设备号、载具号 三个扫描输入
-                     支持条码枪连续扫描 Enter 自动触发查询
-                     ============================================================ -->
+                <!-- Row 1: 快速扫描区 -->
                 <Border Grid.Row="1"
-                        Background="{StaticResource MesCardBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
+                        Style="{DynamicResource MesCard}"
                         Padding="16"
                         Margin="0,0,0,16">
                     <StackPanel>
@@ -182,7 +106,7 @@
                             <TextBox Grid.Column="1"
                                      x:Name="LotIdTextBox"
                                      Text="{Binding LotId, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource ScanInputStyle}"
+                                     Style="{DynamicResource MesTextBox}"
                                      ToolTip="扫描批次号条码，按 Enter 查询">
                                 <TextBox.InputBindings>
                                     <KeyBinding Key="Enter" Command="{Binding ScanLotCommand}"/>
@@ -197,14 +121,14 @@
                                        Margin="16,0,8,0"/>
                             <TextBox Grid.Column="3"
                                      Text="{Binding EquipmentId, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource ScanInputStyle}"
+                                     Style="{DynamicResource MesTextBox}"
                                      ToolTip="扫描设备条码或手动输入">
                                 <TextBox.InputBindings>
                                     <KeyBinding Key="Enter" Command="{Binding ScanLotCommand}"/>
                                 </TextBox.InputBindings>
                             </TextBox>
 
-                            <!-- 载具号（新增） -->
+                            <!-- 载具号 -->
                             <TextBlock Grid.Column="4"
                                        Text="载具号:"
                                        Style="{StaticResource InfoLabelStyle}"
@@ -212,18 +136,18 @@
                                        Margin="16,0,8,0"/>
                             <TextBox Grid.Column="5"
                                      Text="{Binding CarrierId, UpdateSourceTrigger=PropertyChanged}"
-                                     Style="{StaticResource ScanInputStyle}"
+                                     Style="{DynamicResource MesTextBox}"
                                      ToolTip="扫描载具(FOUP/Cassette/Frame)条码">
                                 <TextBox.InputBindings>
                                     <KeyBinding Key="Enter" Command="{Binding ScanLotCommand}"/>
                                 </TextBox.InputBindings>
                             </TextBox>
 
-                            <!-- 手动查询按钮（备选） -->
+                            <!-- 手动查询按钮 -->
                             <Button Grid.Column="6"
                                     Content="查询"
                                     Command="{Binding ScanLotCommand}"
-                                    Style="{StaticResource PrimaryButtonStyle}"
+                                    Style="{DynamicResource MesPrimaryButton}"
                                     Margin="16,0,0,0"
                                     ToolTip="或直接按 Enter 查询"/>
                         </Grid>
@@ -231,18 +155,15 @@
                         <!-- 快捷键提示 -->
                         <TextBlock Text="Enter=查询  |  Ctrl+Enter=确认  |  Esc=取消  |  F8=强制操作"
                                    FontSize="11"
-                                   Foreground="{StaticResource MesTextMutedBrush}"
+                                   Foreground="{DynamicResource MesTextTertiaryBrush}"
                                    Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <!-- ============================================================
-                     Row 2: Hold 告警横幅
-                     当批次处于 Hold 状态时醒目提示
-                     ============================================================ -->
+                <!-- Row 2: Hold 告警横幅 -->
                 <Border Grid.Row="2"
-                        Background="{StaticResource MesCriticalBrush}"
-                        CornerRadius="4"
+                        Background="{DynamicResource MesDangerBrush}"
+                        CornerRadius="8"
                         Padding="16"
                         Margin="0,0,0,16"
                         Visibility="{Binding IsHoldBannerVisible, Converter={StaticResource BoolToVis}}">
@@ -254,10 +175,10 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
-                                   Text="⛔ HOLD"
+                                   Text="HOLD"
                                    FontSize="20"
-                                   FontWeight="Bold"
-                                   Foreground="White"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource MesTextInverseBrush}"
                                    VerticalAlignment="Center"
                                    Margin="0,0,16,0"/>
 
@@ -265,11 +186,12 @@
                             <TextBlock Text="{Binding HoldBannerText}"
                                        FontSize="14"
                                        FontWeight="SemiBold"
-                                       Foreground="White"
+                                       Foreground="{DynamicResource MesTextInverseBrush}"
                                        TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding HoldDetailText}"
                                        FontSize="12"
-                                       Foreground="#DDFFFFFF"
+                                       Foreground="{DynamicResource MesTextInverseBrush}"
+                                       Opacity="0.8"
                                        Margin="0,4,0,0"
                                        TextWrapping="Wrap"/>
                         </StackPanel>
@@ -277,24 +199,20 @@
                         <TextBlock Grid.Column="2"
                                    Text="{Binding HoldDurationText}"
                                    FontSize="12"
-                                   Foreground="#DDFFFFFF"
+                                   Foreground="{DynamicResource MesTextInverseBrush}"
+                                   Opacity="0.8"
                                    VerticalAlignment="Center"/>
                     </Grid>
                 </Border>
 
-                <!-- ============================================================
-                     Row 3: 批次信息卡片（含工单/Recipe/载具/设备状态）
-                     ============================================================ -->
+                <!-- Row 3: 批次信息卡片 -->
                 <Border Grid.Row="3"
-                        Background="{StaticResource MesCardBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
+                        Style="{DynamicResource MesCard}"
                         Padding="16"
                         Margin="0,0,0,16"
                         Visibility="{Binding IsLotInfoVisible, Converter={StaticResource BoolToVis}}">
                     <StackPanel>
-                        <!-- 标题行：左侧标题 + 右侧设备状态 -->
+                        <!-- 标题行 -->
                         <Grid Margin="0,0,0,12">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -306,12 +224,12 @@
                                        Text="批次信息"
                                        Style="{StaticResource SectionTitleStyle}"/>
 
-                            <!-- 设备状态指示（新增） -->
+                            <!-- 设备状态指示 -->
                             <Border Grid.Column="2"
                                     CornerRadius="12"
                                     Padding="10,4"
-                                    Background="{StaticResource MesSurfaceBrush}"
-                                    BorderBrush="{StaticResource MesBorderBrush}"
+                                    Background="{DynamicResource MesSurfaceBrush}"
+                                    BorderBrush="{DynamicResource MesBorderBrush}"
                                     BorderThickness="1">
                                 <StackPanel Orientation="Horizontal">
                                     <Ellipse Width="10" Height="10"
@@ -324,16 +242,16 @@
                                                Foreground="{Binding EquipmentStatusBrush}"/>
                                     <TextBlock Text=" | "
                                                FontSize="12"
-                                               Foreground="{StaticResource MesTextMutedBrush}"
+                                               Foreground="{DynamicResource MesTextTertiaryBrush}"
                                                Margin="4,0"/>
                                     <TextBlock Text="{Binding EquipmentId}"
                                                FontSize="12"
-                                               Foreground="{StaticResource MesTextSecondaryBrush}"/>
+                                               Foreground="{DynamicResource MesTextSecondaryBrush}"/>
                                 </StackPanel>
                             </Border>
                         </Grid>
 
-                        <!-- 批次信息 3×4 网格（扩充了字段） -->
+                        <!-- 批次信息网格 -->
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -401,7 +319,7 @@
                                            Style="{StaticResource InfoValueStyle}" Margin="8,0,0,0"/>
                             </StackPanel>
 
-                            <!-- 第四行（新增：Recipe + 目标良率 + 条带数） -->
+                            <!-- 第四行 -->
                             <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Margin="0,8,0,0">
                                 <TextBlock Text="测试程式:" Style="{StaticResource InfoLabelStyle}"/>
                                 <TextBlock Text="{Binding RecipeName}"
@@ -422,9 +340,9 @@
                         </Grid>
 
                         <!-- 分隔线 -->
-                        <Rectangle Height="1" Fill="{StaticResource MesDividerBrush}" Margin="0,12"/>
+                        <Rectangle Height="1" Fill="{DynamicResource MesDividerBrush}" Margin="0,12"/>
 
-                        <!-- 载具信息行（新增） -->
+                        <!-- 载具信息行 -->
                         <Grid Margin="0,8,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -440,20 +358,20 @@
                             <Border Grid.Column="1"
                                     CornerRadius="4"
                                     Padding="8,2"
-                                    Background="{StaticResource MesSurfaceBrush}"
-                                    BorderBrush="{StaticResource MesBorderBrush}"
+                                    Background="{DynamicResource MesSurfaceBrush}"
+                                    BorderBrush="{DynamicResource MesBorderBrush}"
                                     BorderThickness="1"
                                     Margin="8,0,0,0">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding CurrentLotInfo.CarrierTypeDisplay}"
                                                FontSize="12" FontWeight="SemiBold"
-                                               Foreground="{StaticResource MesAccentBrush}"/>
+                                               Foreground="{DynamicResource MesInfoBrush}"/>
                                     <TextBlock Text=" / "
                                                FontSize="12"
-                                               Foreground="{StaticResource MesTextMutedBrush}"/>
+                                               Foreground="{DynamicResource MesTextTertiaryBrush}"/>
                                     <TextBlock Text="{Binding CurrentLotInfo.CarrierId}"
                                                FontSize="12"
-                                               Foreground="{StaticResource MesTextSecondaryBrush}"/>
+                                               Foreground="{DynamicResource MesTextSecondaryBrush}"/>
                                 </StackPanel>
                             </Border>
 
@@ -468,33 +386,28 @@
                     </StackPanel>
                 </Border>
 
-                <!-- ============================================================
-                     Row 4: 校验结果
-                     ============================================================ -->
+                <!-- Row 4: 校验结果 -->
                 <Border Grid.Row="4"
-                        Background="{StaticResource MesCardBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
+                        Style="{DynamicResource MesCard}"
                         Padding="16"
                         Margin="0,0,0,16">
                     <StackPanel>
                         <TextBlock Text="校验结果" Style="{StaticResource SectionTitleStyle}"/>
 
-                        <!-- 失败汇总横幅（新增：有失败项时醒目展示） -->
-                        <Border Background="{StaticResource MesCriticalBrush}"
-                                CornerRadius="4"
+                        <!-- 失败汇总横幅 -->
+                        <Border Background="{DynamicResource MesDangerBrush}"
+                                CornerRadius="8"
                                 Padding="12,8"
                                 Margin="0,0,0,12"
                                 Visibility="{Binding HasCriticalFailures, Converter={StaticResource BoolToVis}}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="✗"
-                                           FontSize="18" FontWeight="Bold"
-                                           Foreground="White" VerticalAlignment="Center"
+                                <TextBlock Text="X"
+                                           FontSize="18" FontWeight="SemiBold"
+                                           Foreground="{DynamicResource MesTextInverseBrush}" VerticalAlignment="Center"
                                            Margin="0,0,12,0"/>
                                 <TextBlock Text="{Binding FailureSummaryText}"
                                            FontSize="13" FontWeight="SemiBold"
-                                           Foreground="White" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource MesTextInverseBrush}" VerticalAlignment="Center"
                                            TextWrapping="Wrap"/>
                             </StackPanel>
                         </Border>
@@ -503,10 +416,7 @@
                         <DataGrid ItemsSource="{Binding ValidationResults}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
-                                  Background="{StaticResource MesSurfaceBrush}"
-                                  BorderBrush="{StaticResource MesBorderBrush}"
-                                  HeadersVisibility="Column"
-                                  FontSize="13"
+                                  Style="{DynamicResource MesDataGrid}"
                                   GridLinesVisibility="Horizontal"
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
@@ -526,16 +436,16 @@
                                                            VerticalAlignment="Center">
                                                     <TextBlock.Style>
                                                         <Style TargetType="TextBlock">
-                                                            <Setter Property="Foreground" Value="{StaticResource MesTextPrimaryBrush}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource MesTextPrimaryBrush}"/>
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding Status}" Value="Pass">
-                                                                    <Setter Property="Foreground" Value="{StaticResource MesSuccessBrush}"/>
+                                                                    <Setter Property="Foreground" Value="{DynamicResource MesSuccessBrush}"/>
                                                                 </DataTrigger>
                                                                 <DataTrigger Binding="{Binding Status}" Value="Warning">
-                                                                    <Setter Property="Foreground" Value="{StaticResource MesWarningBrush}"/>
+                                                                    <Setter Property="Foreground" Value="{DynamicResource MesWarningBrush}"/>
                                                                 </DataTrigger>
                                                                 <DataTrigger Binding="{Binding Status}" Value="Fail">
-                                                                    <Setter Property="Foreground" Value="{StaticResource MesErrorBrush}"/>
+                                                                    <Setter Property="Foreground" Value="{DynamicResource MesDangerBrush}"/>
                                                                 </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
@@ -551,39 +461,32 @@
                     </StackPanel>
                 </Border>
 
-                <!-- ============================================================
-                     Row 5: 操作按钮区
-                     ============================================================ -->
+                <!-- Row 5: 操作按钮区 -->
                 <Border Grid.Row="5"
                         Background="Transparent"
                         Padding="0,0,0,16">
                     <StackPanel Orientation="Horizontal">
                         <Button Content="确认进站"
                                 Command="{Binding ConfirmCommand}"
-                                Style="{StaticResource PrimaryButtonStyle}"
+                                Style="{DynamicResource MesPrimaryButton}"
                                 Margin="0,0,12,0"
                                 ToolTip="Ctrl+Enter"/>
                         <Button Content="取消"
                                 Command="{Binding CancelCommand}"
-                                Style="{StaticResource SecondaryButtonStyle}"
+                                Style="{DynamicResource MesSecondaryButton}"
                                 Margin="0,0,12,0"
                                 ToolTip="Esc"/>
                         <Button Content="强制操作"
                                 Command="{Binding ForceConfirmCommand}"
-                                Style="{StaticResource DangerButtonStyle}"
+                                Style="{DynamicResource MesDangerButton}"
                                 Visibility="{Binding CanForceConfirm, Converter={StaticResource BoolToVis}}"
                                 ToolTip="F8"/>
                     </StackPanel>
                 </Border>
 
-                <!-- ============================================================
-                     Row 6: 最近操作记录
-                     ============================================================ -->
+                <!-- Row 6: 最近操作记录 -->
                 <Border Grid.Row="6"
-                        Background="{StaticResource MesCardBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
+                        Style="{DynamicResource MesCard}"
                         Padding="16"
                         Margin="0,0,0,16">
                     <StackPanel>
@@ -591,10 +494,7 @@
                         <DataGrid ItemsSource="{Binding OperationHistory}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
-                                  Background="{StaticResource MesSurfaceBrush}"
-                                  BorderBrush="{StaticResource MesBorderBrush}"
-                                  HeadersVisibility="Column"
-                                  FontSize="13"
+                                  Style="{DynamicResource MesDataGrid}"
                                   GridLinesVisibility="Horizontal"
                                   CanUserAddRows="False"
                                   CanUserDeleteRows="False"
@@ -611,14 +511,9 @@
                     </StackPanel>
                 </Border>
 
-                <!-- ============================================================
-                     Row 7: 操作员信息栏
-                     ============================================================ -->
+                <!-- Row 7: 操作员信息栏 -->
                 <Border Grid.Row="7"
-                        Background="{StaticResource MesCardBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="4"
+                        Style="{DynamicResource MesCard}"
                         Padding="12,8">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -643,16 +538,16 @@
                         <Border Grid.Column="3"
                                 CornerRadius="10"
                                 Padding="8,2"
-                                Background="{StaticResource MesSurfaceBrush}"
-                                BorderBrush="{StaticResource MesBorderBrush}"
+                                Background="{DynamicResource MesSurfaceBrush}"
+                                BorderBrush="{DynamicResource MesBorderBrush}"
                                 BorderThickness="1">
                             <StackPanel Orientation="Horizontal">
                                 <Ellipse Width="8" Height="8"
-                                         Fill="{StaticResource MesSuccessBrush}"
+                                         Fill="{DynamicResource MesSuccessBrush}"
                                          VerticalAlignment="Center" Margin="0,0,6,0"/>
                                 <TextBlock Text="Redis"
                                            FontSize="11"
-                                           Foreground="{StaticResource MesTextSecondaryBrush}"/>
+                                           Foreground="{DynamicResource MesTextSecondaryBrush}"/>
                             </StackPanel>
                         </Border>
 
@@ -660,7 +555,7 @@
                         <TextBlock Grid.Column="4"
                                    Text="{Binding HistoryCountDisplay}"
                                    FontSize="11"
-                                   Foreground="{StaticResource MesTextMutedBrush}"
+                                   Foreground="{DynamicResource MesTextTertiaryBrush}"
                                    Margin="12,0,0,0"
                                    VerticalAlignment="Center"/>
                     </Grid>
@@ -668,20 +563,18 @@
             </Grid>
         </ScrollViewer>
 
-        <!-- ============================================================
-             加载遮罩层
-             ============================================================ -->
-        <Border Background="#AA1A1A2E"
+        <!-- 加载遮罩层 -->
+        <Border Background="{DynamicResource MesOverlayBrush}"
                 Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}">
             <StackPanel HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <ProgressBar IsIndeterminate="True"
                              Width="200" Height="4"
-                             Foreground="{StaticResource MesAccentBrush}"
-                             Background="{StaticResource MesSurfaceBrush}"/>
+                             Foreground="{DynamicResource MesInfoBrush}"
+                             Background="{DynamicResource MesSurfaceBrush}"/>
                 <TextBlock Text="正在查询，请稍候..."
                            FontSize="14"
-                           Foreground="{StaticResource MesTextPrimaryBrush}"
+                           Foreground="{DynamicResource MesTextPrimaryBrush}"
                            Margin="0,12,0,0"
                            HorizontalAlignment="Center"/>
             </StackPanel>

@@ -9,6 +9,7 @@
       "MES.Modules.Recipe/1.0.0": {
         "dependencies": {
           "MES.Infrastructure": "1.0.0",
+          "MES.Shared": "1.0.0",
           "MES.Themes": "1.0.0",
           "Prism.Wpf": "9.0.537"
         },
@@ -244,6 +245,17 @@
           }
         }
       },
+      "MES.Shared/1.0.0": {
+        "dependencies": {
+          "MES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MES.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MES.Themes/1.0.0": {
         "runtime": {
           "MES.Themes.dll": {
@@ -399,6 +411,11 @@
       "sha512": ""
     },
     "MES.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MES.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

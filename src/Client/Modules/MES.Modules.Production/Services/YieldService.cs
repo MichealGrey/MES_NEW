@@ -31,7 +31,7 @@ public class YieldService : IYieldService
     public async Task<bool> ShouldAutoHoldAsync(string routeId, string stepCode, double actualYield)
     {
         var rule = await CheckYieldRuleAsync(routeId, stepCode, actualYield);
-        return rule?.ActionType == "AutoHold";
+        return rule?.HoldYield > actualYield;
     }
 
     private static YieldRule MapToModel(MasterYieldRule entity) => new()
@@ -43,5 +43,9 @@ public class YieldService : IYieldService
         ActionType = entity.ActionType,
         NotifyRole = entity.NotifyRole,
         IsActive = entity.IsActive,
+        // Phase 4 computed properties
+        WarningYield = (double)entity.YieldThreshold - 5,
+        AlarmYield = (double)entity.YieldThreshold - 10,
+        HoldYield = (double)entity.YieldThreshold,
     };
 }

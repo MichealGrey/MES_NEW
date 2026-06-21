@@ -4,13 +4,13 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:local="clr-namespace:MES.Modules.Production.Views"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
     <UserControl.Resources>
         <local:RiskLevelToColorConverter x:Key="RiskLevelToColorConverter"/>
         <local:BoolToRiskColorConverter x:Key="BoolToRiskColorConverter"/>
         <local:BoolToRiskTextConverter x:Key="BoolToRiskTextConverter"/>
     </UserControl.Resources>
-    <Grid Margin="16">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -20,17 +20,17 @@
 
         <!-- 标题栏 -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
-            <TextBlock Text="客户交付追踪" FontSize="22" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,24,0"/>
-            <Button Content="刷新" Command="{Binding RefreshCommand}" Width="90" Height="32"/>
+            <TextBlock Text="客户交付追踪" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,24,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
         <!-- 过滤栏 -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
-            <TextBlock Text="客户:" VerticalAlignment="Center" Foreground="#A6ADC8" Margin="0,0,8,0"/>
-            <ComboBox Width="180" Height="30" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="CustomerName" Margin="0,0,16,0"/>
-            <TextBlock Text="工单:" VerticalAlignment="Center" Foreground="#A6ADC8" Margin="0,0,8,0"/>
-            <TextBox Width="150" Height="30" Text="{Binding SearchOrderId}" Margin="0,0,16,0"/>
-            <Button Content="查询" Command="{Binding SearchCommand}" Width="80" Height="32"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="客户:" VerticalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,8,0"/>
+            <ComboBox Width="180" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="CustomerName" Margin="0,0,16,0"/>
+            <TextBlock Text="工单:" VerticalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,8,0"/>
+            <TextBox Width="150" Text="{Binding SearchOrderId}" Style="{DynamicResource MesTextBox}" Margin="0,0,16,0"/>
+            <Button Content="查询" Command="{Binding SearchCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
         <!-- 交期风险卡片 -->
@@ -42,32 +42,32 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="#45475A" CornerRadius="8" Padding="16" Margin="0,0,12,12" Width="280">
+                    <Border Style="{DynamicResource MesKpiCard}" Padding="16" Margin="0,0,12,12" Width="280">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
                                 <Border CornerRadius="4" Padding="8,3" Background="{Binding RiskLevel, Converter={StaticResource RiskLevelToColorConverter}}">
-                                    <TextBlock Text="{Binding RiskLevel}" FontSize="11" FontWeight="SemiBold" Foreground="#1E1E2E"/>
+                                    <TextBlock Text="{Binding RiskLevel}" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource MesTextInverseBrush}"/>
                                 </Border>
-                                <TextBlock Text="{Binding CustomerName}" FontSize="13" FontWeight="SemiBold" Foreground="#CDD6F4" Margin="12,0,0,0"/>
+                                <TextBlock Text="{Binding CustomerName}" FontSize="13" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="12,0,0,0"/>
                             </StackPanel>
-                            <TextBlock Text="{Binding OrderId}" FontSize="12" Foreground="#A6ADC8" Margin="0,0,0,4"/>
-                            <TextBlock Text="{Binding CustomerPN}" FontSize="11" Foreground="#6C7086" Margin="0,0,0,8"/>
+                            <TextBlock Text="{Binding OrderId}" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+                            <TextBlock Text="{Binding CustomerPN}" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}" Margin="0,0,0,8"/>
                             <Grid Margin="0,0,0,4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock Text="计划交期" FontSize="10" Foreground="#6C7086"/>
-                                    <TextBlock Text="{Binding PlannedEndDate, StringFormat=yyyy-MM-dd}" FontSize="13" Foreground="#CDD6F4"/>
+                                    <TextBlock Text="计划交期" FontSize="10" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                                    <TextBlock Text="{Binding PlannedEndDate, StringFormat=yyyy-MM-dd}" FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
-                                    <TextBlock Text="预计完成" FontSize="10" Foreground="#6C7086"/>
-                                    <TextBlock Text="{Binding EstimatedEndDate, StringFormat=yyyy-MM-dd}" FontSize="13" Foreground="#CDD6F4"/>
+                                    <TextBlock Text="预计完成" FontSize="10" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                                    <TextBlock Text="{Binding EstimatedEndDate, StringFormat=yyyy-MM-dd}" FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                                 </StackPanel>
                             </Grid>
                             <ProgressBar Value="{Binding ProgressPercent}" Maximum="100" Height="6" Margin="0,8,0,4"/>
-                            <TextBlock Text="{Binding ProgressPercent, StringFormat={}{0:F1}%}" FontSize="11" Foreground="#A6ADC8" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding ProgressPercent, StringFormat={}{0:F1}%}" FontSize="11" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
@@ -76,25 +76,7 @@
 
         <!-- 批次进度列表 -->
         <DataGrid Grid.Row="3" ItemsSource="{Binding LotProgressList}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12" CanUserSortColumns="True">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#45475A"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="Padding" Value="10,6"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="36"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#585B70"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
+                  Style="{DynamicResource MesDataGrid}" CanUserSortColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="120"/>
                 <DataGridTextColumn Header="客户" Binding="{Binding CustomerName}" Width="100"/>
@@ -110,7 +92,7 @@
                         <DataTemplate>
                             <Border CornerRadius="4" Padding="6,2" HorizontalAlignment="Center"
                                     Background="{Binding IsAtRisk, Converter={StaticResource BoolToRiskColorConverter}}">
-                                <TextBlock Text="{Binding IsAtRisk, Converter={StaticResource BoolToRiskTextConverter}}" FontSize="10" FontWeight="SemiBold" Foreground="#1E1E2E"/>
+                                <TextBlock Text="{Binding IsAtRisk, Converter={StaticResource BoolToRiskTextConverter}}" FontSize="10" FontWeight="SemiBold" Foreground="{DynamicResource MesTextInverseBrush}"/>
                             </Border>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -119,7 +101,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="追溯报告" Command="{Binding DataContext.GenerateReportCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
-                                    CommandParameter="{Binding LotId}" Width="70" Height="26" FontSize="11"/>
+                                    CommandParameter="{Binding LotId}" Style="{DynamicResource MesSecondaryButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

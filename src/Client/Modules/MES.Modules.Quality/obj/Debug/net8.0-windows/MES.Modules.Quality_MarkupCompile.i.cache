@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-5-1006647806
+11-707776485
 
-191219332064
-2201708370146
-Views\FdcMonitorView.xaml;Views\InspectionView.xaml;Views\OocEventView.xaml;Views\SpcChartView.xaml;Views\SpcRuleConfigView.xaml;
+27-1783566938
+220-1007459289
+Views\FdcMonitorView.xaml;Views\FirstArticleInspectionView.xaml;Views\FmeaView.xaml;Views\InspectionView.xaml;Views\MsaView.xaml;Views\NonconformingView.xaml;Views\OocEventView.xaml;Views\PatrolInspectionView.xaml;Views\QualityTargetView.xaml;Views\SpcChartView.xaml;Views\SpcRuleConfigView.xaml;
 
 False
 

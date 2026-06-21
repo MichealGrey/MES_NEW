@@ -6,10 +6,17 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- V2.0 主题资源（优先） -->
+                <ResourceDictionary Source="pack://application:,,,/MES.Themes;component/Themes/DarkThemeV2.xaml"/>
+                <!-- V1.0 主题资源（兼容旧页面） -->
                 <ResourceDictionary Source="pack://application:,,,/MES.Themes;component/Themes/DarkTheme.xaml"/>
+                <!-- V2.0 组件样式 -->
+                <ResourceDictionary Source="pack://application:,,,/MES.Themes;component/Themes/MesComponentStylesV2.xaml"/>
+                <!-- 全局转换器 -->
                 <ResourceDictionary>
                     <converters:BooleanToVisibilityConverter x:Key="BoolToVis"/>
                     <converters:EnumMatchConverter x:Key="EnumMatch"/>
+                    <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

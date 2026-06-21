@@ -1,0 +1,3 @@
+﻿using System.Windows.Controls;
+namespace MES.Modules.MasterData.Views;
+public partial class ReasonCodeManagementView : UserControl { public ReasonCodeManagementView() => InitializeComponent(); }

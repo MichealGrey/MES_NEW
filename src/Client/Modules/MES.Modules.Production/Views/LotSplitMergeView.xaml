@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -12,23 +12,23 @@
         </Grid.RowDefinitions>
 
         <!-- 操作区 -->
-        <GroupBox Grid.Row="0" Header="拆批操作" Margin="0,0,0,12"
-                  Foreground="{StaticResource MesTextPrimaryBrush}">
-            <StackPanel Margin="8">
+        <Border Grid.Row="0" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel>
+                <TextBlock Text="拆批操作" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
                     <TextBlock Text="母批次号:" Width="80" VerticalAlignment="Center"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
-                    <TextBox Text="{Binding MotherLotId}" Width="200" Margin="0,0,16,0"/>
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                    <TextBox Text="{Binding MotherLotId}" Width="200" Margin="0,0,16,0" Style="{DynamicResource MesTextBox}"/>
                     <TextBlock Text="拆分数量:" Width="80" VerticalAlignment="Center"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
-                    <TextBox Text="{Binding SplitQty}" Width="100" Margin="0,0,16,0"/>
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                    <TextBox Text="{Binding SplitQty}" Width="100" Margin="0,0,16,0" Style="{DynamicResource MesTextBox}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
                     <TextBlock Text="拆分原因:" Width="80" VerticalAlignment="Center"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
-                    <TextBox Text="{Binding SplitReason}" Width="300" Margin="0,0,16,0"/>
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                    <TextBox Text="{Binding SplitReason}" Width="300" Margin="0,0,16,0" Style="{DynamicResource MesTextBox}"/>
                     <TextBlock Text="拆分类型:" Width="80" VerticalAlignment="Center"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                     <ComboBox SelectedValue="{Binding SplitType}" Width="120" Margin="0,0,16,0">
                         <ComboBoxItem Content="Normal" IsSelected="True"/>
                         <ComboBoxItem Content="Grade"/>
@@ -36,16 +36,16 @@
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="执行拆批" Command="{Binding SplitCommand}" Width="100" Margin="0,0,12,0"/>
-                    <Button Content="加载子批次" Command="{Binding LoadChildLotsCommand}" Width="100" Margin="0,0,12,0"/>
-                    <Button Content="加载拆批记录" Command="{Binding LoadSplitRecordsCommand}" Width="100"/>
+                    <Button Content="执行拆批" Command="{Binding SplitCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,12,0"/>
+                    <Button Content="加载子批次" Command="{Binding LoadChildLotsCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,12,0"/>
+                    <Button Content="加载拆批记录" Command="{Binding LoadSplitRecordsCommand}" Style="{DynamicResource MesPrimaryButton}"/>
                 </StackPanel>
             </StackPanel>
-        </GroupBox>
+        </Border>
 
         <!-- 消息区 -->
-        <TextBlock Grid.Row="1" Text="{Binding Message}" Margin="0,0,0,12"
-                   Foreground="{StaticResource MesTextPrimaryBrush}" FontSize="14"/>
+        <TextBlock Grid.Row="1" Text="{Binding Message}" Margin="0,0,0,16"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" FontSize="14"/>
 
         <!-- 数据区 -->
         <Grid Grid.Row="2">
@@ -55,41 +55,39 @@
             </Grid.ColumnDefinitions>
 
             <!-- 子批次列表 -->
-            <GroupBox Grid.Column="0" Header="子批次列表" Margin="0,0,8,0"
-                      Foreground="{StaticResource MesTextPrimaryBrush}">
-                <DataGrid ItemsSource="{Binding ChildLots}" AutoGenerateColumns="False"
-                          IsReadOnly="True"
-                          Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                          BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                          AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
-                          HeadersVisibility="Column" FontSize="12">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="160"/>
-                        <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
-                        <DataGridTextColumn Header="数量" Binding="{Binding UnitCount}" Width="80"/>
-                        <DataGridTextColumn Header="拆分原因" Binding="{Binding SplitReason}" Width="*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </GroupBox>
+            <Border Grid.Column="0" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="子批次列表" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+                    <DataGrid ItemsSource="{Binding ChildLots}" AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              Style="{DynamicResource MesDataGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="160"/>
+                            <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                            <DataGridTextColumn Header="数量" Binding="{Binding UnitCount}" Width="80"/>
+                            <DataGridTextColumn Header="拆分原因" Binding="{Binding SplitReason}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
 
             <!-- 拆批记录 -->
-            <GroupBox Grid.Column="1" Header="拆批记录" Margin="8,0,0,0"
-                      Foreground="{StaticResource MesTextPrimaryBrush}">
-                <DataGrid ItemsSource="{Binding SplitRecords}" AutoGenerateColumns="False"
-                          IsReadOnly="True"
-                          Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                          BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                          AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
-                          HeadersVisibility="Column" FontSize="12">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="拆分ID" Binding="{Binding SplitId}" Width="140"/>
-                        <DataGridTextColumn Header="子批次" Binding="{Binding ChildLotId}" Width="140"/>
-                        <DataGridTextColumn Header="数量" Binding="{Binding SplitQty}" Width="80"/>
-                        <DataGridTextColumn Header="类型" Binding="{Binding SplitType}" Width="80"/>
-                        <DataGridTextColumn Header="时间" Binding="{Binding SplitTime}" Width="160"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </GroupBox>
+            <Border Grid.Column="1" Style="{DynamicResource MesCard}" Padding="16" Margin="8,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="拆批记录" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+                    <DataGrid ItemsSource="{Binding SplitRecords}" AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              Style="{DynamicResource MesDataGrid}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="拆分ID" Binding="{Binding SplitId}" Width="140"/>
+                            <DataGridTextColumn Header="子批次" Binding="{Binding ChildLotId}" Width="140"/>
+                            <DataGridTextColumn Header="数量" Binding="{Binding SplitQty}" Width="80"/>
+                            <DataGridTextColumn Header="类型" Binding="{Binding SplitType}" Width="80"/>
+                            <DataGridTextColumn Header="时间" Binding="{Binding SplitTime}" Width="160"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>

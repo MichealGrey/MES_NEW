@@ -80,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -108,7 +108,11 @@
           "net8.0-windows": {
             "framework": "net8.0-windows7.0",
             "targetAlias": "net8.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -146,7 +150,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -186,6 +190,9 @@
               },
               "E:\\AiProj\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj": {
                 "projectPath": "E:\\AiProj\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj"
+              },
+              "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+                "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
               }
             }
           }
@@ -231,7 +238,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -297,7 +304,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -374,7 +381,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -437,7 +444,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

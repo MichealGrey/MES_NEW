@@ -1,0 +1,171 @@
+<UserControl x:Class="MES.Modules.Lot.Views.LotHoldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <UserControl.Resources>
+        <Style x:Key="StatCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource MesCardBackgroundBrush}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="0,0,12,0"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- 标题 -->
+            <RowDefinition Height="Auto"/>   <!-- 统计卡片 -->
+            <RowDefinition Height="Auto"/>   <!-- 选中批次详情 -->
+            <RowDefinition Height="*"/>      <!-- 数据表格 -->
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <DockPanel Grid.Row="0" Margin="0,0,0,16">
+            <TextBlock Text="Hold批次管理" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource MesTextPrimaryBrush}"
+                       DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="释放选中" Command="{Binding ReleaseCommand}"
+                        Style="{DynamicResource MesSuccessButton}"
+                        Margin="0,0,8,0" Width="80"
+                        ToolTip="释放选中的Hold批次"/>
+                <Button Content="全部释放" Command="{Binding ReleaseAllCommand}"
+                        Style="{DynamicResource MesWarningButton}"
+                        Margin="0,0,8,0" Width="80"
+                        ToolTip="释放所有Hold批次"/>
+                <Button Content="刷新" Command="{Binding RefreshCommand}"
+                        Style="{DynamicResource MesPrimaryButton}"
+                        Width="80"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding HoldCount}" FontSize="28" FontWeight="Bold"
+                               Foreground="{DynamicResource MesDangerBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Hold总数" FontSize="12"
+                               Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 选中批次详情面板 -->
+        <Border Grid.Row="2" Padding="16" Margin="0,0,0,16">
+            <Border.Style>
+                <Style TargetType="Border" BasedOn="{StaticResource MesCard}">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedLot}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 批次基本信息 -->
+                <StackPanel Grid.Column="0" Margin="0,0,24,0">
+                    <TextBlock Text="选中批次" FontSize="14" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,8"/>
+                    <TextBlock FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,2,0,0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="批次号: {0}">
+                                <Binding Path="SelectedLot.LotId"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBlock FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,2,0,0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="产品: {0}">
+                                <Binding Path="SelectedLot.ProductName"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBlock FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,2,0,0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="状态: {0}">
+                                <Binding Path="SelectedLot.Status"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+
+                <!-- Hold原因 -->
+                <StackPanel Grid.Column="1" Margin="0,0,16,0">
+                    <TextBlock Text="Hold原因" FontSize="12" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding HoldReason, TargetNullValue='—'}" FontSize="13"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,4,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <!-- Hold分类 -->
+                <StackPanel Grid.Column="2" Margin="0,0,16,0">
+                    <TextBlock Text="Hold分类" FontSize="12" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding HoldCategory, TargetNullValue='—'}" FontSize="13"
+                               Foreground="{DynamicResource MesDangerBrush}" FontWeight="SemiBold"
+                               Margin="0,4,0,0"/>
+                </StackPanel>
+
+                <!-- 备注 -->
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="备注" FontSize="12" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding Remark, TargetNullValue='—'}" FontSize="13"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,4,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <Border Grid.Row="3" Style="{DynamicResource MesCard}" Padding="0">
+            <Grid>
+                <DataGrid ItemsSource="{Binding HoldLots}" SelectedItem="{Binding SelectedLot}"
+                          AutoGenerateColumns="False" IsReadOnly="True"
+                          Style="{DynamicResource MesDataGrid}"
+                          FontSize="13"
+                          SelectionMode="Single" SelectionUnit="FullRow">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
+                        <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
+                        <DataGridTextColumn Header="管芯" Binding="{Binding DieName}" Width="100"/>
+                        <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="90"/>
+                        <DataGridTextColumn Header="Hold原因" Binding="{Binding HoldReason, TargetNullValue='—'}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                                    <Setter Property="ToolTip" Value="{Binding HoldReason}"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Hold分类" Binding="{Binding HoldCategory, TargetNullValue='—'}" Width="100"/>
+                        <DataGridTextColumn Header="Hold时间" Binding="{Binding CreatedAt, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" Width="150"/>
+                        <DataGridTextColumn Header="备注" Binding="{Binding Remark, TargetNullValue='—'}" Width="150"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- 错误提示 -->
+                <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="{DynamicResource MesDangerBrush}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

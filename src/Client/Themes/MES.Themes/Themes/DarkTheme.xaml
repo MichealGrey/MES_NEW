@@ -37,4 +37,28 @@
     <SolidColorBrush x:Key="MesTextDimBrush" Color="{StaticResource MesTextDim}"/>
     <SolidColorBrush x:Key="MesBorderBrush" Color="{StaticResource MesBorder}"/>
     <SolidColorBrush x:Key="MesDividerBrush" Color="{StaticResource MesDivider}"/>
+
+    <Style x:Key="NavButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#45475A"/>
+        <Setter Property="Foreground" Value="#CDD6F4"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#89B4FA"/>
+                            <Setter Property="Foreground" Value="#1E1E2E"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

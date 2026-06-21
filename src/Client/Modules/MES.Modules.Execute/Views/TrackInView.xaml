@@ -1,0 +1,208 @@
+<UserControl x:Class="MES.Modules.Execute.Views.TrackInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+
+        <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextPrimaryBrush}"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+
+        <Style x:Key="InfoLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextSecondaryBrush}"/>
+        </Style>
+
+        <Style x:Key="InfoValueStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="{DynamicResource MesTextPrimaryBrush}"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- 标题 -->
+            <RowDefinition Height="Auto"/>   <!-- 统计卡片 -->
+            <RowDefinition Height="Auto"/>   <!-- 进站输入区 -->
+            <RowDefinition Height="Auto"/>   <!-- 错误提示 -->
+            <RowDefinition Height="Auto"/>   <!-- 操作按钮 -->
+            <RowDefinition Height="*"/>      <!-- 记录列表 -->
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0"
+                   Text="进站/出站管理"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}"
+                   Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="进行中" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="{Binding InProgressCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}"/>
+                    <TextBlock Text="条记录" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="已完成" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="{Binding CompletedCount}" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}"/>
+                    <TextBlock Text="条记录" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 进站输入区 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel>
+                <TextBlock Text="Track-In 登记" Style="{StaticResource SectionTitleStyle}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 批次号 -->
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="批次号:"
+                               Style="{StaticResource InfoLabelStyle}"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"/>
+                    <TextBox Grid.Row="0" Grid.Column="1"
+                             Text="{Binding LotId, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{DynamicResource MesTextBox}"
+                             ToolTip="输入或扫描批次号"/>
+
+                    <!-- 设备号 -->
+                    <TextBlock Grid.Row="0" Grid.Column="2"
+                               Text="设备号:"
+                               Style="{StaticResource InfoLabelStyle}"
+                               VerticalAlignment="Center"
+                               Margin="16,0,8,0"/>
+                    <TextBox Grid.Row="0" Grid.Column="3"
+                             Text="{Binding EquipmentId, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{DynamicResource MesTextBox}"
+                             ToolTip="输入设备编号"/>
+
+                    <!-- 操作员 -->
+                    <TextBlock Grid.Row="0" Grid.Column="4"
+                               Text="操作员:"
+                               Style="{StaticResource InfoLabelStyle}"
+                               VerticalAlignment="Center"
+                               Margin="16,0,8,0"/>
+                    <TextBox Grid.Row="0" Grid.Column="5"
+                             Text="{Binding OperatorName, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{DynamicResource MesTextBox}"
+                             ToolTip="输入操作员姓名"/>
+
+                    <!-- 登记按钮 -->
+                    <Button Grid.Row="0" Grid.Column="6"
+                            Content="Track-In"
+                            Command="{Binding TrackInCommand}"
+                            Style="{DynamicResource MesPrimaryButton}"
+                            Margin="16,0,0,0"
+                            ToolTip="登记批次进站"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3"
+                   Text="{Binding ErrorMessage}"
+                   Foreground="{DynamicResource MesDangerBrush}"
+                   FontSize="13"
+                   Margin="0,0,0,16"
+                   Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <!-- 操作按钮 -->
+        <Border Grid.Row="4" Background="Transparent" Padding="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Track-Out"
+                        Command="{Binding TrackOutCommand}"
+                        Style="{DynamicResource MesPrimaryButton}"
+                        Margin="0,0,12,0"
+                        ToolTip="选中记录并执行出站"/>
+                <Button Content="刷新"
+                        Command="{Binding RefreshCommand}"
+                        Style="{DynamicResource MesSecondaryButton}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 进站记录列表 -->
+        <Border Grid.Row="5" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Records}"
+                      SelectedItem="{Binding SelectedRecord}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      Style="{DynamicResource MesDataGrid}"
+                      FontSize="12"
+                      SelectionMode="Single"
+                      CanUserSortColumns="True"
+                      CanUserResizeColumns="True"
+                      GridLinesVisibility="Horizontal"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="记录ID" Binding="{Binding RecordId}" Width="140"/>
+                    <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="120"/>
+                    <DataGridTextColumn Header="工序编码" Binding="{Binding StepCode}" Width="100"/>
+                    <DataGridTextColumn Header="工序名称" Binding="{Binding StepName}" Width="120"/>
+                    <DataGridTextColumn Header="设备号" Binding="{Binding EquipmentId}" Width="120"/>
+                    <DataGridTextColumn Header="操作员" Binding="{Binding Operator}" Width="100"/>
+                    <DataGridTextColumn Header="进站时间" Binding="{Binding TrackInTime}" Width="160"/>
+                    <DataGridTextColumn Header="出站时间" Binding="{Binding TrackOutTime}" Width="160"/>
+                    <DataGridTextColumn Header="投入数" Binding="{Binding QtyIn}" Width="80"/>
+                    <DataGridTextColumn Header="产出数" Binding="{Binding QtyOut}" Width="80"/>
+                    <DataGridTextColumn Header="合格数" Binding="{Binding QtyPass}" Width="80"/>
+                    <DataGridTextColumn Header="不合格数" Binding="{Binding QtyFail}" Width="100"/>
+                    <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                    <DataGridTextColumn Header="备注" Binding="{Binding Remark}" Width="*"/>
+                    <DataGridTemplateColumn Header="操作" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Track-Out"
+                                        Command="{Binding DataContext.TrackOutCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Padding="4,2"
+                                        FontSize="11">
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource MesPrimaryButton}">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="Completed">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,48 @@
+<Window x:Class="MES.Modules.Production.Views.AlarmRuleDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="报警规则" Height="360" Width="420"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource MesBackgroundBrush}"
+        ResizeMode="NoResize">
+    <ScrollViewer Padding="16">
+        <StackPanel>
+            <GroupBox Header="报警规则信息" Foreground="{StaticResource MesTextPrimaryBrush}"
+                      BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,12">
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/><RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/><RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/><RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/><RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="规则ID *" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtRuleId" Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="规则名称 *" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtRuleName" Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="报警类型" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtAlarmType" Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="条件" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtCondition" Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="通知角色" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtNotifyRoles" Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
+                <Button Content="确定" Width="100" Height="32" Background="{StaticResource MesAccentBrush}" Foreground="White" BorderThickness="0" Cursor="Hand" Click="btnSave_Click"/>
+                <Button Content="取消" Width="100" Height="32" Margin="16,0,0,0" Background="{StaticResource MesBorderBrush}" Foreground="{StaticResource MesTextPrimaryBrush}" BorderThickness="0" Cursor="Hand" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

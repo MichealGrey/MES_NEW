@@ -1,0 +1,318 @@
+<UserControl x:Class="MES.Modules.CustomerComplaint.Views.ComplaintDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:MES.Modules.CustomerComplaint.Models"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <ScrollViewer Margin="24">
+        <StackPanel>
+            <!-- 头部信息卡片 -->
+            <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="20" Margin="0,0,0,16">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <!-- 标题栏 -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="客诉详情" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                        <Button Content="刷新" Command="{Binding RefreshCommand}" Margin="16,0,0,0" Width="70" Height="28"/>
+                        <Button Content="提交审批" Command="{Binding SubmitForApprovalCommand}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        <Button Content="导出报告" Command="{Binding ExportReportCommand}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        <Button Content="编辑" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" Margin="8,0,0,0" Width="70" Height="28" CommandParameter="{Binding Complaint}"/>
+                    </StackPanel>
+
+                    <!-- 基本信息 WrapPanel -->
+                    <WrapPanel Grid.Row="2" ItemWidth="220">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="客诉单号:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.ComplaintNo}" FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="客户:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.CustomerName}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="产品:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.ProductName}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="订单号:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.OrderNo}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="客户PO:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.CustomerPONO}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="批次:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.LotId}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="状态:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.Status}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="8D进度:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.EightDStatus}" FontWeight="Bold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="优先级:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.Priority}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="严重度:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.Severity}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="缺陷类型:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.DefectType}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="负责人:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.AssignedTo}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="报告日期:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.ReportDate, StringFormat=yyyy-MM-dd}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="要求日期:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.RequiredDate, StringFormat=yyyy-MM-dd}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="开放天数:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.OpenDays}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,16,8">
+                            <TextBlock Text="逾期天数:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                            <TextBlock Text="{Binding Complaint.OverdueDays}" Foreground="Red"/>
+                        </StackPanel>
+                    </WrapPanel>
+
+                    <!-- 数量和问题描述 -->
+                    <StackPanel Grid.Row="4" Orientation="Vertical">
+                        <WrapPanel ItemWidth="220" Margin="0,0,0,8">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,16,4">
+                                <TextBlock Text="影响数量:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding Complaint.AffectedQty}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,16,4">
+                                <TextBlock Text="退货数量:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding Complaint.ReturnQty}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,16,4">
+                                <TextBlock Text="样品数量:" Width="70" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding Complaint.SampleQty}"/>
+                            </StackPanel>
+                        </WrapPanel>
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,8">
+                            <TextBlock Text="问题描述:" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+                            <TextBlock Text="{Binding Complaint.DefectDescription}" TextWrapping="Wrap" MaxWidth="800"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,8">
+                            <TextBlock Text="备注:" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+                            <TextBlock Text="{Binding Complaint.Remark}" TextWrapping="Wrap" MaxWidth="800"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- 8D 进度时间线 -->
+            <TextBlock Text="8D 处理进度" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,8"/>
+            <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                <StackPanel>
+                    <!-- 可视化步骤指示器 -->
+                    <ItemsControl ItemsSource="{Binding EightDSteps}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,8,8">
+                                    <Border CornerRadius="16" Padding="12,6" Margin="0,0,4,0">
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Setter Property="Background" Value="{DynamicResource MesBorderBrush}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsCompleted}" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Status}" Value="InProgress">
+                                                        <Setter Property="Background" Value="Orange"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBlock Foreground="White" FontWeight="SemiBold">
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0}: {1}">
+                                                    <Binding Path="Step"/>
+                                                    <Binding Path="StepName"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </Border>
+                                    <TextBlock Text="&#8594;" FontSize="16" VerticalAlignment="Center" Margin="4,0,0,0" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- 8D步骤详细内容 -->
+            <TextBlock Text="8D 步骤详情" FontSize="16" FontWeight="SemiBold" Margin="0,8,0,8"/>
+            <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                <DataGrid ItemsSource="{Binding EightDSteps}" AutoGenerateColumns="False" 
+                          CanUserAddRows="False" IsReadOnly="True"
+                          GridLinesVisibility="Horizontal" MaxHeight="300">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="步骤" Binding="{Binding Step}" Width="60"/>
+                        <DataGridTextColumn Header="步骤名称" Binding="{Binding StepName}" Width="100"/>
+                        <DataGridTextColumn Header="描述" Binding="{Binding Description}" Width="*"/>
+                        <DataGridTextColumn Header="完成状态" Binding="{Binding IsCompleted}" Width="80"/>
+                        <DataGridTextColumn Header="完成日期" Binding="{Binding CompletedDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                        <DataGridTextColumn Header="负责人" Binding="{Binding CompletedBy}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+            <!-- 子表展开区域 -->
+            <!-- 小组成员 -->
+            <Expander Header="D1: 小组成员" IsExpanded="False" Margin="0,0,0,8">
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Button Content="添加成员" Command="{Binding AddTeamMemberCommand}" Width="80" Height="28"/>
+                            <Button Content="删除成员" Command="{Binding DeleteTeamMemberCommand}" CommandParameter="{Binding SelectedItem, ElementName=TeamMemberGrid}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        </StackPanel>
+                        <DataGrid x:Name="TeamMemberGrid" ItemsSource="{Binding TeamMembers}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal" MaxHeight="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="姓名" Binding="{Binding MemberName}" Width="100"/>
+                                <DataGridTextColumn Header="部门" Binding="{Binding Department}" Width="100"/>
+                                <DataGridTextColumn Header="角色" Binding="{Binding Role}" Width="80"/>
+                                <DataGridTextColumn Header="联系方式" Binding="{Binding ContactInfo}" Width="120"/>
+                                <DataGridTextColumn Header="加入日期" Binding="{Binding JoinDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                                <DataGridTextColumn Header="备注" Binding="{Binding Remark}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </Expander>
+
+            <!-- 围堵措施 -->
+            <Expander Header="D3: 围堵措施" IsExpanded="False" Margin="0,0,0,8">
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Button Content="添加措施" Command="{Binding AddContainmentCommand}" Width="80" Height="28"/>
+                            <Button Content="删除" Command="{Binding DeleteContainmentCommand}" CommandParameter="{Binding SelectedItem, ElementName=ContainmentGrid}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        </StackPanel>
+                        <DataGrid x:Name="ContainmentGrid" ItemsSource="{Binding Containments}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal" MaxHeight="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="措施描述" Binding="{Binding ActionDescription}" Width="*"/>
+                                <DataGridTextColumn Header="影响批次" Binding="{Binding AffectedLot}" Width="100"/>
+                                <DataGridTextColumn Header="影响数量" Binding="{Binding AffectedQty}" Width="80"/>
+                                <DataGridTextColumn Header="围堵数量" Binding="{Binding ContainedQty}" Width="80"/>
+                                <DataGridTextColumn Header="处置方式" Binding="{Binding Disposition}" Width="100"/>
+                                <DataGridTextColumn Header="结果" Binding="{Binding Result}" Width="100"/>
+                                <DataGridTextColumn Header="责任人" Binding="{Binding ResponsiblePerson}" Width="100"/>
+                                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBlock Text="{Binding Complaint.D3ContainmentResult}" TextWrapping="Wrap" Margin="0,8,0,0" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                </Border>
+            </Expander>
+
+            <!-- 根因分析 -->
+            <Expander Header="D4: 根因分析" IsExpanded="False" Margin="0,0,0,8">
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Button Content="添加原因" Command="{Binding AddRootCauseCommand}" Width="80" Height="28"/>
+                            <Button Content="删除" Command="{Binding DeleteRootCauseCommand}" CommandParameter="{Binding SelectedItem, ElementName=RootCauseGrid}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        </StackPanel>
+                        <DataGrid x:Name="RootCauseGrid" ItemsSource="{Binding RootCauses}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal" MaxHeight="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="原因类型" Binding="{Binding CauseType}" Width="80"/>
+                                <DataGridTextColumn Header="分析方法" Binding="{Binding AnalysisMethod}" Width="100"/>
+                                <DataGridTextColumn Header="原因描述" Binding="{Binding CauseDescription}" Width="*"/>
+                                <DataGridTextColumn Header="Why1" Binding="{Binding Why1}" Width="120"/>
+                                <DataGridTextColumn Header="Why2" Binding="{Binding Why2}" Width="120"/>
+                                <DataGridTextColumn Header="Why3" Binding="{Binding Why3}" Width="120"/>
+                                <DataGridTextColumn Header="责任人" Binding="{Binding ResponsiblePerson}" Width="100"/>
+                                <DataGridTextColumn Header="分析日期" Binding="{Binding AnalysisDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </Expander>
+
+            <!-- 纠正措施 -->
+            <Expander Header="D5/D6: 纠正/预防措施" IsExpanded="False" Margin="0,0,0,8">
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Button Content="添加措施" Command="{Binding AddActionCommand}" Width="80" Height="28"/>
+                            <Button Content="删除" Command="{Binding DeleteActionCommand}" CommandParameter="{Binding SelectedItem, ElementName=ActionGrid}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        </StackPanel>
+                        <DataGrid x:Name="ActionGrid" ItemsSource="{Binding Actions}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal" MaxHeight="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="类型" Binding="{Binding ActionType}" Width="80"/>
+                                <DataGridTextColumn Header="措施描述" Binding="{Binding ActionDescription}" Width="*"/>
+                                <DataGridTextColumn Header="责任人" Binding="{Binding ResponsiblePerson}" Width="100"/>
+                                <DataGridTextColumn Header="计划日期" Binding="{Binding PlanDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                                <DataGridTextColumn Header="实际日期" Binding="{Binding ActualDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                                <DataGridTextColumn Header="验证方法" Binding="{Binding VerificationMethod}" Width="120"/>
+                                <DataGridTextColumn Header="验证结果" Binding="{Binding VerificationResult}" Width="120"/>
+                                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </Expander>
+
+            <!-- 文件更新 -->
+            <Expander Header="D7: 文件更新" IsExpanded="False" Margin="0,0,0,8">
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                            <Button Content="添加记录" Command="{Binding AddDocUpdateCommand}" Width="80" Height="28"/>
+                            <Button Content="删除" Command="{Binding DeleteDocUpdateCommand}" CommandParameter="{Binding SelectedItem, ElementName=DocUpdateGrid}" Margin="8,0,0,0" Width="80" Height="28"/>
+                        </StackPanel>
+                        <DataGrid x:Name="DocUpdateGrid" ItemsSource="{Binding DocUpdates}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal" MaxHeight="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="文档类型" Binding="{Binding DocType}" Width="80"/>
+                                <DataGridTextColumn Header="文档名称" Binding="{Binding DocName}" Width="120"/>
+                                <DataGridTextColumn Header="文档编号" Binding="{Binding DocNo}" Width="100"/>
+                                <DataGridTextColumn Header="更新描述" Binding="{Binding UpdateDescription}" Width="*"/>
+                                <DataGridTextColumn Header="责任人" Binding="{Binding ResponsiblePerson}" Width="100"/>
+                                <DataGridTextColumn Header="计划日期" Binding="{Binding PlanDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                                <DataGridTextColumn Header="实际日期" Binding="{Binding ActualDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="80"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </Expander>
+
+            <!-- 错误提示 -->
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" 
+                       HorizontalAlignment="Center" Margin="0,16" FontSize="14"
+                       Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

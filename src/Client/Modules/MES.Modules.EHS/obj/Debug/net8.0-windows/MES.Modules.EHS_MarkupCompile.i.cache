@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-3-1501399410
+5152424250
 
-13-1365788966
-2201708370146
-Views\ChemicalManagementView.xaml;Views\EnvironmentMonitorView.xaml;Views\GasMonitorView.xaml;
+16681797265
+2211403511454
+Views\ChemicalManagementView.xaml;Views\EnvironmentMonitorView.xaml;Views\EsdMonitorView.xaml;Views\GasMonitorView.xaml;Views\SafetyCheckView.xaml;
 
 False
 
