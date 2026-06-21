@@ -6,6 +6,8 @@ using MES.Shell.Services;
 using System.Collections.ObjectModel;
 using MES.Shared.Services;
 
+using ISessionService = MES.Shell.Services.ISessionService;
+
 namespace MES.Shell.ViewModels;
 
 public class MenuViewModel : BindableBase
@@ -22,13 +24,22 @@ public class MenuViewModel : BindableBase
         _session = session;
 
         SelectModuleCommand = new DelegateCommand<string>(OnSelectModule);
-
-        // 构建菜单时按用户权限过滤
         MenuItems = [];
+
+        BuildMenu();
+    }
+
+    /// <summary>登录后重建菜单（由 App.xaml.cs 调用）</summary>
+    public void BuildMenu()
+    {
+        MenuItems.Clear();
 
         var allMenus = new (string key, string displayName)[]
         {
-            ("Production",  "生产管理"),
+            ("Order",       "工单管理"),
+            ("Execute",     "生产执行"),
+            ("Lot",         "批次管理"),
+            ("MasterData",  "主数据"),
             ("Equipment",   "设备管理"),
             ("Recipe",      "配方管理"),
             ("Quality",     "质量管理"),
@@ -38,6 +49,10 @@ public class MenuViewModel : BindableBase
             ("Trace",       "追溯管理"),
             ("Yield",       "良率管理"),
             ("EHS",         "EHS管理"),
+            ("CustomerComplaint", "客诉8D"),
+            ("EngineeringChange", "工程变更"),
+            ("ReportCenter", "报表中心"),
+            ("SystemSettings", "系统设置"),
         };
 
         bool isFirst = true;
@@ -95,6 +110,10 @@ public class MenuViewModel : BindableBase
     private string? GetFallbackView(string moduleKey) => moduleKey switch
     {
         "Production" => FindFirstPermitted("Production", "WorkOrderListView", "LotListView", "TrackInView", "WipOverviewView", "LotHoldView", "GenealogyView", "LotSplitMergeView", "MasterDataView", "DispatchView", "ProductionReportView", "YieldReportView", "SystemMonitorView"),
+        "Order" => FindFirstPermitted("Order", "WorkOrderListView", "AddWorkOrderWin", "WorkOrderScheduleView", "CustomerProgressView"),
+        "Execute" => FindFirstPermitted("Execute", "TrackInView", "DispatchView", "ProductionReportView", "MaterialManagementView", "GradeSortView", "LotSplitMergeView"),
+        "Lot" => FindFirstPermitted("Lot", "LotListView", "LotDetailView", "LotHoldView", "WipOverviewView"),
+        "MasterData" => FindFirstPermitted("MasterData", "ProductManagementView", "RouteManagementView", "RecipeManagementView", "EquipmentManagementView"),
         "Equipment" => FindFirstPermitted("Equipment", "EquipmentOverviewView", "EquipmentDetailView", "EapControlView"),
         "Recipe" => FindFirstPermitted("Recipe", "RecipeListView", "RecipeApprovalView", "RecipeParameterView"),
         "Quality" => FindFirstPermitted("Quality", "SpcChartView", "SpcRuleConfigView", "OocEventView", "FdcMonitorView", "InspectionView"),
@@ -104,6 +123,10 @@ public class MenuViewModel : BindableBase
         "Trace" => FindFirstPermitted("Trace", "LotTraceView", "GenealogyView", "ImpactAnalysisView"),
         "Yield" => FindFirstPermitted("Yield", "YieldDashboardView", "YieldTrendView", "WaferMapView"),
         "EHS" => FindFirstPermitted("EHS", "EnvironmentMonitorView", "GasMonitorView", "ChemicalManagementView"),
+        "CustomerComplaint" => FindFirstPermitted("CustomerComplaint", "ComplaintListView", "ComplaintDetailView", "ComplaintAnalysisView"),
+        "EngineeringChange" => FindFirstPermitted("EngineeringChange", "ECNListView", "ECNDetailView", "ECNApprovalView"),
+        "ReportCenter" => FindFirstPermitted("ReportCenter", "ProductionReportView", "YieldReportView", "QualityReportView"),
+        "SystemSettings" => FindFirstPermitted("SystemSettings", "SystemMonitorView", "SystemHealthView", "ExternalSystemView"),
         _ => null
     };
 
@@ -117,6 +140,10 @@ public class MenuViewModel : BindableBase
     private static string GetDefaultView(string moduleKey) => moduleKey switch
     {
         "Production" => "WorkOrderListView",
+        "Order" => "WorkOrderListView",
+        "Execute" => "TrackInView",
+        "Lot" => "LotListView",
+        "MasterData" => "ProductManagementView",
         "Equipment"  => "EquipmentOverviewView",
         "Recipe"     => "RecipeListView",
         "Quality"    => "SpcChartView",
@@ -126,6 +153,10 @@ public class MenuViewModel : BindableBase
         "Trace"      => "LotTraceView",
         "Yield"      => "YieldDashboardView",
         "EHS"        => "EnvironmentMonitorView",
+        "CustomerComplaint" => "ComplaintListView",
+        "EngineeringChange" => "ECNListView",
+        "ReportCenter" => "ProductionReportView",
+        "SystemSettings" => "SystemMonitorView",
         _ => string.Empty
     };
 }

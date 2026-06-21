@@ -5,4 +5,8 @@
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MES.Domain\MES.Domain.csproj" />
+  </ItemGroup>
 </Project>

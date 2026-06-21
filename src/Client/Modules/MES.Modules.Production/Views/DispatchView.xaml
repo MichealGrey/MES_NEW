@@ -3,23 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
-            <TextBlock Text="派工管理" FontSize="20" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,16,0"/>
-            <Button Content="刷新" Command="{Binding RefreshCommand}" Width="80" Margin="0,0,8,0"/>
-            <Button Content="分配" Command="{Binding AssignCommand}" Width="80" Margin="0,0,8,0"/>
-            <Button Content="开始" Command="{Binding StartCommand}" Width="80" Margin="0,0,8,0"/>
-            <Button Content="完成" Command="{Binding CompleteCommand}" Width="80"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="派工管理" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,16,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="分配" Command="{Binding AssignCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="开始" Command="{Binding StartCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="完成" Command="{Binding CompleteCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
-        <Grid Grid.Row="1" Margin="0,0,0,12">
+        <Grid Grid.Row="1" Margin="0,0,0,16">
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -30,30 +30,12 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="#CDD6F4"/>
+            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
         </Grid>
 
         <DataGrid Grid.Row="2" ItemsSource="{Binding Tasks}" SelectedItem="{Binding SelectedTask}"
                   AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#313244"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="Padding" Value="8,4"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="32"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#45475A"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
                 <DataGridTextColumn Header="工单号" Binding="{Binding OrderId}" Width="120"/>

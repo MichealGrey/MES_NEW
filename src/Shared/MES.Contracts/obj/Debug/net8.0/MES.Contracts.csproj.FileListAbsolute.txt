@@ -9,6 +9,7 @@ D:\DSZStoreProject\wpftest\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES
 D:\DSZStoreProject\wpftest\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\refint\MES.Contracts.dll
 D:\DSZStoreProject\wpftest\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.pdb
 D:\DSZStoreProject\wpftest\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\ref\MES.Contracts.dll
+D:\DSZStoreProject\wpftest\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.sourcelink.json
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\bin\Debug\net8.0\MES.Contracts.deps.json
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\bin\Debug\net8.0\MES.Contracts.dll
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\bin\Debug\net8.0\MES.Contracts.pdb
@@ -16,6 +17,7 @@ E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.Genera
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.AssemblyInfoInputs.cache
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.AssemblyInfo.cs
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.csproj.CoreCompileInputs.cache
+E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.sourcelink.json
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.dll
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\refint\MES.Contracts.dll
 E:\AiProj\MES_NEW\src\Shared\MES.Contracts\obj\Debug\net8.0\MES.Contracts.pdb

@@ -393,3 +393,32 @@ public class SignatureLevelRepository : Repository<SysSignatureLevel>, ISignatur
         await _context.SysSignatureLevels
             .FirstOrDefaultAsync(l => l.LevelCode == levelCode);
 }
+
+public class PermissionConfirmRepository : Repository<SysPermissionConfirm>, IPermissionConfirmRepository
+{
+    public PermissionConfirmRepository(MesDbContext context) : base(context) { }
+
+    public async Task<List<SysPermissionConfirm>> GetByEmployeeAsync(string employeeId, int days = 7)
+    {
+        var cutoff = DateTime.UtcNow.AddDays(-days);
+        return await _context.SysPermissionConfirms
+            .Where(c => c.EmployeeId == employeeId && c.ConfirmAt >= cutoff)
+            .OrderByDescending(c => c.ConfirmAt)
+            .ToListAsync();
+    }
+
+    public async Task<List<SysPermissionConfirm>> GetByOperationAsync(string operationType, DateTime? from = null, DateTime? to = null)
+    {
+        var query = _context.SysPermissionConfirms
+            .Where(c => c.OperationType == operationType);
+
+        if (from.HasValue)
+            query = query.Where(c => c.ConfirmAt >= from.Value);
+        if (to.HasValue)
+            query = query.Where(c => c.ConfirmAt <= to.Value);
+
+        return await query
+            .OrderByDescending(c => c.ConfirmAt)
+            .ToListAsync();
+    }
+}

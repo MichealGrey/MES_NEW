@@ -12,14 +12,28 @@ public class EnumMatchConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (value == null || parameter == null) return false;
-        return value.ToString()?.Equals(parameter.ToString(), StringComparison.OrdinalIgnoreCase) ?? false;
+        if (parameter is not string paramStr) return false;
+
+        // ALL 代表"全部"：value 为 null 时才被选中
+        if (paramStr == "ALL")
+            return value == null;
+
+        if (value == null) return false;
+        return value.ToString()!.Equals(paramStr, StringComparison.OrdinalIgnoreCase);
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value is not bool isChecked || !isChecked || parameter == null)
             return Binding.DoNothing;
-        return Enum.Parse(targetType, parameter.ToString()!);
+
+        var paramStr = parameter.ToString()!;
+
+        // ALL 代表"全部"：返回 null 清除筛选
+        if (string.Equals(paramStr, "ALL", StringComparison.OrdinalIgnoreCase))
+            return null;
+
+        var enumType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+        return Enum.Parse(enumType, paramStr);
     }
 }

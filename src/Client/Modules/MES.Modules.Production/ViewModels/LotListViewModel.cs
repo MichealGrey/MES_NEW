@@ -1,5 +1,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation.Regions;
 using MES.Domain.Production;
 using MES.Modules.Production.Models;
 using MES.Modules.Production.Services;
@@ -9,25 +10,16 @@ using System.Windows.Input;
 
 namespace MES.Modules.Production.ViewModels;
 
-/// <summary>
-/// 工艺阶段枚举：前道(Assemble) / 后道(Test)
-/// </summary>
-public enum ProcessStage
-{
-    All,
-    Assemble,
-    Test
-}
-
 public class LotListViewModel : BindableBase
 {
     private readonly IProductionDataService _dataService;
+    private readonly IRegionManager _regionManager;
     private ObservableCollection<LotInfo> _lots = [];
     private ObservableCollection<LotInfo> _filteredLots = [];
     private LotInfo? _selectedLot;
     private string _searchText = string.Empty;
     private string? _filterStatus;
-    private ProcessStage _selectedStage = ProcessStage.All;
+    private ProcessStage? _selectedStage = null;
     private string? _errorMessage;
 
     // Assemble 阶段工序关键字
@@ -82,7 +74,7 @@ public class LotListViewModel : BindableBase
         }
     }
 
-    public ProcessStage SelectedStage
+    public ProcessStage? SelectedStage
     {
         get => _selectedStage;
         set
@@ -111,9 +103,10 @@ public class LotListViewModel : BindableBase
     public DelegateCommand ClearFilterCommand { get; }
     public DelegateCommand<LotInfo?> ViewDetailCommand { get; }
 
-    public LotListViewModel(IProductionDataService dataService)
+    public LotListViewModel(IProductionDataService dataService, IRegionManager regionManager)
     {
         _dataService = dataService;
+        _regionManager = regionManager;
 
         RefreshCommand = new DelegateCommand(async () => await ReloadDataAsync());
         ClearFilterCommand = new DelegateCommand(OnClearFilter);
@@ -149,7 +142,7 @@ public class LotListViewModel : BindableBase
         var query = Lots.AsEnumerable();
 
         // 工艺阶段过滤
-        if (SelectedStage != ProcessStage.All)
+        if (SelectedStage.HasValue)
             query = query.Where(l => GetStage(l) == SelectedStage);
 
         // 状态过滤
@@ -192,32 +185,14 @@ public class LotListViewModel : BindableBase
     {
         SearchText = string.Empty;
         FilterStatus = null;
-        SelectedStage = ProcessStage.All;
+        SelectedStage = null;
     }
 
     private void OnViewDetail(LotInfo? lot)
     {
         if (lot == null) return;
-        System.Windows.MessageBox.Show(
-            $"批次详情\n\n" +
-            $"批次号: {lot.LotId}\n" +
-            $"工单号: {lot.OrderId}\n" +
-            $"产品: {lot.ProductName}\n" +
-            $"管芯: {lot.DieName}\n" +
-            $"封装类型: {lot.PackageTypeDisplay}\n" +
-            $"当前工序: {lot.CurrentStep} (Step {lot.CurrentStepSeq})\n" +
-            $"工艺阶段: {(GetStage(lot) == ProcessStage.Assemble ? "Assemble(前道)" : "Test(后道)")}\n" +
-            $"状态: {lot.Status}\n" +
-            $"优先级: {lot.Priority}\n" +
-            $"数量: {lot.UnitCount}\n" +
-            $"载具: {lot.CarrierTypeDisplay} / {lot.CarrierId}\n" +
-            $"原始数量: {lot.OriginalQty}\n" +
-            $"累计合格: {lot.TotalPassQty}\n" +
-            $"累计报废: {lot.TotalScrapQty}\n" +
-            $"当前良率: {lot.CurrentYield:F1}%",
-            "批次详情",
-            System.Windows.MessageBoxButton.OK,
-            System.Windows.MessageBoxImage.Information);
+        var parameters = new NavigationParameters { { "LotId", lot.LotId } };
+        _regionManager.RequestNavigate("MainContentRegion", "LotDetailViewV2", parameters);
     }
 
     private void RaiseCanExecuteChanged()

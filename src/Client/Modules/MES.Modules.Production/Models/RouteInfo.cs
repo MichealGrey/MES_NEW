@@ -5,7 +5,11 @@ public class RouteInfo
     public string RouteId { get; set; } = string.Empty;
     public string RouteName { get; set; } = string.Empty;
     public string RouteVersion { get; set; } = "1.0";
+    public string RouteCode { get; set; } = string.Empty;
     public string ProductId { get; set; } = string.Empty;
+    public string Version { get; set; } = "1.0";
+    public string Status { get; set; } = "Active";
+    public string Description { get; set; } = string.Empty;
     public string PackageType { get; set; } = string.Empty;
     public bool IsActive { get; set; }
     public bool IsApproved { get; set; }

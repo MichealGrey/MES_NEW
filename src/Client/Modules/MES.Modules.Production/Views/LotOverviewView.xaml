@@ -1,0 +1,132 @@
+<UserControl x:Class="MES.Modules.Production.Views.LotOverviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="批次全览" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="筛选结果" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding TotalCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="活跃批次" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding ActiveCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesInfoBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="Hold" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding HoldCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesDangerBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="已完成" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding CompletedCount}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 过滤栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="12" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 状态过滤 -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <TextBlock Text="状态:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox Width="110"
+                              SelectedValue="{Binding StatusFilter}"
+                              SelectedValuePath="Content">
+                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem Content="Waiting"/>
+                        <ComboBoxItem Content="Processing"/>
+                        <ComboBoxItem Content="Hold"/>
+                        <ComboBoxItem Content="Completed"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- 阶段过滤 -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <TextBlock Text="阶段:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox Width="110"
+                              SelectedValue="{Binding StageFilter}"
+                              SelectedValuePath="Content">
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="Assemble"/>
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Finished"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- 搜索框 -->
+                <TextBox Grid.Column="2" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,16,0" Width="220" Style="{DynamicResource MesTextBox}"/>
+
+                <!-- 搜索按钮 -->
+                <Button Grid.Column="3" Content="搜索" Command="{Binding SearchCommand}"
+                        Style="{DynamicResource MesPrimaryButton}" HorizontalAlignment="Left" Margin="0,0,8,0"/>
+
+                <!-- 刷新按钮 -->
+                <Button Grid.Column="4" Content="刷新" Command="{Binding RefreshCommand}"
+                        Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+
+                <!-- 清除按钮 -->
+                <Button Grid.Column="5" Content="清除"
+                        Style="{DynamicResource MesSecondaryButton}"
+                        Click="OnClearFilterClick"/>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding FilteredLots}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Style="{DynamicResource MesDataGrid}"
+                  SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
+                <DataGridTextColumn Header="工单号" Binding="{Binding OrderId}" Width="120"/>
+                <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
+                <DataGridTextColumn Header="批次类型" Binding="{Binding LotLevelDisplay}" Width="90"/>
+                <DataGridTextColumn Header="工艺阶段" Binding="{Binding ProcessStageDisplay}" Width="90"/>
+                <DataGridTextColumn Header="当前工序" Binding="{Binding CurrentStep}" Width="110"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="90"/>
+                <DataGridTextColumn Header="数量" Binding="{Binding UnitCount}" Width="70"/>
+                <DataGridTextColumn Header="原始数量" Binding="{Binding OriginalQty}" Width="80"/>
+                <DataGridTextColumn Header="良率" Binding="{Binding CurrentYield, StringFormat={}{0:F1}%}" Width="80"/>
+                <DataGridTextColumn Header="优先级" Binding="{Binding Priority}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -7,6 +7,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
     <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
     <PackageReference Include="Prism.Wpf" Version="9.0.537" />
   </ItemGroup>
@@ -26,5 +27,9 @@
     <ProjectReference Include="..\Modules\MES.Modules.Trace\MES.Modules.Trace.csproj" />
     <ProjectReference Include="..\Modules\MES.Modules.Yield\MES.Modules.Yield.csproj" />
     <ProjectReference Include="..\Modules\MES.Modules.EHS\MES.Modules.EHS.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.Order\MES.Modules.Order.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.CustomerComplaint\MES.Modules.CustomerComplaint.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.EngineeringChange\MES.Modules.EngineeringChange.csproj" />
+    <ProjectReference Include="..\Modules\MES.Modules.ReportCenter\MES.Modules.ReportCenter.csproj" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,46 @@
+<UserControl x:Class="MES.Modules.EngineeringChange.Views.ECNHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 搜索工具栏 -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Text="{Binding SearchECNId}" Padding="8" VerticalContentAlignment="Center" ToolTip="输入ECN单号搜索"/>
+            <Button Grid.Column="1" Content="搜索" Command="{Binding SearchCommand}" Margin="8,0,0,0" Width="70"/>
+            <Button Grid.Column="2" Content="刷新" Command="{Binding RefreshCommand}" Margin="8,0,0,0" Width="70"/>
+        </Grid>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="2" ItemsSource="{Binding AllHistory}" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" GridLinesVisibility="Horizontal">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ECN单号" Binding="{Binding ECNId}" Width="130"/>
+                <DataGridTextColumn Header="操作" Binding="{Binding Action}" Width="100"/>
+                <DataGridTextColumn Header="操作人" Binding="{Binding ActionBy}" Width="100"/>
+                <DataGridTextColumn Header="从状态" Binding="{Binding FromStatus}" Width="80"/>
+                <DataGridTextColumn Header="到状态" Binding="{Binding ToStatus}" Width="80"/>
+                <DataGridTextColumn Header="备注" Binding="{Binding Comment}" Width="*"/>
+                <DataGridTextColumn Header="时间" Binding="{Binding ActionDate, StringFormat=yyyy-MM-dd HH:mm}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="2" Text="{Binding ErrorMessage}" Foreground="Red" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"
+                   TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

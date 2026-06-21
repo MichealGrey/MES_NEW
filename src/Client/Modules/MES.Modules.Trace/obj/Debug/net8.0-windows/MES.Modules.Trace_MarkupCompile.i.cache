@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-3-1432277630
+6-360676080
 
-13822157097
-2201708370146
-Views\GenealogyView.xaml;Views\ImpactAnalysisView.xaml;Views\LotTraceView.xaml;
+16-249852514
+225942001167
+Views\BackwardTraceView.xaml;Views\CustomerTraceReportView.xaml;Views\ForwardTraceView.xaml;Views\GenealogyView.xaml;Views\ImpactAnalysisView.xaml;Views\LotTraceView.xaml;
 
 False
 

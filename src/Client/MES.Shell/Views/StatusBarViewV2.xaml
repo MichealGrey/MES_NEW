@@ -1,0 +1,91 @@
+<UserControl x:Class="MES.Shell.Views.StatusBarViewV2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundSurfaceBrush}">
+
+    <Border BorderBrush="{DynamicResource MesBorderDefaultBrush}"
+            BorderThickness="0,1,0,0">
+        <Grid Margin="16,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 左侧状态信息 -->
+            <StackPanel Grid.Column="0"
+                       Orientation="Horizontal"
+                       VerticalAlignment="Center">
+                <!-- 系统状态指示灯 -->
+                <Ellipse Width="8" Height="8"
+                        VerticalAlignment="Center"
+                        Margin="0,0,8,0">
+                    <Ellipse.Style>
+                        <Style TargetType="Ellipse">
+                            <Setter Property="Fill" Value="{DynamicResource MesSuccessBrush}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsConnected}" Value="False">
+                                    <Setter Property="Fill" Value="{DynamicResource MesDangerBrush}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Ellipse.Style>
+                </Ellipse>
+                
+                <TextBlock Text="{Binding StatusMessage}"
+                          FontSize="12"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"
+                          VerticalAlignment="Center"/>
+                
+                <Border Width="1" Height="16"
+                       Background="{DynamicResource MesBorderDefaultBrush}"
+                       Margin="16,0"/>
+                
+                <TextBlock Text="{Binding CurrentUser}"
+                          FontSize="12"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"
+                          VerticalAlignment="Center"/>
+                
+                <Border Width="1" Height="16"
+                       Background="{DynamicResource MesBorderDefaultBrush}"
+                       Margin="16,0"/>
+                
+                <TextBlock Text="{Binding ShiftInfo}"
+                          FontSize="12"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"
+                          VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- 右侧时间和版本 -->
+            <StackPanel Grid.Column="1"
+                       Orientation="Horizontal"
+                       VerticalAlignment="Center">
+                <!-- 告警指示器 -->
+                <Border Background="{DynamicResource MesDangerBrush}"
+                       CornerRadius="{DynamicResource MesRadiusFull}"
+                       Padding="8,2"
+                       Margin="0,0,16,0"
+                       Visibility="{Binding HasAlarms, Converter={StaticResource BoolToVis}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="⚠" FontSize="10" Foreground="White"/>
+                        <TextBlock Text="{Binding ActiveAlarmCount}"
+                                  FontSize="11"
+                                  FontWeight="Medium"
+                                  Foreground="White"
+                                  Margin="4,0,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+                <TextBlock Text="{Binding SystemTime, StringFormat='yyyy-MM-dd HH:mm:ss'}"
+                          FontSize="12"
+                          FontFamily="{DynamicResource MesFontCode}"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"
+                          Margin="0,0,16,0"/>
+                <TextBlock Text="{Binding AppVersion}"
+                          FontSize="12"
+                          Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

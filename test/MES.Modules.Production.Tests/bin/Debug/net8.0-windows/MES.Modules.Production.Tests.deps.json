@@ -594,6 +594,7 @@
       },
       "MES.Modules.Production/1.0.0": {
         "dependencies": {
+          "MES.Domain": "1.0.0",
           "MES.Infrastructure": "1.0.0",
           "MES.Infrastructure.Persistence": "1.0.0",
           "MES.Shared": "1.0.0",
@@ -608,6 +609,9 @@
         }
       },
       "MES.Shared/1.0.0": {
+        "dependencies": {
+          "MES.Domain": "1.0.0"
+        },
         "runtime": {
           "MES.Shared.dll": {
             "assemblyVersion": "1.0.0.0",

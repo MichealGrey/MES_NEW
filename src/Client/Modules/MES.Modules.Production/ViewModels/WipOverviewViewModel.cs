@@ -48,7 +48,7 @@ public class WipOverviewViewModel : BindableBase
     private ObservableCollection<WipStepInfo> _wipByStep = [];
     private WipSummary _summary = new();
     private string? _errorMessage;
-    private ProcessStage _selectedStage = ProcessStage.All;
+    private ProcessStage? _selectedStage = null;
 
     // 工序名称映射
     private static readonly Dictionary<string, string> StepNameMap = new(StringComparer.OrdinalIgnoreCase)
@@ -91,7 +91,7 @@ public class WipOverviewViewModel : BindableBase
         set => SetProperty(ref _errorMessage, value);
     }
 
-    public ProcessStage SelectedStage
+    public ProcessStage? SelectedStage
     {
         get => _selectedStage;
         set
@@ -107,6 +107,7 @@ public class WipOverviewViewModel : BindableBase
     {
         _dataService = dataService;
         RefreshCommand = new DelegateCommand(async () => await ReloadDataAsync());
+        RefreshCommand.Execute();
         _ = InitializeAsync();
     }
 
@@ -132,9 +133,9 @@ public class WipOverviewViewModel : BindableBase
 
     private void RefreshData()
     {
-        if (WipByStep.Count == 0) return;
+        //if (WipByStep.Count == 0) return;
         // 从当前数据重新过滤（不重新请求API）
-        var allLots = WipByStep.SelectMany(s => Enumerable.Repeat(0, s.WipCount)).ToList();
+        //var allLots = WipByStep.SelectMany(s => Enumerable.Repeat(0, s.WipCount)).ToList();
         // 简化：直接重新加载
         _ = ReloadDataAsync();
     }

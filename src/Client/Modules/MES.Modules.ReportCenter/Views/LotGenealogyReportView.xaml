@@ -1,0 +1,114 @@
+<UserControl x:Class="MES.Modules.ReportCenter.Views.LotGenealogyReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题和操作按钮 -->
+        <Grid Grid.Row="0" Margin="0,0,0,16">
+            <TextBlock Text="报表中心 - 批次追溯报表" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource MesTextPrimaryBrush}" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="清除筛选" Style="{DynamicResource MesSecondaryButton}" Command="{Binding ClearFilterCommand}"
+                        Margin="0,0,8,0" Padding="16,6"/>
+                <Button Content="刷新" Style="{DynamicResource MesPrimaryButton}" Command="{Binding RefreshCommand}"
+                        Padding="16,6"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="总批次" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalLots}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="已完成" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding CompletedCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="进行中" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding InProgressCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesWarningBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="分批" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding SplitCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesInfoBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="合批" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding MergeCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 过滤栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="批次号搜索:" FontSize="13" FontWeight="SemiBold"
+                           Foreground="{DynamicResource MesTextPrimaryBrush}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{DynamicResource MesTextBox}" VerticalContentAlignment="Center" Padding="8,6"/>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="3" Style="{DynamicResource MesDataGrid}"
+                  ItemsSource="{Binding GenealogyReports}"
+                  SelectedItem="{Binding SelectedItem}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="批次编号" Binding="{Binding LotNo}" Width="120"/>
+                <DataGridTextColumn Header="产品名称" Binding="{Binding ProductName}" Width="150"/>
+                <DataGridTextColumn Header="父批次" Binding="{Binding ParentLotNo}" Width="120"/>
+                <DataGridTextColumn Header="子批次" Binding="{Binding ChildLotNo}" Width="120"/>
+                <DataGridTextColumn Header="工序" Binding="{Binding ProcessStep}" Width="120"/>
+                <DataGridTextColumn Header="设备编号" Binding="{Binding EquipmentNo}" Width="100"/>
+                <DataGridTextColumn Header="操作员" Binding="{Binding Operator}" Width="100"/>
+                <DataGridTextColumn Header="开始时间" Binding="{Binding StartTime, StringFormat=yyyy-MM-dd HH:mm}" Width="150"/>
+                <DataGridTextColumn Header="结束时间" Binding="{Binding EndTime, StringFormat=yyyy-MM-dd HH:mm}" Width="150"/>
+                <DataGridTextColumn Header="投入数" Binding="{Binding InputQty}" Width="80"/>
+                <DataGridTextColumn Header="产出数" Binding="{Binding OutputQty}" Width="80"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="100"/>
+                <DataGridTextColumn Header="分批/合批" Binding="{Binding SplitMergeType}" Width="100"/>
+                <DataGridTextColumn Header="追溯层级" Binding="{Binding TraceLevel}" Width="100"/>
+                <DataGridTemplateColumn Header="操作" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="详情" Style="{DynamicResource MesPrimaryButton}" Padding="8,4" FontSize="12"
+                                    Command="{Binding DataContext.ViewDetailCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

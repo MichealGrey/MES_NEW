@@ -1,0 +1,169 @@
+<UserControl x:Class="MES.Shell.Views.ComponentDemoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="32">
+        <StackPanel MaxWidth="1200">
+
+            <!-- 页面标题 -->
+            <TextBlock Text="V2.0 组件演示"
+                      FontFamily="{DynamicResource MesFontDisplay}"
+                      FontSize="28"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,32"/>
+
+            <!-- 按钮组件演示 -->
+            <TextBlock Text="按钮组件"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,16"/>
+            
+            <WrapPanel Margin="0,0,0,32">
+                <Button Content="主要按钮" Style="{StaticResource MesPrimaryButton}" Margin="0,0,12,0"/>
+                <Button Content="次要按钮" Style="{StaticResource MesSecondaryButton}" Margin="0,0,12,0"/>
+                <Button Content="危险按钮" Style="{StaticResource MesDangerButton}" Margin="0,0,12,0"/>
+                <Button Content="幽灵按钮" Style="{StaticResource MesGhostButton}" Margin="0,0,12,0"/>
+                <Button Content="小按钮" Style="{StaticResource MesSmallButton}" Margin="0,0,12,0"/>
+                <Button Content="大按钮" Style="{StaticResource MesLargeButton}"/>
+            </WrapPanel>
+
+            <!-- 输入框组件演示 -->
+            <TextBlock Text="输入框组件"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,16"/>
+            
+            <StackPanel Margin="0,0,0,32" MaxWidth="400">
+                <TextBox Text="默认状态" Style="{StaticResource MesTextBox}" Margin="0,0,0,12"/>
+                <TextBox Text="错误状态" Style="{StaticResource MesTextBoxError}"/>
+            </StackPanel>
+
+            <!-- 卡片组件演示 -->
+            <TextBlock Text="卡片组件"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,16"/>
+            
+            <WrapPanel Margin="0,0,0,32">
+                <!-- KPI卡片 -->
+                <Border Style="{StaticResource MesKpiCard}" Width="200" Margin="0,0,16,0">
+                    <StackPanel>
+                        <TextBlock Text="📦 总批次"
+                                  FontSize="14"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                        <TextBlock Text="1,245"
+                                  FontSize="28"
+                                  FontWeight="SemiBold"
+                                  Foreground="{DynamicResource MesTextPrimaryBrush}"
+                                  Margin="0,8"/>
+                        <TextBlock Text="↑ 12% vs 上周"
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesSuccessBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 操作卡片 -->
+                <Border Style="{StaticResource MesActionCard}" Width="200" Margin="0,0,16,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="📱"
+                                  FontSize="32"
+                                  HorizontalAlignment="Center"
+                                  Margin="0,0,0,12"/>
+                        <TextBlock Text="工单执行"
+                                  FontSize="16"
+                                  FontWeight="Medium"
+                                  Foreground="{DynamicResource MesTextPrimaryBrush}"
+                                  HorizontalAlignment="Center"/>
+                        <TextBlock Text="扫码进站"
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"
+                                  HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <!-- 批次层级色彩演示 -->
+            <TextBlock Text="批次层级色彩"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,16"/>
+            
+            <WrapPanel Margin="0,0,0,32">
+                <Border Background="{DynamicResource MesWaferLotLevelBrush}"
+                       Width="120" Height="40" CornerRadius="{DynamicResource MesRadiusSm}"
+                       Margin="0,0,12,0">
+                    <TextBlock Text="Wafer Lot"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="White"
+                              FontWeight="Medium"/>
+                </Border>
+                <Border Background="{DynamicResource MesMotherLotLevelBrush}"
+                       Width="120" Height="40" CornerRadius="{DynamicResource MesRadiusSm}"
+                       Margin="0,0,12,0">
+                    <TextBlock Text="Mother Lot"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="White"
+                              FontWeight="Medium"/>
+                </Border>
+                <Border Background="{DynamicResource MesSubLotLevelBrush}"
+                       Width="120" Height="40" CornerRadius="{DynamicResource MesRadiusSm}"
+                       Margin="0,0,12,0">
+                    <TextBlock Text="Sub Lot"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="White"
+                              FontWeight="Medium"/>
+                </Border>
+                <Border Background="{DynamicResource MesGradeLotLevelBrush}"
+                       Width="120" Height="40" CornerRadius="{DynamicResource MesRadiusSm}"
+                       Margin="0,0,12,0">
+                    <TextBlock Text="Grade Lot"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="White"
+                              FontWeight="Medium"/>
+                </Border>
+                <Border Background="{DynamicResource MesMfgIdLevelBrush}"
+                       Width="120" Height="40" CornerRadius="{DynamicResource MesRadiusSm}">
+                    <TextBlock Text="MFG ID"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="White"
+                              FontWeight="Medium"/>
+                </Border>
+            </WrapPanel>
+
+            <!-- 状态标签演示 -->
+            <TextBlock Text="状态标签"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      Margin="0,0,0,16"/>
+            
+            <WrapPanel Margin="0,0,0,32">
+                <Border Style="{StaticResource MesBadgeSuccess}" Margin="0,0,12,0">
+                    <TextBlock Text="● 在制" Foreground="White" FontSize="12" FontWeight="Medium" Padding="4,0"/>
+                </Border>
+                <Border Style="{StaticResource MesBadgeWarning}" Margin="0,0,12,0">
+                    <TextBlock Text="◐ 等待" Foreground="White" FontSize="12" FontWeight="Medium" Padding="4,0"/>
+                </Border>
+                <Border Style="{StaticResource MesBadgeDanger}" Margin="0,0,12,0">
+                    <TextBlock Text="⏸ 暂扣" Foreground="White" FontSize="12" FontWeight="Medium" Padding="4,0"/>
+                </Border>
+                <Border Style="{StaticResource MesBadgeInfo}" Margin="0,0,12,0">
+                    <TextBlock Text="✓ 完成" Foreground="White" FontSize="12" FontWeight="Medium" Padding="4,0"/>
+                </Border>
+            </WrapPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,69 @@
+<UserControl x:Class="MES.Modules.Equipment.Views.FixtureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <TextBlock Grid.Row="0" Text="工装夹具管理" Style="{DynamicResource MesPageTitle}" Margin="0,0,0,16"/>
+
+        <!-- 操作区域 -->
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="即将到期: " VerticalAlignment="Center" Margin="0,0,4,0"/>
+                <TextBlock Text="{Binding NearExpiryCount}" FontWeight="Bold" Foreground="Orange" VerticalAlignment="Center"/>
+                <TextBlock Text=" 项" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                <Button Content="刷新数据" Command="{Binding RefreshCommand}" Padding="12,4" Margin="0,0,8,0"/>
+                <Button Content="保存" Command="{Binding SaveCommand}" Padding="12,4"/>
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="16,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 数据表格 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,0">
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}"
+                      AutoGenerateColumns="False" IsReadOnly="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="工装编号" Binding="{Binding FixtureNo}" Width="140"/>
+                    <DataGridTextColumn Header="工装类型" Binding="{Binding FixtureType}" Width="100"/>
+                    <DataGridTextColumn Header="适用设备" Binding="{Binding EquipmentType}" Width="120"/>
+                    <DataGridTextColumn Header="使用次数" Binding="{Binding UseCount}" Width="80"/>
+                    <DataGridTextColumn Header="最大使用次数" Binding="{Binding MaxUseCount}" Width="100"/>
+                    <DataGridTemplateColumn Header="使用状态" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Status}" HorizontalAlignment="Center">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="Green"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="NearExpiry">
+                                                    <Setter Property="Foreground" Value="Orange"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="Expired">
+                                                    <Setter Property="Foreground" Value="Red"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="最后使用时间" Binding="{Binding LastUsed, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Width="140"/>
+                    <DataGridTextColumn Header="最后校准日期" Binding="{Binding LastCalibration, StringFormat='{}{0:yyyy-MM-dd}'}" Width="140"/>
+                    <DataGridTextColumn Header="存放位置" Binding="{Binding Location}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

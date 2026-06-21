@@ -1,0 +1,193 @@
+<Window x:Class="MES.Modules.Order.Views.AddWorkOrderWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="新建工单" Height="680" Width="580"
+        Background="{StaticResource MesBackgroundBrush}"
+        WindowStartupLocation="CenterOwner">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="16">
+        <StackPanel>
+            <GroupBox Header="基本信息" Foreground="{StaticResource MesTextPrimaryBrush}"
+                      BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="工单号 *" Grid.Row="0" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtOrderNo" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="产品ID" Grid.Row="2" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtProductId" Grid.Row="2" Grid.Column="1"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="产品名称 *" Grid.Row="2" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtProduct" Grid.Row="2" Grid.Column="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="管芯" Grid.Row="4" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtDieName" Grid.Row="4" Grid.Column="1"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="封装类型" Grid.Row="4" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <ComboBox Name="cmbPackageType" Grid.Row="4" Grid.Column="4"
+                              Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesComboxTextBrush}"
+                              BorderBrush="{StaticResource MesBorderBrush}">
+                        <ComboBoxItem Content="BGA"/>
+                        <ComboBoxItem Content="QFP"/>
+                        <ComboBoxItem Content="QFN"/>
+                        <ComboBoxItem Content="SOP"/>
+                        <ComboBoxItem Content="CSP"/>
+                        <ComboBoxItem Content="SiP"/>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="生产信息" Foreground="{StaticResource MesTextPrimaryBrush}"
+                      BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="工艺路线" Grid.Row="0" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <ComboBox Name="cmbRoute" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"
+                              Background="{DynamicResource MesComboxTextBrush}" Foreground="{DynamicResource MesComboxTextBrush}"
+                              BorderBrush="{StaticResource MesBorderBrush}">
+                        <ComboBoxItem Content="RT-001: DA-WB-MOLD-TF-FT"/>
+                        <ComboBoxItem Content="RT-002: DA-WB-MOLD-MARK-FT"/>
+                        <ComboBoxItem Content="RT-003: DA-MOLD-TF-MARK-FT"/>
+                    </ComboBox>
+
+                    <TextBlock Text="计划量 *" Grid.Row="2" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtPlannedQty" Grid.Row="2" Grid.Column="1"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}">25</TextBox>
+
+                    <TextBlock Text="成品颗数" Grid.Row="2" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtUnitQty" Grid.Row="2" Grid.Column="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}">25</TextBox>
+
+                    <TextBlock Text="优先级" Grid.Row="4" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <ComboBox Name="cmbPriority" Grid.Row="4" Grid.Column="1" SelectedIndex="1"
+                              Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesComboxTextBrush}"
+                              BorderBrush="{StaticResource MesBorderBrush}">
+                        <ComboBoxItem Content="Urgent"/>
+                        <ComboBoxItem Content="High"/>
+                        <ComboBoxItem Content="Normal"/>
+                        <ComboBoxItem Content="Low"/>
+                    </ComboBox>
+
+                    <TextBlock Text="良率目标%" Grid.Row="4" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtYieldTarget" Grid.Row="4" Grid.Column="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}">95</TextBox>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="排程信息" Foreground="{StaticResource MesTextPrimaryBrush}"
+                      BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="计划开始" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <DatePicker Name="dpStartDate" Grid.Column="1"
+                                Background="{StaticResource MesSurfaceBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="计划结束" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <DatePicker Name="dpEndDate" Grid.Column="4"
+                                Background="{StaticResource MesSurfaceBrush}" BorderBrush="{StaticResource MesBorderBrush}"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="客户信息" Foreground="{StaticResource MesTextPrimaryBrush}"
+                      BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="客户名称" Grid.Row="0" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtCustomer" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+
+                    <TextBlock Text="区域" Grid.Row="2" Grid.Column="0" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <ComboBox Name="cmbArea" Grid.Row="2" Grid.Column="1" SelectedIndex="0"
+                              Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesComboxTextBrush}"
+                              BorderBrush="{StaticResource MesBorderBrush}">
+                        <ComboBoxItem Content="PK1"/>
+                        <ComboBoxItem Content="PK2"/>
+                    </ComboBox>
+
+                    <TextBlock Text="规格书" Grid.Row="2" Grid.Column="3" Foreground="{StaticResource MesTextSecondaryBrush}" VerticalAlignment="Center"/>
+                    <TextBox Name="txtSpecId" Grid.Row="2" Grid.Column="4"
+                             Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                             BorderBrush="{StaticResource MesBorderBrush}"/>
+                </Grid>
+            </GroupBox>
+
+            <TextBlock Text="备注" Foreground="{StaticResource MesTextSecondaryBrush}" Margin="0,0,0,4"/>
+            <TextBox Name="txtRemark" Height="60" AcceptsReturn="True" TextWrapping="Wrap"
+                     Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                     BorderBrush="{StaticResource MesBorderBrush}" Margin="0,0,0,16"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,8">
+                <Button Content="确定保存" Name="btnSave" Width="100" Height="32"
+                        Background="{StaticResource MesAccentBrush}" Foreground="White"
+                        BorderThickness="0" Click="btnSave_Click"/>
+                <Button Content="取消" Width="100" Height="32" Margin="16,0,0,0"
+                        Background="{StaticResource MesBorderBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
+                        BorderThickness="0" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

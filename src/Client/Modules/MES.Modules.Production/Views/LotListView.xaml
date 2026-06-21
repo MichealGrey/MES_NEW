@@ -4,9 +4,9 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
 
-    <Grid Margin="16">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>   <!-- 标题 -->
             <RowDefinition Height="Auto"/>   <!-- 统计卡片 -->
@@ -15,64 +15,57 @@
         </Grid.RowDefinitions>
 
         <!-- 标题 -->
-        <TextBlock Grid.Row="0" Text="批次管理" FontSize="20" FontWeight="Bold"
-                   Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="0" Text="批次管理" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
 
         <!-- 统计卡片行 -->
-        <WrapPanel Grid.Row="1" Margin="0,0,0,12">
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
                 <StackPanel>
-                    <TextBlock Text="总批次" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding TotalCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="{StaticResource MesTextPrimaryBrush}"/>
+                    <TextBlock Text="总批次" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TotalCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                 </StackPanel>
             </Border>
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
                 <StackPanel>
-                    <TextBlock Text="Assemble" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding AssembleCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="#00D2FF"/>
+                    <TextBlock Text="Assemble" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding AssembleCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesInfoBrush}"/>
                 </StackPanel>
             </Border>
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
                 <StackPanel>
-                    <TextBlock Text="Test" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding TestCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="#4CC56C"/>
+                    <TextBlock Text="Test" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding TestCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesSuccessBrush}"/>
                 </StackPanel>
             </Border>
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesCriticalBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
                 <StackPanel>
-                    <TextBlock Text="Hold" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding HoldCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="{StaticResource MesCriticalBrush}"/>
+                    <TextBlock Text="Hold" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding HoldCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesDangerBrush}"/>
                 </StackPanel>
             </Border>
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,8,0">
                 <StackPanel>
-                    <TextBlock Text="等待中" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding WaitingCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="{StaticResource MesWarningBrush}"/>
+                    <TextBlock Text="等待中" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding WaitingCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesWarningBrush}"/>
                 </StackPanel>
             </Border>
-            <Border Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                    BorderThickness="1" CornerRadius="4" Padding="12,8" Margin="0,0,8,0">
+            <Border Style="{DynamicResource MesKpiCard}" Margin="0,0,0,0">
                 <StackPanel>
-                    <TextBlock Text="生产中" FontSize="11" Foreground="{StaticResource MesTextMutedBrush}"/>
-                    <TextBlock Text="{Binding ProcessingCount}" FontSize="18" FontWeight="Bold"
-                               Foreground="{StaticResource MesAccentBrush}"/>
+                    <TextBlock Text="生产中" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding ProcessingCount}" FontSize="28" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesInfoBrush}"/>
                 </StackPanel>
             </Border>
         </WrapPanel>
 
         <!-- 过滤栏 -->
-        <Border Grid.Row="2" Background="{StaticResource MesCardBrush}" BorderBrush="{StaticResource MesBorderBrush}"
-                BorderThickness="1" CornerRadius="4" Padding="12" Margin="0,0,0,12">
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -84,24 +77,25 @@
 
                 <!-- 工艺阶段 Tab -->
                 <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="阶段:" FontSize="13" Foreground="{StaticResource MesTextSecondaryBrush}"
+                    <TextBlock Text="阶段:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
                                VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <RadioButton Content="全部"
                                  IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=All}"
-                                 FontSize="13" Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,12,0"/>
+                                 FontSize="13" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,12,0"/>
                     <RadioButton Content="Assemble"
                                  IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=Assemble}"
-                                 FontSize="13" Foreground="#00D2FF" Margin="0,0,12,0"/>
+                                 FontSize="13" Foreground="{DynamicResource MesInfoBrush}" Margin="0,0,12,0"/>
                     <RadioButton Content="Test"
                                  IsChecked="{Binding SelectedStage, Converter={StaticResource EnumMatch}, ConverterParameter=Test}"
-                                 FontSize="13" Foreground="#4CC56C" Margin="0,0,12,0"/>
+                                 FontSize="13" Foreground="{DynamicResource MesSuccessBrush}" Margin="0,0,12,0"/>
                 </StackPanel>
 
                 <!-- 状态过滤 -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
-                    <TextBlock Text="状态:" FontSize="13" Foreground="{StaticResource MesTextSecondaryBrush}"
+                    <TextBlock Text="状态:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
                                VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <ComboBox Width="100" FontSize="13"
+                              Style="{DynamicResource MesComboBox}"
                               SelectedValue="{Binding FilterStatus}"
                               SelectedValuePath="Content">
                         <ComboBoxItem Content=""/>
@@ -115,75 +109,45 @@
                 <!-- 搜索框 -->
                 <TextBox Grid.Column="2" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                          FontSize="13" Padding="8,4" Margin="0,0,16,0"
-                         Background="{StaticResource MesSurfaceBrush}"
-                         Foreground="{StaticResource MesTextPrimaryBrush}"
-                         BorderBrush="{StaticResource MesBorderBrush}"
-                         ToolTip="搜索批次号/工单号/产品/工序">
-                    <TextBox.Style>
-                        <Style TargetType="TextBox">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="TextBox">
-                                        <Border Background="{TemplateBinding Background}"
-                                                BorderBrush="{TemplateBinding BorderBrush}"
-                                                BorderThickness="{TemplateBinding BorderThickness}"
-                                                CornerRadius="4">
-                                            <Grid>
-                                                <TextBlock Text="搜索批次号/工单号/产品/工序..."
-                                                           Foreground="{StaticResource MesTextMutedBrush}"
-                                                           FontSize="13" Margin="8,0"
-                                                           VerticalAlignment="Center"
-                                                           Visibility="{Binding Text, RelativeSource={RelativeSource TemplatedParent},
-                                                                       Converter={StaticResource BoolToVis}, ConverterParameter=Invert}"/>
-                                                <ScrollViewer x:Name="PART_ContentHost" Margin="8,0" VerticalAlignment="Center"/>
-                                            </Grid>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>
+                         Style="{DynamicResource MesTextBox}"
+                         ToolTip="搜索批次号/工单号/产品/工序"/>
 
                 <!-- 刷新按钮 -->
                 <Button Grid.Column="3" Content="刷新" Command="{Binding RefreshCommand}"
-                        FontSize="13" Padding="16,6" Margin="0,0,8,0"
-                        Background="{StaticResource MesAccentBrush}" Foreground="White"
-                        BorderThickness="0" Cursor="Hand"/>
+                        Style="{DynamicResource MesPrimaryButton}"
+                        Margin="0,0,8,0"/>
 
                 <!-- 清除过滤 -->
                 <Button Grid.Column="4" Content="清除" Command="{Binding ClearFilterCommand}"
-                        FontSize="13" Padding="16,6"
-                        Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                        BorderBrush="{StaticResource MesBorderBrush}" BorderThickness="1" Cursor="Hand"/>
+                        Style="{DynamicResource MesSecondaryButton}"/>
             </Grid>
         </Border>
 
         <!-- 数据表格 -->
-        <DataGrid Grid.Row="3" ItemsSource="{Binding FilteredLots}" SelectedItem="{Binding SelectedLot}"
-                  AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                  AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="13"
-                  SelectionMode="Single" SelectionUnit="FullRow">
-            <DataGrid.InputBindings>
-                <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding ViewDetailCommand}"
-                              CommandParameter="{Binding SelectedLot}"/>
-            </DataGrid.InputBindings>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
-                <DataGridTextColumn Header="工单号" Binding="{Binding OrderId}" Width="120"/>
-                <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
-                <DataGridTextColumn Header="封装" Binding="{Binding PackageTypeDisplay}" Width="80"/>
-                <DataGridTextColumn Header="当前工序" Binding="{Binding CurrentStep}" Width="110"/>
-                <DataGridTextColumn Header="工序序号" Binding="{Binding CurrentStepSeq}" Width="80"/>
-                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="90"/>
-                <DataGridTextColumn Header="优先级" Binding="{Binding Priority}" Width="70"/>
-                <DataGridTextColumn Header="数量" Binding="{Binding UnitCount}" Width="70"/>
-                <DataGridTextColumn Header="载具" Binding="{Binding CarrierId}" Width="100"/>
-                <DataGridTextColumn Header="良率" Binding="{Binding CurrentYield, StringFormat={}{0:F1}%}" Width="70"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Border Grid.Row="3" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding FilteredLots}" SelectedItem="{Binding SelectedLot}"
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      Style="{DynamicResource MesDataGrid}"
+                      FontSize="13"
+                      SelectionMode="Single" SelectionUnit="FullRow">
+                <DataGrid.InputBindings>
+                    <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding ViewDetailCommand}"
+                                  CommandParameter="{Binding SelectedLot}"/>
+                </DataGrid.InputBindings>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
+                    <DataGridTextColumn Header="工单号" Binding="{Binding OrderId}" Width="120"/>
+                    <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
+                    <DataGridTextColumn Header="封装" Binding="{Binding PackageTypeDisplay}" Width="80"/>
+                    <DataGridTextColumn Header="当前工序" Binding="{Binding CurrentStep}" Width="110"/>
+                    <DataGridTextColumn Header="工序序号" Binding="{Binding CurrentStepSeq}" Width="80"/>
+                    <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="90"/>
+                    <DataGridTextColumn Header="优先级" Binding="{Binding Priority}" Width="70"/>
+                    <DataGridTextColumn Header="数量" Binding="{Binding UnitCount}" Width="70"/>
+                    <DataGridTextColumn Header="载具" Binding="{Binding CarrierId}" Width="100"/>
+                    <DataGridTextColumn Header="良率" Binding="{Binding CurrentYield, StringFormat={}{0:F1}%}" Width="70"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </UserControl>

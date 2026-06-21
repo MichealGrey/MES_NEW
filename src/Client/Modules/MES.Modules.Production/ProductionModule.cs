@@ -63,8 +63,6 @@ public class ProductionModule : IModule
         // V2 Phase 4 新增视图
         containerRegistry.RegisterForNavigation<MasterDataView>();
         containerRegistry.RegisterForNavigation<DispatchView>();
-        containerRegistry.RegisterForNavigation<ProductionReportView>();
-        containerRegistry.RegisterForNavigation<YieldReportView>();
         containerRegistry.RegisterForNavigation<SystemMonitorView>();
 
         // V3 Phase 5 新增视图
@@ -72,6 +70,27 @@ public class ProductionModule : IModule
         containerRegistry.RegisterForNavigation<CustomerProgressView>();
         containerRegistry.RegisterForNavigation<SystemHealthView>();
         containerRegistry.RegisterForNavigation<ExternalSystemView>();
+
+        // Phase 3 Batch Management Split Views
+        containerRegistry.RegisterForNavigation<LotOverviewView>();
+        containerRegistry.RegisterForNavigation<LotDetailViewV2>();
+        containerRegistry.RegisterForNavigation<LotExceptionView>();
+        containerRegistry.RegisterForNavigation<GradeSortView>();
+        containerRegistry.RegisterForNavigation<LotArchiveView>();
+
+        // Master Data CRUD Views (与 MasterDataModule 共存，使用相同类型名但不同命名空间)
+        containerRegistry.RegisterForNavigation<ProductManagementView>();
+        containerRegistry.RegisterForNavigation<RouteManagementView>();
+        containerRegistry.RegisterForNavigation<RecipeManagementView>();
+        containerRegistry.RegisterForNavigation<EquipmentManagementView>();
+        containerRegistry.RegisterForNavigation<CustomerManagementView>();
+        containerRegistry.RegisterForNavigation<ReasonCodeManagementView>();
+        containerRegistry.RegisterForNavigation<DefectCodeManagementView>();
+        containerRegistry.RegisterForNavigation<CarrierManagementView>();
+        containerRegistry.RegisterForNavigation<MaterialManagementView>();
+        containerRegistry.RegisterForNavigation<YieldRuleManagementView>();
+        containerRegistry.RegisterForNavigation<AlarmRuleManagementView>();
+        containerRegistry.RegisterForNavigation<ScrapRuleManagementView>();
 
         // 注册 ViewModel（供 AutoWireViewModel 使用）
         containerRegistry.Register<TrackInViewModel>();
@@ -90,5 +109,24 @@ public class ProductionModule : IModule
         containerRegistry.Register<CustomerProgressViewModel>();
         containerRegistry.Register<SystemHealthViewModel>();
         containerRegistry.Register<ExternalSystemViewModel>();
+        containerRegistry.Register<LotOverviewViewModel>();
+        containerRegistry.Register<LotDetailViewModelV2>();
+        containerRegistry.Register<LotExceptionViewModel>();
+        containerRegistry.Register<GradeSortViewModel>();
+        containerRegistry.Register<LotArchiveViewModel>();
+
+        // Master Data CRUD ViewModels
+        containerRegistry.Register<ProductManagementViewModel>();
+        containerRegistry.Register<RouteManagementViewModel>();
+        containerRegistry.Register<RecipeManagementViewModel>();
+        containerRegistry.Register<EquipmentManagementViewModel>();
+        containerRegistry.Register<CustomerManagementViewModel>();
+        containerRegistry.Register<ReasonCodeManagementViewModel>();
+        containerRegistry.Register<DefectCodeManagementViewModel>();
+        containerRegistry.Register<CarrierManagementViewModel>();
+        containerRegistry.Register<MaterialManagementViewModel>();
+        containerRegistry.Register<YieldRuleManagementViewModel>();
+        containerRegistry.Register<AlarmRuleManagementViewModel>();
+        containerRegistry.Register<ScrapRuleManagementViewModel>();
     }
 }

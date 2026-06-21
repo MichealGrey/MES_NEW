@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -14,25 +14,28 @@
 
         <!-- 标题栏 -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
-            <TextBlock Text="系统健康监控" FontSize="22" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,24,0"/>
-            <Button Content="刷新" Command="{Binding RefreshCommand}" Width="90" Height="32" Margin="0,0,8,0"/>
-            <Button Content="清理过期数据" Command="{Binding CleanupCommand}" Width="110" Height="32"/>
+            <TextBlock Text="系统健康监控" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,24,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="清理过期数据" Command="{Binding CleanupCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
         <!-- 整体状态 -->
-        <Border Grid.Row="1" CornerRadius="12" Padding="24" Margin="0,0,0,16">
+        <Border Grid.Row="1" Padding="24" Margin="0,0,0,16">
             <Border.Style>
-                <Style TargetType="Border">
-                    <Setter Property="Background" Value="#45475A"/>
+                <Style TargetType="Border" BasedOn="{StaticResource MesCard}">
+                    <Setter Property="Background" Value="{DynamicResource MesSurfaceBrush}"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding HealthReport.OverallStatus}" Value="Healthy">
-                            <Setter Property="Background" Value="#1B3A2A"/>
+                            <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
+                            <Setter Property="Opacity" Value="0.1"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding HealthReport.OverallStatus}" Value="Degraded">
-                            <Setter Property="Background" Value="#3D3A1B"/>
+                            <Setter Property="Background" Value="{DynamicResource MesWarningBrush}"/>
+                            <Setter Property="Opacity" Value="0.1"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding HealthReport.OverallStatus}" Value="Critical">
-                            <Setter Property="Background" Value="#3D1B1B"/>
+                            <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
+                            <Setter Property="Opacity" Value="0.1"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -46,66 +49,48 @@
                 <Ellipse Width="24" Height="24" Grid.Column="0">
                     <Ellipse.Style>
                         <Style TargetType="Ellipse">
-                            <Setter Property="Fill" Value="#A6E3A1"/>
+                            <Setter Property="Fill" Value="{DynamicResource MesSuccessBrush}"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding HealthReport.OverallStatus}" Value="Degraded">
-                                    <Setter Property="Fill" Value="#F9E2AF"/>
+                                    <Setter Property="Fill" Value="{DynamicResource MesWarningBrush}"/>
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding HealthReport.OverallStatus}" Value="Critical">
-                                    <Setter Property="Fill" Value="#F38BA8"/>
+                                    <Setter Property="Fill" Value="{DynamicResource MesDangerBrush}"/>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Ellipse.Style>
                 </Ellipse>
                 <StackPanel Grid.Column="1" Margin="16,0,0,0">
-                    <TextBlock Text="系统状态" FontSize="13" Foreground="#A6ADC8"/>
-                    <TextBlock Text="{Binding HealthReport.OverallStatus}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
+                    <TextBlock Text="系统状态" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding HealthReport.OverallStatus}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <StackPanel Margin="0,0,24,0">
-                        <TextBlock Text="总批次" FontSize="11" Foreground="#6C7086"/>
-                        <TextBlock Text="{Binding HealthReport.TotalLots}" FontSize="18" FontWeight="SemiBold" Foreground="#CDD6F4"/>
+                        <TextBlock Text="总批次" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                        <TextBlock Text="{Binding HealthReport.TotalLots}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
                     </StackPanel>
                     <StackPanel Margin="0,0,24,0">
-                        <TextBlock Text="活跃批次" FontSize="11" Foreground="#6C7086"/>
-                        <TextBlock Text="{Binding HealthReport.ActiveLots}" FontSize="18" FontWeight="SemiBold" Foreground="#89B4FA"/>
+                        <TextBlock Text="活跃批次" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                        <TextBlock Text="{Binding HealthReport.ActiveLots}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource MesInfoBrush}"/>
                     </StackPanel>
                     <StackPanel Margin="0,0,24,0">
-                        <TextBlock Text="未解决报警" FontSize="11" Foreground="#6C7086"/>
-                        <TextBlock Text="{Binding HealthReport.UnresolvedAlarms}" FontSize="18" FontWeight="SemiBold" Foreground="#F38BA8"/>
+                        <TextBlock Text="未解决报警" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                        <TextBlock Text="{Binding HealthReport.UnresolvedAlarms}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource MesDangerBrush}"/>
                     </StackPanel>
                     <StackPanel>
-                        <TextBlock Text="数据异常" FontSize="11" Foreground="#6C7086"/>
-                        <TextBlock Text="{Binding HealthReport.DataInconsistencies}" FontSize="18" FontWeight="SemiBold" Foreground="#F9E2AF"/>
+                        <TextBlock Text="数据异常" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                        <TextBlock Text="{Binding HealthReport.DataInconsistencies}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource MesWarningBrush}"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
         </Border>
 
         <!-- 组件健康状态 -->
-        <TextBlock Grid.Row="2" Text="组件状态" FontSize="16" FontWeight="SemiBold" Foreground="#CDD6F4" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="2" Text="组件状态" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
 
         <DataGrid Grid.Row="3" ItemsSource="{Binding HealthReport.Components}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#45475A"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="Padding" Value="10,6"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="40"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#585B70"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="组件名称" Binding="{Binding Name}" Width="150"/>
                 <DataGridTemplateColumn Header="状态" Width="100">
@@ -115,13 +100,13 @@
                                 <Ellipse Width="10" Height="10" Margin="0,0,8,0">
                                     <Ellipse.Style>
                                         <Style TargetType="Ellipse">
-                                            <Setter Property="Fill" Value="#A6E3A1"/>
+                                            <Setter Property="Fill" Value="{DynamicResource MesSuccessBrush}"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding Status}" Value="Degraded">
-                                                    <Setter Property="Fill" Value="#F9E2AF"/>
+                                                    <Setter Property="Fill" Value="{DynamicResource MesWarningBrush}"/>
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding Status}" Value="Down">
-                                                    <Setter Property="Fill" Value="#F38BA8"/>
+                                                    <Setter Property="Fill" Value="{DynamicResource MesDangerBrush}"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>

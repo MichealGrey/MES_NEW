@@ -5,13 +5,28 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="MES.Api.Tests" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\MES.Contracts\MES.Contracts.csproj" />
     <ProjectReference Include="..\..\Shared\MES.Domain\MES.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MES.Infrastructure.Persistence\MES.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\Modules\MES.Services.Production\MES.Services.Production.csproj" />
     <ProjectReference Include="..\Modules\MES.Services.Quality\MES.Services.Quality.csproj" />
     <ProjectReference Include="..\Modules\MES.Services.Equipment\MES.Services.Equipment.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.SystemMgmt\MES.Services.SystemMgmt.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Warehouse\MES.Services.Warehouse.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Planning\MES.Services.Planning.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.ProcessControl\MES.Services.ProcessControl.csproj" />
+    <ProjectReference Include="..\..\Adapters\Adapters.Abstractions\Adapters.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Adapters\Adapters.Mock\Adapters.Mock.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Analytics\MES.Services.Analytics.csproj" />
+    <ProjectReference Include="..\Modules\MES.Services.Engineering\MES.Services.Engineering.csproj" />
   </ItemGroup>
 </Project>

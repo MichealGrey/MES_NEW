@@ -148,3 +148,9 @@ public interface ISignatureLevelRepository : IRepository<SysSignatureLevel>
 {
     Task<SysSignatureLevel?> GetLevelAsync(string levelCode);
 }
+
+public interface IPermissionConfirmRepository : IRepository<SysPermissionConfirm>
+{
+    Task<List<SysPermissionConfirm>> GetByEmployeeAsync(string employeeId, int days = 7);
+    Task<List<SysPermissionConfirm>> GetByOperationAsync(string operationType, DateTime? from = null, DateTime? to = null);
+}

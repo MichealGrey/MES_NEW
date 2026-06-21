@@ -1,0 +1,161 @@
+<UserControl x:Class="MES.Modules.CustomerComplaint.Views.ComplaintReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 客诉选择 -->
+        <Border Grid.Row="0" Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,12">
+            <StackPanel>
+                <TextBlock Text="8D 报告生成" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="选择客诉:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox Grid.Column="1" ItemsSource="{Binding Complaints}" 
+                              SelectedItem="{Binding SelectedComplaint}"
+                              DisplayMemberPath="ComplaintNo"
+                              VerticalContentAlignment="Center"/>
+                    <Button Grid.Column="2" Content="生成报告" Command="{Binding GenerateReportCommand}" 
+                            IsEnabled="{Binding CanGenerateReport}"
+                            Width="100" Height="30" Margin="16,0,0,0"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- 报告预览区 -->
+        <ScrollViewer Grid.Row="2" Margin="0,0,0,0">
+            <StackPanel Margin="0,0,0,16">
+                <!-- 报告头部 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="20" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="8D 质量报告" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,16"/>
+                        <TextBlock Text="{Binding CurrentReport.ReportId}" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                        <Line X1="0" Y1="0" X2="1" Y2="0" Stroke="{DynamicResource MesBorderBrush}" Stretch="Fill" Margin="0,0,0,16"/>
+
+                        <WrapPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="客诉单号:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.ComplaintNo}" FontWeight="SemiBold"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="客户:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.CustomerName}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="产品:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.ProductName}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="缺陷类型:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.DefectType}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="严重度:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.Severity}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="8D进度:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.EightDStatus}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="报告日期:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding CurrentReport.ReportDate, StringFormat=yyyy-MM-dd HH:mm}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Width="250" Margin="0,0,16,8">
+                                <TextBlock Text="影响数量:" Width="80" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                <TextBlock Text="{Binding SelectedComplaint.AffectedQty}"/>
+                            </StackPanel>
+                        </WrapPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- 问题摘要 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="问题描述" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding CurrentReport.Findings}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- D0-D8 步骤详情 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="8D 处理步骤" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <DataGrid ItemsSource="{Binding ReportEightDSteps}" AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" IsReadOnly="True" GridLinesVisibility="Horizontal">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="步骤" Binding="{Binding Step}" Width="60"/>
+                                <DataGridTextColumn Header="步骤名称" Binding="{Binding StepName}" Width="100"/>
+                                <DataGridTextColumn Header="描述" Binding="{Binding Description}" Width="*"/>
+                                <DataGridTextColumn Header="内容" Binding="{Binding Content}" Width="*"/>
+                                <DataGridTextColumn Header="完成状态" Binding="{Binding IsCompleted}" Width="80"/>
+                                <DataGridTextColumn Header="完成人" Binding="{Binding CompletedBy}" Width="100"/>
+                                <DataGridTextColumn Header="完成日期" Binding="{Binding CompletedDate, StringFormat=yyyy-MM-dd}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+
+                <!-- 纠正措施 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="纠正措施" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding CurrentReport.CorrectiveActions}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 预防措施 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="预防措施" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding CurrentReport.PreventiveActions}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 结论 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="16" Margin="0,0,0,16">
+                    <StackPanel>
+                        <TextBlock Text="结论" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                        <TextBlock Text="{Binding CurrentReport.Conclusion}" TextWrapping="Wrap" FontSize="14"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- 无报告时的提示 -->
+                <Border Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="40" Visibility="{Binding CurrentReport, Converter={StaticResource NullToVisibilityConverter}}">
+                    <TextBlock Text="请选择客诉并点击生成报告" FontSize="16" HorizontalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- 底部操作按钮 -->
+        <Border Grid.Row="3" Background="{DynamicResource MesCardBackgroundBrush}" CornerRadius="8" Padding="12">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="生成报告" Command="{Binding GenerateReportCommand}" IsEnabled="{Binding CanGenerateReport}" Width="100" Height="32"/>
+                <Button Content="刷新" Command="{Binding RefreshCommand}" Width="80" Height="32" Margin="12,0,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="Red" 
+                   HorizontalAlignment="Center" Margin="0,60,0,0" FontSize="14"
+                   Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+    </Grid>
+</UserControl>

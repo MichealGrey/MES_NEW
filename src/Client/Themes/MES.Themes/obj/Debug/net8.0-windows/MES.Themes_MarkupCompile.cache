@@ -1,20 +1,20 @@
 ﻿MES.Themes
-1.0.0.0
+
 
 library
 C#
 .cs
-e:\AiProj\MES_NEW\src\Client\Themes\MES.Themes\obj\Debug\net8.0-windows\
+E:\AiProj\MES_NEW\src\Client\Themes\MES.Themes\obj\Debug\net8.0-windows\
 MES.Themes
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-1-943178879
+3-74403617
 
-3831845507
-198-552479049
-Themes\DarkTheme.xaml;
+11906626404
+1981026658812
+Themes\DarkTheme.xaml;Themes\DarkThemeV2.xaml;Themes\MesComponentStylesV2.xaml;
 
 False
 

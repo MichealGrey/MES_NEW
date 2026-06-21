@@ -1,20 +1,20 @@
 ﻿MES.Modules.EHS
-1.0.0.0
+
 
 library
 C#
 .cs
-e:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.EHS\obj\Debug\net8.0-windows\
+E:\AiProj\MES_NEW\src\Client\Modules\MES.Modules.EHS\obj\Debug\net8.0-windows\
 MES.Modules.EHS
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-3-1501399410
+5152424250
 
-13-1365788966
-220-1511120023
-Views\ChemicalManagementView.xaml;Views\EnvironmentMonitorView.xaml;Views\GasMonitorView.xaml;
+141093378493
+2211403511454
+Views\ChemicalManagementView.xaml;Views\EnvironmentMonitorView.xaml;Views\EsdMonitorView.xaml;Views\GasMonitorView.xaml;Views\SafetyCheckView.xaml;
 
 False
 

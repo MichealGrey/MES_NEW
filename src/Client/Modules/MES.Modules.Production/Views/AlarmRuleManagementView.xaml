@@ -1,0 +1,45 @@
+<UserControl x:Class="MES.Modules.Production.Views.AlarmRuleManagementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:MES.Modules.Production.Views"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <UserControl.Resources>
+        <local:BoolToStatusConverter x:Key="BoolToStatusConverter"/>
+    </UserControl.Resources>
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="报警规则管理" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"
+                       VerticalAlignment="Center"/>
+            <Button Content="新增" Command="{Binding AddCommand}"
+                    Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="编辑" Command="{Binding EditCommand}"
+                    Style="{DynamicResource MesSecondaryButton}" Margin="0,0,8,0"/>
+            <Button Content="删除" Command="{Binding DeleteCommand}"
+                    Style="{DynamicResource MesDangerButton}" Margin="0,0,8,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}"
+                    Style="{DynamicResource MesSecondaryButton}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding AlarmRules}" SelectedItem="{Binding SelectedAlarmRule}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Style="{DynamicResource MesDataGrid}"
+                  SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="规则ID" Binding="{Binding RuleId}" Width="100"/>
+                <DataGridTextColumn Header="规则名称" Binding="{Binding RuleName}" Width="*"/>
+                <DataGridTextColumn Header="报警类型" Binding="{Binding AlarmType}" Width="120"/>
+                <DataGridTextColumn Header="条件" Binding="{Binding Condition}" Width="120"/>
+                <DataGridTextColumn Header="通知角色" Binding="{Binding NotifyRoles}" Width="100"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding IsActive, Converter={StaticResource BoolToStatusConverter}}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

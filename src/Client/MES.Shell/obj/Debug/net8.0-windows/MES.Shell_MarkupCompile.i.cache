@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 E:\AiProj\MES_NEW\src\Client\MES.Shell\App.xaml
-5-819556392
+13-1674974563
 
-23589382802
-235-610754618
-MainWindow.xaml;Views\LoginWindow.xaml;Views\MenuView.xaml;Views\NavigationView.xaml;Views\StatusBarView.xaml;
+37-2117823335
+241317697764
+MainWindow.xaml;Views\AccountSwitchDialog.xaml;Views\ComponentDemoView.xaml;Views\LockScreenView.xaml;Views\LoginWindow.xaml;Views\MainWindowV2.xaml;Views\MenuView.xaml;Views\NavigationView.xaml;Views\NavigationViewV2.xaml;Views\PermissionConfirmDialog.xaml;Views\StatusBarView.xaml;Views\StatusBarViewV2.xaml;Views\Templates\StandardPageTemplate.xaml;
 
-True
+False
 

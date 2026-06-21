@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -13,32 +13,22 @@
 
         <!-- 标题栏 -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
-            <TextBlock Text="外部系统接口" FontSize="22" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,24,0"/>
-            <Button Content="刷新" Command="{Binding RefreshCommand}" Width="90" Height="32" Margin="0,0,8,0"/>
-            <Button Content="重发失败事件" Command="{Binding RetryFailedCommand}" Width="120" Height="32"/>
+            <TextBlock Text="外部系统接口" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,24,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="重发失败事件" Command="{Binding RetryFailedCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
         <!-- Tab 切换 -->
         <TabControl Grid.Row="1" SelectedIndex="{Binding SelectedTabIndex}" Margin="0,0,0,16">
-            <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="Background" Value="#45475A"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="Padding" Value="16,8"/>
-                    <Setter Property="FontSize" Value="13"/>
-                </Style>
-            </TabControl.Resources>
             <TabItem Header="事件队列"/>
             <TabItem Header="系统配置"/>
         </TabControl>
 
         <!-- 事件队列 -->
         <DataGrid Grid.Row="2" ItemsSource="{Binding Events}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12" CanUserSortColumns="True">
+                  CanUserSortColumns="True">
             <DataGrid.Style>
-                <Style TargetType="DataGrid">
+                <Style TargetType="DataGrid" BasedOn="{StaticResource MesDataGrid}">
                     <Setter Property="Visibility" Value="Visible"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding SelectedTabIndex}" Value="1">
@@ -47,22 +37,6 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.Style>
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#45475A"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="Padding" Value="10,6"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="36"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#585B70"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="事件类型" Binding="{Binding EventType}" Width="120"/>
                 <DataGridTextColumn Header="目标系统" Binding="{Binding TargetSystem}" Width="100"/>
@@ -72,21 +46,21 @@
                             <Border CornerRadius="4" Padding="6,2" HorizontalAlignment="Center">
                                 <Border.Style>
                                     <Style TargetType="Border">
-                                        <Setter Property="Background" Value="#585B70"/>
+                                        <Setter Property="Background" Value="{DynamicResource MesTextTertiaryBrush}"/>
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Status}" Value="Pending">
-                                                <Setter Property="Background" Value="#F9E2AF"/>
+                                                <Setter Property="Background" Value="{DynamicResource MesWarningBrush}"/>
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding Status}" Value="Sent">
-                                                <Setter Property="Background" Value="#A6E3A1"/>
+                                                <Setter Property="Background" Value="{DynamicResource MesSuccessBrush}"/>
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding Status}" Value="Failed">
-                                                <Setter Property="Background" Value="#F38BA8"/>
+                                                <Setter Property="Background" Value="{DynamicResource MesDangerBrush}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </Border.Style>
-                                <TextBlock Text="{Binding Status}" FontSize="10" FontWeight="SemiBold" Foreground="#1E1E2E"/>
+                                <TextBlock Text="{Binding Status}" FontSize="10" FontWeight="SemiBold" Foreground="{DynamicResource MesTextInverseBrush}"/>
                             </Border>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -99,12 +73,9 @@
         </DataGrid>
 
         <!-- 系统配置 -->
-        <DataGrid Grid.Row="2" ItemsSource="{Binding SystemConfigs}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12">
+        <DataGrid Grid.Row="2" ItemsSource="{Binding SystemConfigs}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Style>
-                <Style TargetType="DataGrid">
+                <Style TargetType="DataGrid" BasedOn="{StaticResource MesDataGrid}">
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding SelectedTabIndex}" Value="1">
@@ -113,22 +84,6 @@
                     </Style.Triggers>
                 </Style>
             </DataGrid.Style>
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#45475A"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="Padding" Value="10,6"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="36"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#585B70"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="系统ID" Binding="{Binding SystemId}" Width="100"/>
                 <DataGridTextColumn Header="系统名称" Binding="{Binding SystemName}" Width="120"/>

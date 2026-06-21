@@ -3,26 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="实时告警" FontSize="20" FontWeight="Bold" Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                  AlternatingRowBackground="{StaticResource MesSurfaceBrush}" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="13">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="告警ID" Binding="{Binding AlarmId}" Width="100"/>
-                <DataGridTextColumn Header="设备" Binding="{Binding EquipmentId}" Width="100"/>
-                <DataGridTextColumn Header="告警码" Binding="{Binding AlarmCode}" Width="80"/>
-                <DataGridTextColumn Header="级别" Binding="{Binding Severity}" Width="80"/>
-                <DataGridTextColumn Header="内容" Binding="{Binding Text}" Width="*"/>
-                <DataGridTextColumn Header="时间" Binding="{Binding AlarmTime, StringFormat='{}{0:HH:mm:ss}'}" Width="80"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TextBlock Grid.Row="0" Text="实时告警" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True"
+                      Style="{DynamicResource MesDataGrid}"
+                      FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="告警ID" Binding="{Binding AlarmId}" Width="100"/>
+                    <DataGridTextColumn Header="设备" Binding="{Binding EquipmentId}" Width="100"/>
+                    <DataGridTextColumn Header="告警码" Binding="{Binding AlarmCode}" Width="80"/>
+                    <DataGridTextColumn Header="级别" Binding="{Binding Severity}" Width="80"/>
+                    <DataGridTextColumn Header="内容" Binding="{Binding Text}" Width="*"/>
+                    <DataGridTextColumn Header="时间" Binding="{Binding AlarmTime, StringFormat='{}{0:HH:mm:ss}'}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </UserControl>

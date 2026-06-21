@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-5217468320
+9-743421341
 
-15-393716336
-2201708370146
-Views\EapControlView.xaml;Views\EquipmentAlarmView.xaml;Views\EquipmentDetailView.xaml;Views\EquipmentOverviewView.xaml;Views\PmScheduleView.xaml;
+171443148950
+220-1007459289
+Views\EapControlView.xaml;Views\EquipmentAlarmView.xaml;Views\EquipmentDetailView.xaml;Views\EquipmentHistoryView.xaml;Views\EquipmentOverviewView.xaml;Views\EquipmentPerformanceView.xaml;Views\FixtureView.xaml;Views\PmScheduleView.xaml;Views\SparePartView.xaml;
 
 False
 

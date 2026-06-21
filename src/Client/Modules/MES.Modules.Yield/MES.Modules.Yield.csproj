@@ -7,9 +7,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="9.0.537" />
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MES.Shared\MES.Shared.csproj" />
     <ProjectReference Include="..\..\MES.Infrastructure\MES.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Shared\MES.Contracts\MES.Contracts.csproj" />
     <ProjectReference Include="..\..\Themes\MES.Themes\MES.Themes.csproj" />
   </ItemGroup>
 </Project>

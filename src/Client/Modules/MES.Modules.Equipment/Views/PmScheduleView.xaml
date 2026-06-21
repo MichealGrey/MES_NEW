@@ -3,17 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="预防性维护" FontSize="20" FontWeight="Bold" Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="0" Text="预防性维护" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
         <DataGrid Grid.Row="1" ItemsSource="{Binding PmSchedules}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                  HeadersVisibility="Column" FontSize="13">
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="设备" Binding="{Binding EquipmentId}" Width="100"/>
                 <DataGridTextColumn Header="维护类型" Binding="{Binding PmType}" Width="120"/>

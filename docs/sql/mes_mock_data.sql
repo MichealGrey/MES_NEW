@@ -633,5 +633,14 @@ INSERT INTO `prod_lot_archive` (`lot_id`, `order_id`, `product_id`, `status`, `o
 ('LOT-015', 'WO-2026008', 'PROD-SOP14', 'Completed', 20000, 19600, 250, 98.0, DATE_SUB(NOW(), INTERVAL 5 DAY));
 
 -- ============================================================
+-- 为已完成批次添加 BinResult 数据（用于等级分选功能）
+-- ============================================================
+UPDATE `prod_lot` SET `bin_result` = '{"Bin1":3500,"Bin2":800,"Bin3":300,"Bin4":100,"Bin5":50,"Bin6":50}' WHERE `lot_id` = 'LOT-004';
+UPDATE `prod_lot` SET `bin_result` = '{"Bin1":3400,"Bin2":850,"Bin3":300,"Bin4":120,"Bin5":50,"Bin6":30}' WHERE `lot_id` = 'LOT-005';
+UPDATE `prod_lot` SET `bin_result` = '{"Bin1":3600,"Bin2":750,"Bin3":280,"Bin4":130,"Bin5":60,"Bin6":30}' WHERE `lot_id` = 'LOT-006';
+UPDATE `prod_lot` SET `bin_result` = '{"Bin1":14000,"Bin2":3000,"Bin3":1500,"Bin4":600,"Bin5":250,"Bin6":150}' WHERE `lot_id` = 'LOT-014';
+UPDATE `prod_lot` SET `bin_result` = '{"Bin1":14200,"Bin2":2900,"Bin3":1400,"Bin4":700,"Bin5":250,"Bin6":150}' WHERE `lot_id` = 'LOT-015';
+
+-- ============================================================
 -- 数据生成完成
 -- ============================================================

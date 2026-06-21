@@ -1,0 +1,107 @@
+<Window x:Class="MES.Modules.Production.Views.CustomerDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="客户信息" Height="560" Width="500"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E2E"
+        ResizeMode="NoResize">
+    <ScrollViewer Padding="16">
+        <StackPanel>
+            <GroupBox Header="基本信息" Foreground="#CDD6F4" BorderBrush="#45475A" Margin="0,0,0,12">
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="客户ID" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCustomerId" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="客户名称 *" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCustomerName" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="客户代码 *" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtCustomerCode" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="联系人" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtContactPerson" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="联系电话" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtContactPhone" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="邮箱" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="txtEmail" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="地址" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="12" Grid.Column="1" x:Name="txtAddress" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="14" Grid.Column="0" Text="客户料号前缀" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="14" Grid.Column="1" x:Name="txtCustomerPnPrefix" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="质量等级" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="16" Grid.Column="1" x:Name="cmbQualityLevel" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Automotive"/>
+                        <ComboBoxItem Content="Industrial"/>
+                        <ComboBoxItem Content="Consumer"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="18" Grid.Column="0" Text="状态" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="18" Grid.Column="1" x:Name="cmbStatus" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Active"/>
+                        <ComboBoxItem Content="Inactive"/>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="默认规范" Foreground="#CDD6F4" BorderBrush="#45475A" Margin="0,0,0,12">
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="包装规范" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDefaultPackingSpec" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="出货检验规范" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtDefaultOqcSpec" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
+                <Button Content="确定" x:Name="btnSave" Width="100" Height="32"
+                        Background="#89B4FA" Foreground="#1E1E2E" FontWeight="Bold"
+                        BorderThickness="0" Cursor="Hand" Click="btnSave_Click"/>
+                <Button Content="取消" Width="100" Height="32" Margin="16,0,0,0"
+                        Background="#45475A" Foreground="#CDD6F4"
+                        BorderThickness="0" Cursor="Hand" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

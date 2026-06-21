@@ -3,30 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="{StaticResource MesBackgroundBrush}">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="EAP控制" FontSize="20" FontWeight="Bold"
-                   Foreground="{StaticResource MesTextPrimaryBrush}" Margin="0,0,0,12"/>
+        <TextBlock Grid.Row="0" Text="EAP控制" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,16">
             <Ellipse Width="12" Height="12" VerticalAlignment="Center" Margin="0,0,8,0">
-                <Ellipse.Style><Style TargetType="Ellipse"><Setter Property="Fill" Value="{StaticResource MesErrorBrush}"/>
-                    <Style.Triggers><DataTrigger Binding="{Binding IsOnline}" Value="True"><Setter Property="Fill" Value="{StaticResource MesSuccessBrush}"/></DataTrigger></Style.Triggers></Style>
+                <Ellipse.Style><Style TargetType="Ellipse"><Setter Property="Fill" Value="{DynamicResource MesDangerBrush}"/>
+                    <Style.Triggers><DataTrigger Binding="{Binding IsOnline}" Value="True"><Setter Property="Fill" Value="{DynamicResource MesSuccessBrush}"/></DataTrigger></Style.Triggers></Style>
                 </Ellipse.Style>
             </Ellipse>
-            <TextBlock Text="{Binding EquipmentId}" Foreground="{StaticResource MesTextSecondaryBrush}" FontSize="14" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding EquipmentId}" Foreground="{DynamicResource MesTextSecondaryBrush}" FontSize="14" VerticalAlignment="Center"/>
         </StackPanel>
 
         <DataGrid Grid.Row="2" ItemsSource="{Binding Ports}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="{StaticResource MesSurfaceBrush}" Foreground="{StaticResource MesTextPrimaryBrush}"
-                  BorderBrush="{StaticResource MesBorderBrush}" RowBackground="{StaticResource MesCardBrush}"
-                  HeadersVisibility="Column" FontSize="13">
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="端口" Binding="{Binding PortId}" Width="80"/>
                 <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="100"/>

@@ -1,0 +1,662 @@
+<UserControl x:Class="MES.Modules.Production.Views.LotListViewV2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <!-- 引用转换器 -->
+        <converters:LotLevelToBrushConverter x:Key="LotLevelToBrush"/>
+        <converters:LotLevelToTextConverter x:Key="LotLevelToText"/>
+        <converters:LotLevelToIconConverter x:Key="LotLevelToIcon"/>
+        <converters:LotLevelToForegroundConverter x:Key="LotLevelToForeground"/>
+        <converters:LotStatusToColorConverter x:Key="LotStatusToColor"/>
+        
+        <!-- 展开/折叠图标 -->
+        <Geometry x:Key="ExpandIcon">M0 0 L10 5 L0 10 Z</Geometry>
+        <Geometry x:Key="CollapseIcon">M0 0 L5 10 L10 0 Z</Geometry>
+    </UserControl.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- 标题 -->
+            <RowDefinition Height="Auto"/>   <!-- 统计卡片行 -->
+            <RowDefinition Height="Auto"/>   <!-- 层级筛选条 -->
+            <RowDefinition Height="Auto"/>   <!-- 过滤栏 -->
+            <RowDefinition Height="*"/>      <!-- 数据表格 -->
+        </Grid.RowDefinitions>
+
+        <!-- ==========================================
+             标题栏
+        ========================================== -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="批次管理" 
+                      FontFamily="{DynamicResource MesFontDisplay}"
+                      FontSize="24" 
+                      FontWeight="Bold"
+                      Foreground="{DynamicResource MesTextPrimaryBrush}"
+                      VerticalAlignment="Center"
+                      Margin="0,0,12,0"/>
+            <Border Background="{DynamicResource MesBackgroundSurfaceBrush}"
+                    BorderBrush="{DynamicResource MesBorderDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="{DynamicResource MesRadiusSm}"
+                    Padding="8,4"
+                    VerticalAlignment="Center">
+                <TextBlock Text="V2.0" 
+                          FontSize="12" 
+                          FontWeight="Medium"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+            </Border>
+        </StackPanel>
+
+        <!-- ==========================================
+             统计卡片行 - 按5层层级统计
+        ========================================== -->
+        <WrapPanel Grid.Row="1" Margin="0,16,0,0">
+            <!-- Wafer Lot -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="12"
+                                Height="12"
+                                CornerRadius="3"
+                                Background="{DynamicResource MesWaferLotLevelBrush}"
+                                Margin="0,0,6,0"/>
+                        <TextBlock Text="Wafer Lot" 
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding WaferLotCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesTextPrimaryBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="L1 层级" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Mother Lot -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="12"
+                                Height="12"
+                                CornerRadius="3"
+                                Background="{DynamicResource MesMotherLotLevelBrush}"
+                                Margin="0,0,6,0"/>
+                        <TextBlock Text="Mother Lot" 
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding MotherLotCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesTextPrimaryBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="L2 层级" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Sub Lot -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="12"
+                                Height="12"
+                                CornerRadius="3"
+                                Background="{DynamicResource MesSubLotLevelBrush}"
+                                Margin="0,0,6,0"/>
+                        <TextBlock Text="Sub Lot" 
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding SubLotCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesTextPrimaryBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="L3 层级" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Grade Lot -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="12"
+                                Height="12"
+                                CornerRadius="3"
+                                Background="{DynamicResource MesGradeLotLevelBrush}"
+                                Margin="0,0,6,0"/>
+                        <TextBlock Text="Grade Lot" 
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding GradeLotCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesTextPrimaryBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="L4 层级" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- MFG ID -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="12"
+                                Height="12"
+                                CornerRadius="3"
+                                Background="{DynamicResource MesMfgIdLevelBrush}"
+                                Margin="0,0,6,0"/>
+                        <TextBlock Text="MFG ID" 
+                                  FontSize="12"
+                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding MfgIdCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesTextPrimaryBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="L5 层级" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Hold 数量 -->
+            <Border Style="{DynamicResource MesKpiCard}"
+                    Width="160">
+                <StackPanel>
+                    <TextBlock Text="Hold 批次" 
+                              FontSize="12"
+                              Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding HoldCount}" 
+                              FontFamily="{DynamicResource MesFontDisplay}"
+                              FontSize="28"
+                              FontWeight="Bold"
+                              Foreground="{DynamicResource MesCriticalBrush}"
+                              Margin="0,4,0,0"/>
+                    <TextBlock Text="当前 Hold" 
+                              FontSize="11"
+                              Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- ==========================================
+             批次层级筛选条
+        ========================================== -->
+        <Border Grid.Row="2"
+                Background="{DynamicResource MesBackgroundSurfaceBrush}"
+                BorderBrush="{DynamicResource MesBorderDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="{DynamicResource MesRadiusMd}"
+                Padding="16"
+                Margin="0,16,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- 左侧筛选标签 -->
+                <TextBlock Grid.Column="0"
+                          Text="显示层级:" 
+                          FontSize="13"
+                          Foreground="{DynamicResource MesTextSecondaryBrush}"
+                          VerticalAlignment="Center"
+                          Margin="0,0,12,0"/>
+                
+                <!-- 层级筛选按钮组 -->
+                <StackPanel Grid.Column="1"
+                          Orientation="Horizontal">
+                    <RadioButton Content="全部"
+                                 IsChecked="{Binding ShowAllLevels}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0"/>
+                    <RadioButton Content="L1 Wafer"
+                                 IsChecked="{Binding ShowWaferLots}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{DynamicResource MesWaferLotLevelBrush}"
+                                        BorderThickness="{Binding ShowWaferLots, Converter={StaticResource BoolToThickness}}"
+                                        CornerRadius="{DynamicResource MesRadiusSm}"
+                                        Padding="{TemplateBinding Padding}"
+                                        Cursor="Hand">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="8"
+                                                Height="8"
+                                                CornerRadius="2"
+                                                Background="{DynamicResource MesWaferLotLevelBrush}"
+                                                Margin="0,0,6,0"/>
+                                        <TextBlock Text="L1 Wafer"
+                                                  FontSize="13"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <RadioButton Content="L2 Mother"
+                                 IsChecked="{Binding ShowMotherLots}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{DynamicResource MesMotherLotLevelBrush}"
+                                        BorderThickness="{Binding ShowMotherLots, Converter={StaticResource BoolToThickness}}"
+                                        CornerRadius="{DynamicResource MesRadiusSm}"
+                                        Padding="{TemplateBinding Padding}"
+                                        Cursor="Hand">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="8"
+                                                Height="8"
+                                                CornerRadius="2"
+                                                Background="{DynamicResource MesMotherLotLevelBrush}"
+                                                Margin="0,0,6,0"/>
+                                        <TextBlock Text="L2 Mother"
+                                                  FontSize="13"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <RadioButton Content="L3 Sub"
+                                 IsChecked="{Binding ShowSubLots}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{DynamicResource MesSubLotLevelBrush}"
+                                        BorderThickness="{Binding ShowSubLots, Converter={StaticResource BoolToThickness}}"
+                                        CornerRadius="{DynamicResource MesRadiusSm}"
+                                        Padding="{TemplateBinding Padding}"
+                                        Cursor="Hand">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="8"
+                                                Height="8"
+                                                CornerRadius="2"
+                                                Background="{DynamicResource MesSubLotLevelBrush}"
+                                                Margin="0,0,6,0"/>
+                                        <TextBlock Text="L3 Sub"
+                                                  FontSize="13"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <RadioButton Content="L4 Grade"
+                                 IsChecked="{Binding ShowGradeLots}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{DynamicResource MesGradeLotLevelBrush}"
+                                        BorderThickness="{Binding ShowGradeLots, Converter={StaticResource BoolToThickness}}"
+                                        CornerRadius="{DynamicResource MesRadiusSm}"
+                                        Padding="{TemplateBinding Padding}"
+                                        Cursor="Hand">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="8"
+                                                Height="8"
+                                                CornerRadius="2"
+                                                Background="{DynamicResource MesGradeLotLevelBrush}"
+                                                Margin="0,0,6,0"/>
+                                        <TextBlock Text="L4 Grade"
+                                                  FontSize="13"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <RadioButton Content="L5 MFG"
+                                 IsChecked="{Binding ShowMfgIds}"
+                                 Style="{DynamicResource MesGhostButton}"
+                                 Padding="12,6"
+                                 Margin="0,0,8,0">
+                        <RadioButton.Template>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{DynamicResource MesMfgIdLevelBrush}"
+                                        BorderThickness="{Binding ShowMfgIds, Converter={StaticResource BoolToThickness}}"
+                                        CornerRadius="{DynamicResource MesRadiusSm}"
+                                        Padding="{TemplateBinding Padding}"
+                                        Cursor="Hand">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Width="8"
+                                                Height="8"
+                                                CornerRadius="2"
+                                                Background="{DynamicResource MesMfgIdLevelBrush}"
+                                                Margin="0,0,6,0"/>
+                                        <TextBlock Text="L5 MFG"
+                                                  FontSize="13"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                </StackPanel>
+                
+                <!-- 右侧操作 -->
+                <StackPanel Grid.Column="2"
+                          Orientation="Horizontal">
+                    <Button Content="展开全部"
+                            Command="{Binding ExpandAllCommand}"
+                            Style="{DynamicResource MesGhostButton}"
+                            Padding="12,6"
+                            Margin="0,0,8,0"/>
+                    <Button Content="折叠全部"
+                            Command="{Binding CollapseAllCommand}"
+                            Style="{DynamicResource MesGhostButton}"
+                            Padding="12,6"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ==========================================
+             过滤栏
+        ========================================== -->
+        <Border Grid.Row="3"
+                Background="{DynamicResource MesBackgroundSurfaceBrush}"
+                BorderBrush="{DynamicResource MesBorderDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="{DynamicResource MesRadiusMd}"
+                Padding="16"
+                Margin="0,16,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- 搜索和过滤 -->
+                <StackPanel Grid.Column="0"
+                          Orientation="Horizontal">
+                    <!-- 搜索框 -->
+                    <Border Width="320"
+                            Background="{DynamicResource MesBackgroundElevatedBrush}"
+                            CornerRadius="{DynamicResource MesRadiusSm}"
+                            Margin="0,0,12,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0"
+                                      Text="🔍"
+                                      FontSize="14"
+                                      Foreground="{DynamicResource MesTextTertiaryBrush}"
+                                      VerticalAlignment="Center"
+                                      Margin="12,0"/>
+                            <TextBox Grid.Column="1"
+                                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                                    Style="{DynamicResource MesTextBox}"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Center"
+                                    FontSize="13"
+                                    Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- 状态过滤 -->
+                    <ComboBox Width="120"
+                              Style="{DynamicResource MesComboBox}"
+                              SelectedValue="{Binding FilterStatus}"
+                              SelectedValuePath="Content"
+                              Margin="0,0,12,0">
+                        <ComboBoxItem Content="全部状态"/>
+                        <ComboBoxItem Content="Waiting"/>
+                        <ComboBoxItem Content="Processing"/>
+                        <ComboBoxItem Content="Hold"/>
+                        <ComboBoxItem Content="Completed"/>
+                    </ComboBox>
+                    
+                    <!-- 工艺阶段过滤 -->
+                    <ComboBox Width="120"
+                              Style="{DynamicResource MesComboBox}"
+                              SelectedValue="{Binding FilterStage}"
+                              SelectedValuePath="Content"
+                              Margin="0,0,12,0">
+                        <ComboBoxItem Content="全部阶段"/>
+                        <ComboBoxItem Content="Assemble"/>
+                        <ComboBoxItem Content="Test"/>
+                        <ComboBoxItem Content="Finished"/>
+                    </ComboBox>
+                </StackPanel>
+                
+                <!-- 操作按钮 -->
+                <StackPanel Grid.Column="1"
+                          Orientation="Horizontal">
+                    <Button Content="刷新"
+                            Command="{Binding RefreshCommand}"
+                            Style="{DynamicResource MesPrimaryButton}"
+                            Margin="0,0,8,0"/>
+                    <Button Content="清除"
+                            Command="{Binding ClearFilterCommand}"
+                            Style="{DynamicResource MesSecondaryButton}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ==========================================
+             数据表格 - 支持树形展开
+        ========================================== -->
+        <Border Grid.Row="4"
+                Background="{DynamicResource MesBackgroundSurfaceBrush}"
+                BorderBrush="{DynamicResource MesBorderDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="{DynamicResource MesRadiusMd}"
+                Margin="0,16,0,0">
+            <Grid>
+                <!-- 表格 -->
+                <DataGrid ItemsSource="{Binding FilteredLots}" 
+                          SelectedItem="{Binding SelectedLot}"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          Style="{DynamicResource MesDataGrid}"
+                          RowStyle="{DynamicResource MesDataGridRow}"
+                          ColumnHeaderStyle="{DynamicResource MesDataGridColumnHeader}"
+                          Grid.Row="4"
+                          Margin="12"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow">
+                    <DataGrid.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick" 
+                                     Command="{Binding ViewDetailCommand}"
+                                     CommandParameter="{Binding SelectedLot}"/>
+                    </DataGrid.InputBindings>
+                    <DataGrid.Columns>
+                        <!-- 展开/折叠列 -->
+                        <DataGridTemplateColumn Header="" Width="40">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{DynamicResource MesIconButton}"
+                                           Width="28"
+                                           Height="28"
+                                           Visibility="{Binding HasChildren, Converter={StaticResource BoolToVis}}"
+                                           Command="{Binding DataContext.ToggleExpandCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                           CommandParameter="{Binding}">
+                                        <TextBlock Text="{Binding IsExpanded, Converter={StaticResource BoolToExpandIcon}}"
+                                                  FontSize="10"
+                                                  Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <!-- 层级标识列 -->
+                        <DataGridTemplateColumn Header="层级" Width="120">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="{Binding LotLevel, Converter={StaticResource LotLevelToBrush}}"
+                                            CornerRadius="3"
+                                            Padding="8,4">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding LotLevel, Converter={StaticResource LotLevelToIcon}}"
+                                                      FontSize="12"
+                                                      Margin="0,0,4,0"/>
+                                            <TextBlock Text="{Binding LotLevel, Converter={StaticResource LotLevelToText}}"
+                                                      FontSize="12"
+                                                      FontWeight="Medium"
+                                                      Foreground="{Binding LotLevel, Converter={StaticResource LotLevelToForeground}}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <!-- 批次号列 -->
+                        <DataGridTemplateColumn Header="批次号" Width="160">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding LotId}"
+                                                  FontSize="13"
+                                                  FontWeight="Medium"
+                                                  Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                                        <TextBlock Text="{Binding ParentLotId, StringFormat='从 {0} 拆分'}"
+                                                  FontSize="11"
+                                                  Foreground="{DynamicResource MesTextTertiaryBrush}"
+                                                  Visibility="{Binding ParentLotId, Converter={StaticResource NullToVis}}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTextColumn Header="工单号" 
+                                           Binding="{Binding OrderId}" 
+                                           Width="120"/>
+                        
+                        <DataGridTextColumn Header="产品" 
+                                           Binding="{Binding ProductName}" 
+                                           Width="140"/>
+                        
+                        <DataGridTextColumn Header="封装" 
+                                           Binding="{Binding PackageTypeDisplay}" 
+                                           Width="80"/>
+                        
+                        <DataGridTextColumn Header="当前工序" 
+                                           Binding="{Binding CurrentStep}" 
+                                           Width="120"/>
+                        
+                        <!-- 状态列 -->
+                        <DataGridTemplateColumn Header="状态" Width="90">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="{Binding Status, Converter={StaticResource LotStatusToColor}}"
+                                            CornerRadius="3"
+                                            Padding="6,3">
+                                        <TextBlock Text="{Binding Status}"
+                                                  FontSize="11"
+                                                  FontWeight="Medium"
+                                                  Foreground="{Binding Status, Converter={StaticResource LotStatusToForeground}}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTextColumn Header="优先级" 
+                                           Binding="{Binding Priority}" 
+                                           Width="70"/>
+                        
+                        <DataGridTextColumn Header="数量" 
+                                           Binding="{Binding UnitCount}" 
+                                           Width="70"/>
+                        
+                        <DataGridTextColumn Header="载具" 
+                                           Binding="{Binding CarrierId}" 
+                                           Width="100"/>
+                        
+                        <DataGridTextColumn Header="良率" 
+                                           Binding="{Binding CurrentYield, StringFormat={}{0:F1}%}" 
+                                           Width="70"/>
+                        
+                        <!-- 操作列 -->
+                        <DataGridTemplateColumn Header="操作" Width="160">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="查看"
+                                               Style="{DynamicResource MesIconButton}"
+                                               Width="28"
+                                               Height="28"
+                                               ToolTip="查看详情"
+                                               Command="{Binding DataContext.ViewDetailCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                               CommandParameter="{Binding}"/>
+                                        <Button Content="Hold"
+                                               Style="{DynamicResource MesIconButton}"
+                                               Width="28"
+                                               Height="28"
+                                               ToolTip="Hold 批次"
+                                               Visibility="{Binding IsHold, Converter={StaticResource BoolToVisInverse}}"
+                                               Command="{Binding DataContext.HoldLotCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                               CommandParameter="{Binding}"/>
+                                        <Button Content="拆分"
+                                               Style="{DynamicResource MesIconButton}"
+                                               Width="28"
+                                               Height="28"
+                                               ToolTip="拆分批次"
+                                               Command="{Binding DataContext.SplitLotCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                               CommandParameter="{Binding}"/>
+                                        <Button Content="Trace"
+                                               Style="{DynamicResource MesIconButton}"
+                                               Width="28"
+                                               Height="28"
+                                               ToolTip="批次追踪"
+                                               Command="{Binding DataContext.TraceLotCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                               CommandParameter="{Binding}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

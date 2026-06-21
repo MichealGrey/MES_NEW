@@ -405,6 +405,9 @@
       "MES.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MES.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MES.Shared.dll": {}
         },
@@ -1027,6 +1030,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows": [
+      "MES.Domain >= 1.0.0",
       "MES.Infrastructure >= 1.0.0",
       "MES.Infrastructure.Persistence >= 1.0.0",
       "MES.Shared >= 1.0.0",
@@ -1073,6 +1077,9 @@
             },
             "E:\\AiProj\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj": {
               "projectPath": "E:\\AiProj\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence\\MES.Infrastructure.Persistence.csproj"
+            },
+            "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+              "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
             }
           }
         }
@@ -1118,7 +1125,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#1E1E2E">
-    <Grid Margin="16">
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -12,12 +12,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
-            <TextBlock Text="系统监控" FontSize="20" FontWeight="Bold" Foreground="#CDD6F4" Margin="0,0,16,0"/>
-            <Button Content="刷新" Command="{Binding RefreshCommand}" Width="80"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="系统监控" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,16,0"/>
+            <Button Content="刷新" Command="{Binding RefreshCommand}" Style="{DynamicResource MesPrimaryButton}"/>
         </StackPanel>
 
-        <Grid Grid.Row="1" Margin="0,0,0,12">
+        <Grid Grid.Row="1" Margin="0,0,0,16">
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -28,10 +28,10 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="#CDD6F4"/>
+            <TextBlock Text="加载中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
         </Grid>
 
-        <Grid Grid.Row="2" Margin="0,0,0,12">
+        <Grid Grid.Row="2" Margin="0,0,0,16">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -39,48 +39,40 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock Text="加工中" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Monitor.ProcessingLots}" FontSize="24" FontWeight="Bold" Foreground="#4CAF50"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <TextBlock Text="等待中" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Monitor.WaitingLots}" FontSize="24" FontWeight="Bold" Foreground="#FF9800"/>
-            </StackPanel>
-            <StackPanel Grid.Column="2">
-                <TextBlock Text="Hold" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Monitor.HoldLots}" FontSize="24" FontWeight="Bold" Foreground="#F44336"/>
-            </StackPanel>
-            <StackPanel Grid.Column="3">
-                <TextBlock Text="可用设备" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Monitor.AvailableEquipments}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
-            <StackPanel Grid.Column="4">
-                <TextBlock Text="可用载具" FontSize="14" Foreground="#CDD6F4"/>
-                <TextBlock Text="{Binding Monitor.AvailableCarriers}" FontSize="24" FontWeight="Bold" Foreground="#CDD6F4"/>
-            </StackPanel>
+            <Border Grid.Column="0" Style="{DynamicResource MesKpiCard}" Padding="16">
+                <StackPanel>
+                    <TextBlock Text="加工中" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Monitor.ProcessingLots}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Style="{DynamicResource MesKpiCard}" Padding="16" Margin="12,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="等待中" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Monitor.WaitingLots}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesWarningBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Style="{DynamicResource MesKpiCard}" Padding="16" Margin="12,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="Hold" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Monitor.HoldLots}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesDangerBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="3" Style="{DynamicResource MesKpiCard}" Padding="16" Margin="12,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="可用设备" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Monitor.AvailableEquipments}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="4" Style="{DynamicResource MesKpiCard}" Padding="16" Margin="12,0,0,0">
+                <StackPanel>
+                    <TextBlock Text="可用载具" FontSize="14" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding Monitor.AvailableCarriers}" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
         </Grid>
 
         <DataGrid Grid.Row="3" ItemsSource="{Binding Alerts}" AutoGenerateColumns="False" IsReadOnly="True"
-                  Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"
-                  RowBackground="#1E1E2E" AlternatingRowBackground="#313244" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" FontSize="12">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="Background" Value="#313244"/>
-                    <Setter Property="Foreground" Value="#CDD6F4"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="Padding" Value="8,4"/>
-                </Style>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="32"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#45475A"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
+                  Style="{DynamicResource MesDataGrid}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="类型" Binding="{Binding AlertType}" Width="120"/>
                 <DataGridTextColumn Header="级别" Binding="{Binding Severity}" Width="80"/>

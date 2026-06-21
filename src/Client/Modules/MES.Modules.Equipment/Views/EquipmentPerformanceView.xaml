@@ -1,0 +1,84 @@
+<UserControl x:Class="MES.Modules.Equipment.Views.EquipmentPerformanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 页面标题 -->
+        <TextBlock Grid.Row="0" Text="设备绩效分析" Style="{DynamicResource MesPageTitle}" Margin="0,0,0,16"/>
+
+        <!-- 搜索和统计区域 -->
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="搜索设备:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <TextBox Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,16,0"/>
+                <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="平均 OEE: " VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBlock Text="{Binding AvgOee, StringFormat='{}{0:F1}%'}" FontWeight="Bold" Foreground="LightGreen" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                    <TextBlock Text="平均可用率: " VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBlock Text="{Binding AvgAvailability, StringFormat='{}{0:F1}%'}" FontWeight="Bold" Foreground="LightBlue" VerticalAlignment="Center" Margin="0,0,16,0"/>
+                    <Button Content="刷新数据" Command="{Binding RefreshCommand}" Padding="12,4"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- KPI 卡片区域 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                    <TextBlock Text="平均 OEE" HorizontalAlignment="Center" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding AvgOee, StringFormat='{}{0:F1}%'}" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Foreground="LightGreen"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                    <TextBlock Text="平均可用率" HorizontalAlignment="Center" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding AvgAvailability, StringFormat='{}{0:F1}%'}" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Foreground="LightBlue"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="设备数量" HorizontalAlignment="Center" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}"/>
+                    <TextBlock Text="{Binding FilteredView.Count}" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Foreground="LightYellow"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <Border Grid.Row="3" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,0">
+            <DataGrid ItemsSource="{Binding FilteredView}" SelectedItem="{Binding SelectedItem}"
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="设备编号" Binding="{Binding EquipmentId}" Width="100"/>
+                    <DataGridTextColumn Header="设备名称" Binding="{Binding EquipmentName}" Width="150"/>
+                    <DataGridTextColumn Header="OEE" Binding="{Binding OEE, StringFormat='{}{0:F1}%'}" Width="80"/>
+                    <DataGridTextColumn Header="可用率" Binding="{Binding Availability, StringFormat='{}{0:F1}%'}" Width="80"/>
+                    <DataGridTextColumn Header="性能率" Binding="{Binding Performance, StringFormat='{}{0:F1}%'}" Width="80"/>
+                    <DataGridTextColumn Header="质量率" Binding="{Binding Quality, StringFormat='{}{0:F1}%'}" Width="80"/>
+                    <DataGridTextColumn Header="总批次" Binding="{Binding TotalLots}" Width="80"/>
+                    <DataGridTextColumn Header="完成批次" Binding="{Binding CompletedLots}" Width="80"/>
+                    <DataGridTextColumn Header="平均周期(秒)" Binding="{Binding AvgCycleTime, StringFormat='{}{0:F1}'}" Width="100"/>
+                    <DataGridTextColumn Header="报警次数" Binding="{Binding AlarmCount}" Width="80"/>
+                    <DataGridTextColumn Header="运行率" Binding="{Binding Uptime, StringFormat='{}{0:F1}%'}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

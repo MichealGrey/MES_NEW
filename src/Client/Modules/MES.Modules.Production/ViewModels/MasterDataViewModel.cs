@@ -1,6 +1,4 @@
-using System.Collections.ObjectModel;
 using System.Windows.Input;
-using MES.Modules.Production.Models;
 using MES.Modules.Production.Services;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -10,57 +8,50 @@ namespace MES.Modules.Production.ViewModels;
 public class MasterDataViewModel : BindableBase
 {
     private readonly IMasterDataService _masterDataService;
+    private object? _currentView;
+    private string _selectedNav = "Product";
 
-    private ObservableCollection<EquipmentInfo> _equipments = [];
-    private ObservableCollection<CarrierInfo> _carriers = [];
-    private ObservableCollection<RecipeInfo> _recipes = [];
-    private ObservableCollection<UserInfo> _users = [];
-    private bool _isLoading;
-
-    public bool IsLoading
+    public object? CurrentView
     {
-        get => _isLoading;
-        set => SetProperty(ref _isLoading, value);
+        get => _currentView;
+        set => SetProperty(ref _currentView, value);
     }
 
-    public ObservableCollection<EquipmentInfo> Equipments
+    public string SelectedNav
     {
-        get => _equipments;
-        set => SetProperty(ref _equipments, value);
+        get => _selectedNav;
+        set => SetProperty(ref _selectedNav, value);
     }
 
-    public ObservableCollection<CarrierInfo> Carriers
-    {
-        get => _carriers;
-        set => SetProperty(ref _carriers, value);
-    }
-
-    public ObservableCollection<RecipeInfo> Recipes
-    {
-        get => _recipes;
-        set => SetProperty(ref _recipes, value);
-    }
-
-    public ObservableCollection<UserInfo> Users
-    {
-        get => _users;
-        set => SetProperty(ref _users, value);
-    }
-
-    public ICommand LoadDataCommand { get; }
+    public ICommand NavigateCommand { get; }
 
     public MasterDataViewModel(IMasterDataService masterDataService)
     {
         _masterDataService = masterDataService;
-        LoadDataCommand = new DelegateCommand(async () => await LoadAllDataAsync());
-        LoadDataCommand.Execute(masterDataService);
+        NavigateCommand = new DelegateCommand<string>(OnNavigate);
+        OnNavigate("Product");
     }
 
-    private async System.Threading.Tasks.Task LoadAllDataAsync()
+    private void OnNavigate(string? viewName)
     {
-        Equipments = new ObservableCollection<EquipmentInfo>(await _masterDataService.GetAllEquipmentsAsync());
-        Carriers = new ObservableCollection<CarrierInfo>(await _masterDataService.GetAllCarriersAsync());
-        Recipes = new ObservableCollection<RecipeInfo>(await _masterDataService.GetAllRecipesAsync());
-        Users = new ObservableCollection<UserInfo>(await _masterDataService.GetAllUsersAsync());
+        if (string.IsNullOrEmpty(viewName)) viewName = "Product";
+        SelectedNav = viewName;
+
+        CurrentView = viewName switch
+        {
+            "Product" => new Views.ProductManagementView(),
+            "Route" => new Views.RouteManagementView(),
+            "Equipment" => new Views.EquipmentManagementView(),
+            "Carrier" => new Views.CarrierManagementView(),
+            "Recipe" => new Views.RecipeManagementView(),
+            "Material" => new Views.MaterialManagementView(),
+            "Customer" => new Views.CustomerManagementView(),
+            "ReasonCode" => new Views.ReasonCodeManagementView(),
+            "DefectCode" => new Views.DefectCodeManagementView(),
+            "YieldRule" => new Views.YieldRuleManagementView(),
+            "AlarmRule" => new Views.AlarmRuleManagementView(),
+            "ScrapRule" => new Views.ScrapRuleManagementView(),
+            _ => new Views.ProductManagementView()
+        };
     }
 }

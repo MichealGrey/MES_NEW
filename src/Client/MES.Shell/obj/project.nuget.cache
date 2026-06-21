@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/UmGtSosTNg=",
+  "dgSpecHash": "Gjh9AZizJhA=",
   "success": true,
   "projectFilePath": "E:\\AiProj\\MES_NEW\\src\\Client\\MES.Shell\\MES.Shell.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\dryioc.dll\\5.4.3\\dryioc.dll.5.4.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.11\\microsoft.entityframeworkcore.8.0.11.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.11\\microsoft.entityframeworkcore.abstractions.8.0.11.nupkg.sha512",

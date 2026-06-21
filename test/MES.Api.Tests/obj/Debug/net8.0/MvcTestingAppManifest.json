@@ -1,8 +1,17 @@
 {
+  "Adapters.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Adapters\\Adapters.Abstractions",
+  "Adapters.Mock, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Adapters\\Adapters.Mock",
   "MES.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\MES.Api",
   "MES.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Contracts",
   "MES.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain",
+  "MES.Infrastructure.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Infrastructure\\MES.Infrastructure.Persistence",
+  "MES.Services.Analytics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Analytics",
+  "MES.Services.Engineering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Engineering",
   "MES.Services.Equipment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Equipment",
+  "MES.Services.Planning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Planning",
+  "MES.Services.ProcessControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.ProcessControl",
   "MES.Services.Production, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Production",
-  "MES.Services.Quality, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality"
+  "MES.Services.Quality, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Quality",
+  "MES.Services.SystemMgmt, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.SystemMgmt",
+  "MES.Services.Warehouse, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\AiProj\\MES_NEW\\src\\Server\\Modules\\MES.Services.Warehouse"
 }

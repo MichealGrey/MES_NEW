@@ -1,11 +1,30 @@
 {
   "version": 4,
   "targets": {
-    "net8.0-windows": {}
+    "net8.0-windows": {
+      "MES.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MES.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MES.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MES.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Shared/MES.Domain/MES.Domain.csproj",
+      "msbuildProject": "../../Shared/MES.Domain/MES.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows": []
+    "net8.0-windows": [
+      "MES.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
@@ -34,7 +53,11 @@
         "net8.0-windows": {
           "framework": "net8.0-windows7.0",
           "targetAlias": "net8.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj": {
+              "projectPath": "E:\\AiProj\\MES_NEW\\src\\Shared\\MES.Domain\\MES.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -72,7 +95,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

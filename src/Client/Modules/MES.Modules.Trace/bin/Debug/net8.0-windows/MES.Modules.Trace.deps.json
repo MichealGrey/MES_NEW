@@ -8,12 +8,23 @@
     ".NETCoreApp,Version=v8.0": {
       "MES.Modules.Trace/1.0.0": {
         "dependencies": {
+          "MES.Contracts": "1.0.0",
           "MES.Infrastructure": "1.0.0",
+          "MES.Shared": "1.0.0",
           "MES.Themes": "1.0.0",
+          "Prism.DryIoc": "9.0.537",
           "Prism.Wpf": "9.0.537"
         },
         "runtime": {
           "MES.Modules.Trace.dll": {}
+        }
+      },
+      "DryIoc.dll/5.4.3": {
+        "runtime": {
+          "lib/net7.0/DryIoc.dll": {
+            "assemblyVersion": "5.4.3.0",
+            "fileVersion": "5.4.3.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/8.0.11": {
@@ -191,6 +202,18 @@
           }
         }
       },
+      "Prism.Container.DryIoc/9.0.106": {
+        "dependencies": {
+          "DryIoc.dll": "5.4.3",
+          "Prism.Container.Abstractions": "9.0.106"
+        },
+        "runtime": {
+          "lib/net8.0/Prism.Container.DryIoc.dll": {
+            "assemblyVersion": "9.0.106.9543",
+            "fileVersion": "9.0.106.9543"
+          }
+        }
+      },
       "Prism.Core/9.0.537": {
         "dependencies": {
           "Prism.Container.Abstractions": "9.0.106",
@@ -198,6 +221,18 @@
         },
         "runtime": {
           "lib/net6.0/Prism.dll": {
+            "assemblyVersion": "9.0.537.60525",
+            "fileVersion": "9.0.537.60525"
+          }
+        }
+      },
+      "Prism.DryIoc/9.0.537": {
+        "dependencies": {
+          "Prism.Container.DryIoc": "9.0.106",
+          "Prism.Wpf": "9.0.537"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Prism.DryIoc.Wpf.dll": {
             "assemblyVersion": "9.0.537.60525",
             "fileVersion": "9.0.537.60525"
           }
@@ -223,6 +258,14 @@
           }
         }
       },
+      "MES.Contracts/1.0.0": {
+        "runtime": {
+          "MES.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MES.Domain/1.0.0": {
         "runtime": {
           "MES.Domain.dll": {
@@ -244,6 +287,17 @@
           }
         }
       },
+      "MES.Shared/1.0.0": {
+        "dependencies": {
+          "MES.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MES.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MES.Themes/1.0.0": {
         "runtime": {
           "MES.Themes.dll": {
@@ -259,6 +313,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DryIoc.dll/5.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yhXOG3SOxeWYxBAWskNRDD8fzw5hriEawv4VN4WKaFHOuubiop4kxe2rkWTEyCnTgRVgxVUSQCDBBkZqwPm1iQ==",
+      "path": "dryioc.dll/5.4.3",
+      "hashPath": "dryioc.dll.5.4.3.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/8.0.11": {
       "type": "package",
@@ -372,12 +433,26 @@
       "path": "prism.container.abstractions/9.0.106",
       "hashPath": "prism.container.abstractions.9.0.106.nupkg.sha512"
     },
+    "Prism.Container.DryIoc/9.0.106": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g7UzyK4oRPmEGgz2CV976KTBFk+QPdfktyrL91kvI4YbHciQATO6/r1KFnyRnBE73il5v+SeXXKWIrvlMnsMdg==",
+      "path": "prism.container.dryioc/9.0.106",
+      "hashPath": "prism.container.dryioc.9.0.106.nupkg.sha512"
+    },
     "Prism.Core/9.0.537": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-D7mEqPKLVNrD0g2WHCpC/MOKwn8h7X1liCWyjqjL7NCuxgwuhVLTG85E/ZPBkISrXdwvOQZ+bSY31bvP79FQlg==",
       "path": "prism.core/9.0.537",
       "hashPath": "prism.core.9.0.537.nupkg.sha512"
+    },
+    "Prism.DryIoc/9.0.537": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tnKifVxlKeSbNP2gZi+nMcjsi/w0lm3aLhBh92gWO6uCoa44ACM9gVJeO77ew4aHYZuoHUd6wHyeozfN7QKWuA==",
+      "path": "prism.dryioc/9.0.537",
+      "hashPath": "prism.dryioc.9.0.537.nupkg.sha512"
     },
     "Prism.Events/9.0.537": {
       "type": "package",
@@ -393,12 +468,22 @@
       "path": "prism.wpf/9.0.537",
       "hashPath": "prism.wpf.9.0.537.nupkg.sha512"
     },
+    "MES.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MES.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "MES.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MES.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

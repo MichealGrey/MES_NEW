@@ -1,0 +1,46 @@
+<UserControl x:Class="MES.Modules.Trace.Views.BackwardTraceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:MES.Shared.Converters;assembly=MES.Shared"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <UserControl.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="反向追溯" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <Border Grid.Row="1" Style="{DynamicResource MesCard}" Padding="16" Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="批次号:" VerticalAlignment="Center" Foreground="{DynamicResource MesTextSecondaryBrush}" Margin="0,0,8,0"/>
+                <TextBox Width="200" Text="{Binding SearchLotId}" Style="{DynamicResource MesTextBox}" Margin="0,0,16,0" ToolTip="输入要追溯的批次号"/>
+                <Button Content="追溯" Command="{Binding SearchCommand}" Style="{DynamicResource MesPrimaryButton}"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="2" Text="{Binding ErrorMessage}" Foreground="{DynamicResource MesDangerBrush}" FontSize="13" Margin="0,0,0,16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}"/>
+
+        <Border Grid.Row="3" Style="{DynamicResource MesCard}" Padding="0">
+            <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True" Style="{DynamicResource MesDataGrid}" FontSize="13">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="120"/>
+                    <DataGridTextColumn Header="晶圆ID" Binding="{Binding WaferId}" Width="100"/>
+                    <DataGridTextColumn Header="供应商" Binding="{Binding Supplier}" Width="120"/>
+                    <DataGridTextColumn Header="物料批次" Binding="{Binding MaterialLot}" Width="120"/>
+                    <DataGridTextColumn Header="接收日期" Binding="{Binding ReceiveDate, StringFormat='{}{0:yyyy-MM-dd}'}" Width="110"/>
+                    <DataGridTextColumn Header="检验结果" Binding="{Binding InspectionResult}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

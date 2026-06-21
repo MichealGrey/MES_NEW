@@ -9,4 +9,6 @@ public class ActiveAlarmItem
     public string Text { get; set; } = string.Empty;
     public DateTime AlarmTime { get; set; }
     public string Duration { get; set; } = string.Empty;
+    public string Status { get; set; } = "Active";
+    public string AckBy { get; set; } = string.Empty;
 }

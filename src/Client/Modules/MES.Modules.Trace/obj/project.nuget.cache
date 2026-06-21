@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "39Rv+byahT4=",
+  "dgSpecHash": "wWkhjh4M2Zw=",
   "success": true,
   "projectFilePath": "E:\\AiProj\\MES_NEW\\src\\Client\\Modules\\MES.Modules.Trace\\MES.Modules.Trace.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\dryioc.dll\\5.4.3\\dryioc.dll.5.4.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.11\\microsoft.entityframeworkcore.8.0.11.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.11\\microsoft.entityframeworkcore.abstractions.8.0.11.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.11\\microsoft.entityframeworkcore.analyzers.8.0.11.nupkg.sha512",
@@ -21,7 +22,9 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\prism.container.abstractions\\9.0.106\\prism.container.abstractions.9.0.106.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\prism.container.dryioc\\9.0.106\\prism.container.dryioc.9.0.106.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\prism.core\\9.0.537\\prism.core.9.0.537.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\prism.dryioc\\9.0.537\\prism.dryioc.9.0.537.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\prism.events\\9.0.537\\prism.events.9.0.537.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\prism.wpf\\9.0.537\\prism.wpf.9.0.537.nupkg.sha512"
   ],

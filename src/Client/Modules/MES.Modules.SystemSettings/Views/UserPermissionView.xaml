@@ -1,0 +1,142 @@
+<UserControl x:Class="MES.Modules.SystemSettings.Views.UserPermissionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+    <UserControl.Resources>
+        <Style x:Key="StatCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource MesCardBackgroundBrush}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16"/>
+            <Setter Property="Margin" Value="0,0,12,0"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 统计卡片 -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding TotalUsers}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource MesPrimaryBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="用户总数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding ActiveUsers}" FontSize="28" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center"/>
+                    <TextBlock Text="活跃用户" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding LockedUsers}" FontSize="28" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"/>
+                    <TextBlock Text="锁定用户" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource StatCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{Binding TotalRoles}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource MesPrimaryBrush}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="角色总数" FontSize="12" Foreground="{DynamicResource MesTextSecondaryBrush}" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Tab切换 -->
+        <TabControl Grid.Row="1" SelectedValue="{Binding ActiveTab}" SelectedValuePath="Name">
+            <TabControl.Items>
+                <TabItem Header="用户管理" Name="Users"/>
+                <TabItem Header="角色管理" Name="Roles"/>
+                <TabItem Header="权限管理" Name="Permissions"/>
+            </TabControl.Items>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding}"/>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+
+        <!-- 用户列表 (Users Tab) -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                  IsReadOnly="True" GridLinesVisibility="Horizontal" SelectionMode="Single">
+            <DataGrid.Style>
+                <Style TargetType="DataGrid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ActiveTab}" Value="Users">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ActiveTab}" Value="Users">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Style>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="用户名" Binding="{Binding UserName}" Width="120"/>
+                <DataGridTextColumn Header="姓名" Binding="{Binding DisplayName}" Width="100"/>
+                <DataGridTextColumn Header="邮箱" Binding="{Binding Email}" Width="180"/>
+                <DataGridTextColumn Header="部门" Binding="{Binding Department}" Width="100"/>
+                <DataGridTextColumn Header="职位" Binding="{Binding Position}" Width="100"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="70"/>
+                <DataGridTextColumn Header="最后登录" Binding="{Binding LastLogin, StringFormat=yyyy-MM-dd HH:mm}" Width="130"/>
+                <DataGridTextColumn Header="登录失败次数" Binding="{Binding LoginFailCount}" Width="100"/>
+                <DataGridTemplateColumn Header="操作" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="详情" Command="{Binding DataContext.EditUserCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding}" Margin="2" Padding="6,2"/>
+                                <Button Content="启用/禁用" Command="{Binding DataContext.ToggleUserStatusCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding}" Margin="2" Padding="6,2"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- 角色列表 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding Roles}" SelectedItem="{Binding SelectedRole}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                  IsReadOnly="True" GridLinesVisibility="Horizontal" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="角色代码" Binding="{Binding RoleCode}" Width="120"/>
+                <DataGridTextColumn Header="角色名称" Binding="{Binding RoleName}" Width="150"/>
+                <DataGridTextColumn Header="描述" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="用户数" Binding="{Binding UserCount}" Width="80"/>
+                <DataGridTextColumn Header="系统角色" Binding="{Binding IsSystem}" Width="80"/>
+                <DataGridTemplateColumn Header="操作" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="详情" Command="{Binding DataContext.EditRoleCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                    CommandParameter="{Binding}" Margin="2" Padding="6,2"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- 权限列表 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding Permissions}"
+                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                  IsReadOnly="True" GridLinesVisibility="Horizontal" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="权限代码" Binding="{Binding PermissionCode}" Width="140"/>
+                <DataGridTextColumn Header="权限名称" Binding="{Binding PermissionName}" Width="150"/>
+                <DataGridTextColumn Header="模块" Binding="{Binding Module}" Width="120"/>
+                <DataGridTextColumn Header="操作类型" Binding="{Binding ActionType}" Width="100"/>
+                <DataGridTextColumn Header="描述" Binding="{Binding Description}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- 错误提示 -->
+        <TextBlock Grid.Row="3" Text="{Binding ErrorMessage}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Visibility="{Binding ErrorMessage, Converter={StaticResource StringToVisibilityConverter}}" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

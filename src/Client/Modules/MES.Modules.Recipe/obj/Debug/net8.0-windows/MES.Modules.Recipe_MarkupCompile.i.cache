@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 
-4580340235
+6-1900451938
 
-161605350236
-2201708370146
-Views\RecipeApprovalView.xaml;Views\RecipeEquipmentView.xaml;Views\RecipeListView.xaml;Views\RecipeParameterView.xaml;
+16-1841147283
+2211403511454
+Views\RecipeApprovalView.xaml;Views\RecipeDispatchView.xaml;Views\RecipeEquipmentView.xaml;Views\RecipeListView.xaml;Views\RecipeParameterView.xaml;Views\RecipeVersionView.xaml;
 
 False
 

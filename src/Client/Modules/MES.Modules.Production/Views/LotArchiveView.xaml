@@ -1,0 +1,103 @@
+<UserControl x:Class="MES.Modules.Production.Views.LotArchiveView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="{DynamicResource MesBackgroundPrimaryBrush}">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="Lot 归档" FontSize="24" FontWeight="SemiBold"
+                   Foreground="{DynamicResource MesTextPrimaryBrush}" Margin="0,0,0,16"/>
+
+        <!-- 统计卡片 -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,16">
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="归档总数" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding TotalArchived}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesTextPrimaryBrush}"/>
+                </StackPanel>
+            </Border>
+            <Border Style="{DynamicResource MesKpiCard}" Padding="12,8" Margin="0,0,8,0">
+                <StackPanel>
+                    <TextBlock Text="平均良率" FontSize="11" Foreground="{DynamicResource MesTextTertiaryBrush}"/>
+                    <TextBlock Text="{Binding TotalYield, StringFormat={}{0:F1}%}" FontSize="18" FontWeight="SemiBold"
+                               Foreground="{DynamicResource MesSuccessBrush}"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+
+        <!-- 过滤栏 -->
+        <Border Grid.Row="2" Style="{DynamicResource MesCard}" Padding="12" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 日期范围 - 起始 -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,8,0">
+                    <TextBlock Text="从:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <DatePicker Width="130"/>
+                </StackPanel>
+
+                <!-- 日期范围 - 截止 -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <TextBlock Text="到:" FontSize="13" Foreground="{DynamicResource MesTextSecondaryBrush}"
+                               VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <DatePicker Width="130"/>
+                </StackPanel>
+
+                <!-- 搜索框 -->
+                <TextBox Grid.Column="2" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,0,16,0" Width="220" Style="{DynamicResource MesTextBox}"/>
+
+                <!-- 搜索按钮 -->
+                <Button Grid.Column="3" Content="搜索" Command="{Binding SearchCommand}"
+                        Style="{DynamicResource MesPrimaryButton}" Margin="0,0,16,0"/>
+
+                <!-- 刷新按钮 -->
+                <Button Grid.Column="5" Content="刷新" Command="{Binding RefreshCommand}"
+                        Style="{DynamicResource MesPrimaryButton}" Margin="0,0,8,0"/>
+
+                <!-- 导出报表 -->
+                <Button Grid.Column="6" Content="导出报表" Command="{Binding ExportCommand}"
+                        Style="{DynamicResource MesSecondaryButton}"/>
+            </Grid>
+        </Border>
+
+        <!-- 数据表格 -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding FilteredLots}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Style="{DynamicResource MesDataGrid}"
+                  SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="批次号" Binding="{Binding LotId}" Width="140"/>
+                <DataGridTextColumn Header="工单号" Binding="{Binding WorkOrderId}" Width="120"/>
+                <DataGridTextColumn Header="产品" Binding="{Binding ProductName}" Width="120"/>
+                <DataGridTextColumn Header="批次类型" Binding="{Binding LotLevelDisplay}" Width="90"/>
+                <DataGridTextColumn Header="工艺阶段" Binding="{Binding ProcessStageDisplay}" Width="90"/>
+                <DataGridTextColumn Header="最终工序" Binding="{Binding CurrentStep}" Width="110"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="90"/>
+                <DataGridTextColumn Header="最终数量" Binding="{Binding Qty}" Width="80"/>
+                <DataGridTextColumn Header="原始数量" Binding="{Binding OriginalQty}" Width="80"/>
+                <DataGridTextColumn Header="良率" Binding="{Binding YieldPercent, StringFormat={}{0:F1}%}" Width="80"/>
+                <DataGridTextColumn Header="归档时间" Binding="{Binding ArchivedAt, StringFormat={}{0:yyyy-MM-dd HH:mm}}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

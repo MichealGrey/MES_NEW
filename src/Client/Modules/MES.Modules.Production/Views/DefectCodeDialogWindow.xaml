@@ -1,0 +1,65 @@
+<Window x:Class="MES.Modules.Production.Views.DefectCodeDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="缺陷代码" Height="340" Width="480"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E2E"
+        ResizeMode="NoResize">
+    <ScrollViewer Padding="16">
+        <StackPanel>
+            <GroupBox Header="缺陷代码信息" Foreground="#CDD6F4" BorderBrush="#45475A" Margin="0,0,0,12">
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="缺陷代码" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDefectCodeId" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A" IsReadOnly="True"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="缺陷分类 *" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cmbDefectCategory" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Cosmetic"/>
+                        <ComboBoxItem Content="Dimensional"/>
+                        <ComboBoxItem Content="Electrical"/>
+                        <ComboBoxItem Content="Functional"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="严重等级" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="4" Grid.Column="1" x:Name="cmbSeverity" Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A">
+                        <ComboBoxItem Content="Critical"/>
+                        <ComboBoxItem Content="Major"/>
+                        <ComboBoxItem Content="Minor"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="是否启用" Foreground="#A6ADC8" VerticalAlignment="Center"/>
+                    <CheckBox Grid.Row="6" Grid.Column="1" x:Name="chkIsEnabled" Content="启用" Foreground="#CDD6F4" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="缺陷描述 *" Foreground="#A6ADC8" VerticalAlignment="Top" Margin="0,4,0,0"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtDefectText" AcceptsReturn="True" TextWrapping="Wrap"
+                             Background="#313244" Foreground="#CDD6F4" BorderBrush="#45475A"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
+                <Button Content="确定" x:Name="btnSave" Width="100" Height="32"
+                        Background="#89B4FA" Foreground="#1E1E2E" FontWeight="Bold"
+                        BorderThickness="0" Cursor="Hand" Click="btnSave_Click"/>
+                <Button Content="取消" Width="100" Height="32" Margin="16,0,0,0"
+                        Background="#45475A" Foreground="#CDD6F4"
+                        BorderThickness="0" Cursor="Hand" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

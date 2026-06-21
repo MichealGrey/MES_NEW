@@ -9,6 +9,7 @@
     <PackageReference Include="Prism.Wpf" Version="9.0.537" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MES.Shared\MES.Shared.csproj" />
     <ProjectReference Include="..\..\MES.Infrastructure\MES.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Themes\MES.Themes\MES.Themes.csproj" />
   </ItemGroup>
